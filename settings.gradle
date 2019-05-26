@@ -1,0 +1,1 @@
+include ':app', ':http', ':adapter', ':mvp', ':compat', ':mvvm'
