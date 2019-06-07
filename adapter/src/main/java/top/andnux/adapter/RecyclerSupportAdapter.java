@@ -24,7 +24,7 @@ import top.andnux.adapter.animation.BaseAnimation;
 /**
  * Base adapter.
  * <p>
- * Created by Cheney on 16/3/30.
+ * Created by andnux on 16/3/30.
  */
 abstract class RecyclerSupportAdapter<T> extends RecyclerView.Adapter<SuperViewHolder>
         implements IViewBindData<T, SuperViewHolder>, IAnimation, ILayoutManager, IHeaderFooter {

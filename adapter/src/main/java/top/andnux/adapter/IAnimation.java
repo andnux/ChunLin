@@ -8,7 +8,7 @@ import top.andnux.adapter.animation.BaseAnimation;
 /**
  * Animation interface for adapter.
  * <p>
- * Created by Cheney on 16/6/28.
+ * Created by andnux on 16/6/28.
  */
 interface IAnimation {
 

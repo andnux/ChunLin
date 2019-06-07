@@ -5,9 +5,10 @@ import android.view.View;
 /**
  * Methods about header and footer.
  * <p>
- * Created by Cheney on 16/1/12.
+ * Created by andnux on 16/1/12.
  */
 interface IHeaderFooter {
+
     View getHeaderView();
 
     View getFooterView();

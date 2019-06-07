@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">图书馆</string>
+	<string name="re_send">秒后可重发</string>
+	<string name="re_send_code">重新获取验证码</string>
+</resources>

@@ -24,7 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 /**
  * More convenient chain call.
  * <p>
- * Created by Cheney on 2017/3/29.
+ * Created by andnux on 2017/3/29.
  */
 public class ExtendViewHolder {
     private View currentView;

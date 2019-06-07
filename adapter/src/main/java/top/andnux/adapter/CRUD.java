@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Select, insert, update, delete.
  * <p>
- * Created by Cheney on 16/4/1.
+ * Created by andnux on 16/4/1.
  */
 interface CRUD<T> {
     void add(T item);

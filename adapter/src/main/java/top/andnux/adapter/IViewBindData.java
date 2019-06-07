@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 /**
  * Create and bind data to item view.
  * <p>
- * Created by Cheney on 16/3/31.
+ * Created by andnux on 16/3/31.
  */
 interface IViewBindData<T, VH> {
 

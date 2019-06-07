@@ -5,7 +5,7 @@ import android.view.View;
 /**
  * OnItemClickListener for RecyclerView.
  * <p>
- * Created by Cheney on 16/1/13.
+ * Created by andnux on 16/1/13.
  */
 public interface OnItemClickListener {
 

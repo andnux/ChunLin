@@ -28,7 +28,7 @@ import com.bumptech.glide.Glide;
 /**
  * Universal view holder.
  * <p>
- * Created by Cheney on 16/3/30.
+ * Created by andnux on 16/3/30.
  */
 public class SuperViewHolder extends RecyclerView.ViewHolder implements ChainSetter<SuperViewHolder> {
 

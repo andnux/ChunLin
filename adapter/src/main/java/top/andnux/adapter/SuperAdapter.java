@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * The adapter you need to implement.
  * <p>
- * Created by Cheney on 16/3/30.
+ * Created by andnux on 16/3/30.
  */
 public abstract class SuperAdapter<T> extends ListSupportAdapter<T> implements CRUD<T> {
 

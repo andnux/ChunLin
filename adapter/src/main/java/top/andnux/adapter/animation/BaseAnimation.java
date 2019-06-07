@@ -6,7 +6,7 @@ import android.view.View;
 /**
  * Base animation for item loading.
  *
- * @Author: chenenyu
+ * @Author: andnux
  * @Created: 16/6/28 14:41.
  */
 public interface BaseAnimation {

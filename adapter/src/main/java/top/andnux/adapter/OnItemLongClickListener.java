@@ -5,7 +5,7 @@ import android.view.View;
 /**
  * OnItemLongClickListener for RecyclerView.
  * <p>
- * Created by Cheney on 16/2/24.
+ * Created by andnux on 16/2/24.
  */
 public interface OnItemLongClickListener {
 

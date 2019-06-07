@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Default callback class used by DiffUtil while calculating the diff between two lists.
  * <p>
- * Created by Cheney on 2016/9/26.
+ * Created by andnux on 2016/9/26.
  */
 public abstract class DefaultDiffCallback<T> extends DiffUtil.Callback {
     private List<T> oldList;

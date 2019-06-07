@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * Bridge adapter for {@link android.widget.BaseAdapter} supporting.
  * <p>
- * Created by Cheney on 16/6/28.
+ * Created by andnux on 16/6/28.
  */
 abstract class ListSupportAdapter<T> extends RecyclerSupportAdapter<T>
         implements ListAdapter, SpinnerAdapter {

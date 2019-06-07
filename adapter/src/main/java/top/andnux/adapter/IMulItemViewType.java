@@ -6,7 +6,7 @@ import androidx.annotation.LayoutRes;
 /**
  * Interface for multiple view types.
  * <p>
- * Created by Cheney on 15/11/28.
+ * Created by andnux on 15/11/28.
  */
 public interface IMulItemViewType<T> {
 

@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 /**
  * Some convenient methods called like a chain.
  * <p>
- * Created by Cheney on 16/4/1.
+ * Created by andnux on 16/4/1.
  */
 interface ChainSetter<VH> {
 

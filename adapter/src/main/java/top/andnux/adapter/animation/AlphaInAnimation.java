@@ -5,7 +5,7 @@ import android.animation.ObjectAnimator;
 import android.view.View;
 
 /**
- * @Author: chenenyu
+ * @Author: andnux
  * @Created: 16/6/28 16:01.
  */
 public class AlphaInAnimation implements BaseAnimation {
