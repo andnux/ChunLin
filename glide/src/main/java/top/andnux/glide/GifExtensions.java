@@ -1,7 +1,5 @@
 package top.andnux.glide;
 
-import android.support.rastermill.FrameSequenceDrawable;
-
 import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.annotation.GlideExtension;
 import com.bumptech.glide.annotation.GlideType;

@@ -1,8 +1,6 @@
 package top.andnux.glide;
 
 import android.graphics.Bitmap;
-import android.support.rastermill.FrameSequence;
-import android.support.rastermill.FrameSequenceDrawable;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

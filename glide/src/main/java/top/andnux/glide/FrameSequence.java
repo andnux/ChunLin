@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package android.support.rastermill;
+package top.andnux.glide;
 
 import android.graphics.Bitmap;
 import java.nio.ByteBuffer;
@@ -23,7 +23,7 @@ import java.io.InputStream;
 
 public class FrameSequence {
     static {
-        System.loadLibrary("framesequence");
+        System.loadLibrary("glide");
     }
 
     private final long mNativeFrameSequence;

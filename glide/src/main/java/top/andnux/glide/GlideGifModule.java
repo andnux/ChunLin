@@ -1,7 +1,6 @@
 package top.andnux.glide;
 
 import android.content.Context;
-import android.support.rastermill.FrameSequenceDrawable;
 
 import androidx.annotation.NonNull;
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package android.support.rastermill;
+package top.andnux.glide;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;

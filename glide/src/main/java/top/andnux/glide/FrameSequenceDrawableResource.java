@@ -1,7 +1,5 @@
 package top.andnux.glide;
 
-import android.support.rastermill.FrameSequenceDrawable;
-
 import androidx.annotation.NonNull;
 
 import com.bumptech.glide.load.resource.drawable.DrawableResource;
