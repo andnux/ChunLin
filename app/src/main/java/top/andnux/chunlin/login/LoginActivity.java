@@ -1,14 +1,17 @@
 package top.andnux.chunlin.login;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import top.andnux.base.annotation.ContentView;
 import top.andnux.chunlin.R;
 import top.andnux.mvp.BaseActivity;
-import top.andnux.base.annotation.ContentView;
+
 
 @ContentView(R.layout.a_login)
 public class LoginActivity extends BaseActivity<LoginView, LoginPresenter>
@@ -44,7 +47,7 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter>
     }
 
     public void login(View view) {
-        mPresenter.login();
+//        mPresenter.login();
     }
 
     @Override

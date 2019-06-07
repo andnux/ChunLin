@@ -41,6 +41,7 @@ dependencies {
     implementation project(path: ':adapter')
     implementation project(path: ':mvp')
     implementation project(path: ':compat')
+    implementation project(path: ':zbar')
 
     //测试相关
     testImplementation 'junit:junit:4.12'
