@@ -26,10 +26,10 @@ import top.andnux.adapter.animation.BaseAnimation;
  * <p>
  * Created by andnux on 16/3/30.
  */
-abstract class RecyclerSupportAdapter<T> extends RecyclerView.Adapter<SuperViewHolder>
-        implements IViewBindData<T, SuperViewHolder>, IAnimation, ILayoutManager, IHeaderFooter {
+abstract class RecyclerSupportAdapter<T> extends RecyclerView.Adapter<CommonViewHolder>
+        implements IViewBindData<T, CommonViewHolder>, IAnimation, ILayoutManager, IHeaderFooter {
 
-    final String TAG = "SuperAdapter";
+    final String TAG = "CommonAdapter";
 
     private final Context mContext;
     List<T> mData;
@@ -151,12 +151,12 @@ abstract class RecyclerSupportAdapter<T> extends RecyclerView.Adapter<SuperViewH
     }
 
     @Override
-    public SuperViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
-        final SuperViewHolder holder;
+    public CommonViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
+        final CommonViewHolder holder;
         if (viewType == TYPE_HEADER && hasHeaderView()) {
-            return new SuperViewHolder(getHeaderView());
+            return new CommonViewHolder(getHeaderView());
         } else if (viewType == TYPE_FOOTER && hasFooterView()) {
-            return new SuperViewHolder(getFooterView());
+            return new CommonViewHolder(getFooterView());
         } else {
             holder = onCreate(null, parent, viewType);
         }
@@ -184,7 +184,7 @@ abstract class RecyclerSupportAdapter<T> extends RecyclerView.Adapter<SuperViewH
     }
 
     @Override
-    public void onBindViewHolder(SuperViewHolder holder, int position) {
+    public void onBindViewHolder(CommonViewHolder holder, int position) {
         int viewType = getItemViewType(position);
         if (viewType != TYPE_HEADER && viewType != TYPE_FOOTER) {
             onBind(holder, viewType, position, mData.get(hasHeaderView() ? --position : position));
@@ -211,7 +211,7 @@ abstract class RecyclerSupportAdapter<T> extends RecyclerView.Adapter<SuperViewH
     }
 
     @Override
-    public void onViewAttachedToWindow(SuperViewHolder holder) {
+    public void onViewAttachedToWindow(CommonViewHolder holder) {
         if (isHeaderView(holder.getLayoutPosition()) || isFooterView(holder.getLayoutPosition())) {
             ViewGroup.LayoutParams lp = holder.itemView.getLayoutParams();
             if (lp != null && lp instanceof StaggeredGridLayoutManager.LayoutParams) {

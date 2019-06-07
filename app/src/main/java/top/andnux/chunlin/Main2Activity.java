@@ -12,14 +12,14 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import top.andnux.adapter.SuperAdapter;
-import top.andnux.adapter.SuperViewHolder;
+import top.andnux.adapter.CommonAdapter;
+import top.andnux.adapter.CommonViewHolder;
 import top.andnux.http.HttpManager;
 
 public class Main2Activity extends AppCompatActivity {
 
     private static final String TAG = "Main2Activity";
-    private SuperAdapter<NewBean.DataBean> mAdapter;
+    private CommonAdapter<NewBean.DataBean> mAdapter;
     private RecyclerView mRecyclerView;
     private List<NewBean.DataBean> mBeans = new ArrayList<>();
 
@@ -28,9 +28,9 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         RefreshLayout refreshLayout = findViewById(R.id.refreshLayout);
-        mAdapter = new SuperAdapter<NewBean.DataBean>(this, mBeans, R.layout.item_main2) {
+        mAdapter = new CommonAdapter<NewBean.DataBean>(this, mBeans, R.layout.item_main2) {
             @Override
-            public void onBind(SuperViewHolder holder, int viewType, int layoutPosition, NewBean.DataBean item) {
+            public void onBind(CommonViewHolder holder, int viewType, int layoutPosition, NewBean.DataBean item) {
                 holder.setText(R.id.textView, item.getTitle());
                 holder.setImageUrl(R.id.imageView, item.getThumbnail_pic_s());
             }

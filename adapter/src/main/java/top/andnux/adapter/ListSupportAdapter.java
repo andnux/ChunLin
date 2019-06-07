@@ -119,7 +119,7 @@ abstract class ListSupportAdapter<T> extends RecyclerSupportAdapter<T>
         if (mAbsListView == null && parent instanceof AbsListView) {
             mAbsListView = (AbsListView) parent;
         }
-        SuperViewHolder holder = onCreate(convertView, parent, getItemViewType(position));
+        CommonViewHolder holder = onCreate(convertView, parent, getItemViewType(position));
         T item = getItem(position);
         onBind(holder, getItemViewType(position), position, item);
         addLoadAnimation(holder); // Load animation

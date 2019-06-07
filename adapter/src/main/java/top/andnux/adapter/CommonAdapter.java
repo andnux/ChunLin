@@ -20,14 +20,14 @@ import java.util.List;
  * <p>
  * Created by andnux on 16/3/30.
  */
-public abstract class SuperAdapter<T> extends ListSupportAdapter<T> implements CRUD<T> {
+public abstract class CommonAdapter<T> extends ListSupportAdapter<T> implements CRUD<T> {
 
     private LayoutInflater mLayoutInflater;
 
     /**
      * Constructor for single itemView type.
      */
-    public SuperAdapter(Context context, List<T> items, @LayoutRes int layoutResId) {
+    public CommonAdapter(Context context, List<T> items, @LayoutRes int layoutResId) {
         super(context, items, layoutResId);
         this.mLayoutInflater = LayoutInflater.from(context);
     }
@@ -35,20 +35,20 @@ public abstract class SuperAdapter<T> extends ListSupportAdapter<T> implements C
     /**
      * Constructor for multiple itemView types.
      */
-    public SuperAdapter(Context context, List<T> items, IMulItemViewType<T> mulItemViewType) {
+    public CommonAdapter(Context context, List<T> items, IMulItemViewType<T> mulItemViewType) {
         super(context, items, mulItemViewType);
         this.mLayoutInflater = LayoutInflater.from(context);
     }
 
     @CallSuper
     @Override
-    public SuperViewHolder onCreate(@Nullable View convertView, ViewGroup parent, int viewType) {
+    public CommonViewHolder onCreate(@Nullable View convertView, ViewGroup parent, int viewType) {
         if (convertView == null) {
             View itemView = mLayoutInflater.inflate(mMulItemViewType == null ?
                     mLayoutResId : mMulItemViewType.getLayoutId(viewType), parent, false);
-            return SuperViewHolder.get(null, itemView);
+            return CommonViewHolder.get(null, itemView);
         } else { // When convertView != null, parent must be an AbsListView.
-            return SuperViewHolder.get(convertView, null);
+            return CommonViewHolder.get(convertView, null);
         }
     }
 
@@ -256,7 +256,7 @@ public abstract class SuperAdapter<T> extends ListSupportAdapter<T> implements C
                 protected void onPostExecute(DiffUtil.DiffResult diffResult) {
                     setData(callback.getNewList());
                     if (diffResult != null) {
-                        diffResult.dispatchUpdatesTo(SuperAdapter.this);
+                        diffResult.dispatchUpdatesTo(CommonAdapter.this);
                     }
                 }
             }.execute();
