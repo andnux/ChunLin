@@ -1,0 +1,12 @@
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    publish {
+        userOrg = 'ilpanda'
+        groupId = 'com.ilpanda'
+        artifactId = 'rocket'
+        publishVersion = '1.0.0'
+        desc = 'an  Android  downloader'
+        website = 'https://github.com/ilpanda/Rocket'
+    }
+}

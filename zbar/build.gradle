@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.andnux'
+group = 'com.github.andnux'
+//apply plugin: 'com.novoda.bintray-release'
+
 android {
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
@@ -27,6 +29,14 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+//    publish {
+//        userOrg = 'andnux'
+//        groupId = 'top.andnux'
+//        artifactId = 'zbar'
+//        publishVersion = '1.0.0'
+//        desc = 'an zbar'
+//        website = 'https://github.com/andnux/ChunLin'
+//    }
 }
 
 dependencies {
