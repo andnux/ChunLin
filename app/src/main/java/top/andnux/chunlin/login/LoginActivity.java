@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 import top.andnux.chunlin.R;
 import top.andnux.mvp.BaseActivity;
-import top.andnux.mvp.annotation.ContentView;
+import top.andnux.base.annotation.ContentView;
 
 @ContentView(R.layout.a_login)
 public class LoginActivity extends BaseActivity<LoginView, LoginPresenter>

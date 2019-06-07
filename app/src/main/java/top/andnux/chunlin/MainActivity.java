@@ -9,7 +9,7 @@ import android.view.View;
 import top.andnux.mvp.BaseActivity;
 import top.andnux.mvp.NormalPresenter;
 import top.andnux.mvp.NormalView;
-import top.andnux.mvp.annotation.ContentView;
+import top.andnux.base.annotation.ContentView;
 
 @ContentView(R.layout.activity_main)
 public class MainActivity extends BaseActivity< NormalView,  NormalPresenter> {

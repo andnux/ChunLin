@@ -1,1 +1,1 @@
-include ':app', ':http', ':adapter', ':mvp', ':compat', ':mvvm', ':ui', ':utils', ':glide'
+include ':app', ':http', ':adapter', ':mvp', ':compat', ':mvvm', ':ui', ':utils', ':glide', ':base'
