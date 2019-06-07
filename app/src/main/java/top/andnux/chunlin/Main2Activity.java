@@ -40,8 +40,7 @@ public class Main2Activity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
         refreshLayout.autoRefresh();
         refreshLayout.setOnRefreshListener(it ->
-                HttpManager.getInstance().with(Main2Activity.this)
-                        .url("http://v.juhe.cn/toutiao/index")
+                HttpManager.getInstance().with("http://v.juhe.cn/toutiao/index")
                         .callback(new JsonCallback2<NewBean>() {
                             @Override
                             public void onSuccess(Result<NewBean> data) {

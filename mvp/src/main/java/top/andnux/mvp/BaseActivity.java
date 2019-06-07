@@ -18,13 +18,12 @@ import top.andnux.ui.statelayout.StateLayout;
 
 /**
  * 泛型参数结束
- * @param <T> 数据类型
+ *
  * @param <V> 视图类型
- * @param <M> 模型类型
  * @param <P> 控制器类型
  */
-public abstract class BaseActivity<T, V extends BaseView, M extends BaseModel<T, V>,
-        P extends BasePresenter<T, V, M>> extends AppCompatActivity
+public abstract class BaseActivity<V extends BaseView,
+        P extends BasePresenter<V>> extends AppCompatActivity
         implements BaseView, StateLayout.OnViewRefreshListener {
 
     protected P mPresenter;
@@ -79,7 +78,7 @@ public abstract class BaseActivity<T, V extends BaseView, M extends BaseModel<T,
                     .getGenericSuperclass();
             if (pType != null) {
                 Type[] types = pType.getActualTypeArguments();
-                if (types.length == 4) {
+                if (types.length == 2) {
                     Class<P> pClass = (Class<P>) types[types.length - 1];
                     return pClass.newInstance();
                 }
@@ -92,45 +91,59 @@ public abstract class BaseActivity<T, V extends BaseView, M extends BaseModel<T,
 
     @Override
     public void showNoNetworkView() {
-        if (mStateLayout == null) return;
-        mStateLayout.showNoNetworkView();
+        runOnUiThread(() -> {
+            if (mStateLayout == null) return;
+            mStateLayout.showNoNetworkView();
+        });
     }
 
     @Override
     public void showTimeoutView() {
-        if (mStateLayout == null) return;
-        mStateLayout.showTimeoutView();
+        runOnUiThread(() -> {
+            if (mStateLayout == null) return;
+            mStateLayout.showTimeoutView();
+        });
     }
 
     @Override
     public void showEmptyView() {
-        if (mStateLayout == null) return;
-        mStateLayout.showEmptyView();
+        runOnUiThread(() -> {
+            if (mStateLayout == null) return;
+            mStateLayout.showEmptyView();
+        });
     }
 
     @Override
     public void showErrorView() {
-        if (mStateLayout == null) return;
-        mStateLayout.showErrorView();
+        runOnUiThread(() -> {
+            if (mStateLayout == null) return;
+            mStateLayout.showErrorView();
+        });
     }
 
     @Override
     public void showLoginView() {
-        if (mStateLayout == null) return;
-        mStateLayout.showLoginView();
+        runOnUiThread(() -> {
+            if (mStateLayout == null) return;
+            mStateLayout.showLoginView();
+        });
     }
 
     @Override
     public void showContentView() {
-        if (mStateLayout == null) return;
-        mStateLayout.showContentView();
+        runOnUiThread(() -> {
+            if (mStateLayout == null) return;
+            mStateLayout.showContentView();
+        });
     }
 
     @Override
     public void toast(String msg) {
-        Toast toast = Toast.makeText(this, null, Toast.LENGTH_SHORT);
-        toast.setText(msg);
-        toast.show();
+        runOnUiThread(() -> {
+            Toast toast = Toast.makeText(this, null, Toast.LENGTH_SHORT);
+            toast.setText(msg);
+            toast.show();
+        });
     }
 
     @Override

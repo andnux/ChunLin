@@ -6,18 +6,23 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 
 import top.andnux.mvp.annotation.ContentView;
 import top.andnux.ui.statelayout.StateLayout;
 
-public abstract class BaseFragment extends Fragment implements BaseView, StateLayout.OnViewRefreshListener {
+public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V>>
+        extends Fragment implements BaseView, StateLayout.OnViewRefreshListener {
 
     private StateLayout mStateLayout;
+    protected P mPresenter;
 
     protected View getLayoutView(LayoutInflater inflater) {
         return null;
@@ -42,6 +47,23 @@ public abstract class BaseFragment extends Fragment implements BaseView, StateLa
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
+    protected P instancePresenter() {
+        try {
+            ParameterizedType pType = (ParameterizedType) this.getClass()
+                    .getGenericSuperclass();
+            if (pType != null) {
+                Type[] types = pType.getActualTypeArguments();
+                if (types.length == 2) {
+                    Class<P> pClass = (Class<P>) types[types.length - 1];
+                    return pClass.newInstance();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -49,54 +71,89 @@ public abstract class BaseFragment extends Fragment implements BaseView, StateLa
         if (mStateLayout != null) {
             mStateLayout.setRefreshListener(this);
         }
+        mPresenter = instancePresenter();
+        if (mPresenter != null) {
+            mPresenter.attachView((V) this);
+        }
         onCreated(savedInstanceState);
     }
 
-    protected abstract void onCreated(@Nullable Bundle savedInstanceState);
+    @Override
+    public void onDestroy() {
+        if (mPresenter != null) {
+            mPresenter.detachView();
+        }
+        super.onDestroy();
+    }
+
+    public abstract void onCreated(@Nullable Bundle savedInstanceState);
 
 
     @Override
+    public void showEmptyView() {
+        FragmentActivity activity = getActivity();
+        if (activity != null) {
+            activity.runOnUiThread(() -> {
+                if (mStateLayout == null) return;
+                mStateLayout.showEmptyView();
+            });
+        }
+    }
+
+    @Override
     public void showNoNetworkView() {
-        if (mStateLayout == null) return;
-        mStateLayout.showNoNetworkView();
+        FragmentActivity activity = getActivity();
+        if (activity != null) {
+            activity.runOnUiThread(() -> {
+                if (mStateLayout == null) return;
+                mStateLayout.showNoNetworkView();
+            });
+        }
     }
 
     @Override
     public void showTimeoutView() {
-        if (mStateLayout == null) return;
-        mStateLayout.showTimeoutView();
+        FragmentActivity activity = getActivity();
+        if (activity != null) {
+            activity.runOnUiThread(() -> {
+                if (mStateLayout == null) return;
+                mStateLayout.showTimeoutView();
+            });
+        }
     }
 
-    @Override
-    public void showEmptyView() {
-        if (mStateLayout == null) return;
-        mStateLayout.showEmptyView();
-    }
 
     @Override
     public void showErrorView() {
-        if (mStateLayout == null) return;
-        mStateLayout.showErrorView();
+        FragmentActivity activity = getActivity();
+        if (activity != null) {
+            activity.runOnUiThread(() -> {
+                if (mStateLayout == null) return;
+                mStateLayout.showErrorView();
+            });
+        }
     }
 
     @Override
     public void showLoginView() {
-        if (mStateLayout == null) return;
-        mStateLayout.showLoginView();
+        FragmentActivity activity = getActivity();
+        if (activity != null) {
+            activity.runOnUiThread(() -> {
+                if (mStateLayout == null) return;
+                mStateLayout.showLoginView();
+            });
+        }
     }
 
     @Override
     public void showContentView() {
-        if (mStateLayout == null) return;
-        mStateLayout.showContentView();
-    }
-
-
-    @Override
-    public void toast(String msg) {
-        Toast toast = Toast.makeText(getContext(), null, Toast.LENGTH_SHORT);
-        toast.setText(msg);
-        toast.show();
+        FragmentActivity activity = getActivity();
+        if (activity != null) {
+            activity.runOnUiThread(() -> {
+                if (mStateLayout == null) return;
+                mStateLayout.showContentView();
+            });
+        }
     }
 
     @Override

@@ -5,15 +5,13 @@ import android.view.View;
 import android.widget.EditText;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
-import top.andnux.chunlin.CLActivity;
 import top.andnux.chunlin.R;
 import top.andnux.mvp.BaseActivity;
 import top.andnux.mvp.annotation.ContentView;
 
 @ContentView(R.layout.a_login)
-public class LoginActivity extends CLActivity<String, LoginView, LoginModel, LoginPresenter>
+public class LoginActivity extends BaseActivity<LoginView, LoginPresenter>
         implements LoginView {
 
     private EditText mName;
@@ -47,5 +45,15 @@ public class LoginActivity extends CLActivity<String, LoginView, LoginModel, Log
 
     public void login(View view) {
         mPresenter.login();
+    }
+
+    @Override
+    public void refreshClick() {
+
+    }
+
+    @Override
+    public void loginClick() {
+
     }
 }

@@ -1,9 +1,5 @@
 package top.andnux.http;
 
-import android.app.Activity;
-
-import androidx.fragment.app.Fragment;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -14,7 +10,7 @@ public class HttpManager {
 
     private static final String TAG = "HttpManager";
     private static final HttpManager INSTANCE = new HttpManager();
-    private Map<String, List<HttpRequest>> mMap = new WeakHashMap<>();
+    private Map<Object, List<HttpRequest>> mMap = new WeakHashMap<>();
     private HttpRequest mRequest;
     private Engine mEngine;
 
@@ -26,15 +22,14 @@ public class HttpManager {
         mEngine = new HttpEngine();
     }
 
-    public HttpManager with(Activity activity) {
+    public HttpManager with(String url) {
         mRequest = new HttpRequest();
-        mRequest.setTag(activity.getClass().getCanonicalName());
+        mRequest.setUrl(url);
         return this;
     }
 
-    public HttpManager with(Fragment fragment) {
-        mRequest = new HttpRequest();
-        mRequest.setTag(fragment.getClass().getCanonicalName());
+    public HttpManager tag(Object tag) {
+        mRequest.setTag(tag);
         return this;
     }
 
@@ -43,25 +38,14 @@ public class HttpManager {
         return this;
     }
 
-    public HttpManager cancel(Activity activity) {
-        List<HttpRequest> engines = mMap.get(activity.getClass().getCanonicalName());
+    public HttpManager cancel(Object tag) {
+        List<HttpRequest> engines = mMap.get(tag);
         if (engines != null && engines.size() > 0) {
             for (HttpRequest request : engines) {
                 mEngine.cancel(request);
             }
         }
-        mMap.remove(activity.toString());
-        return this;
-    }
-
-    public HttpManager cancel(Fragment fragment) {
-        List<HttpRequest> engines = mMap.get(fragment.getClass().getCanonicalName());
-        if (engines != null && engines.size() > 0) {
-            for (HttpRequest request : engines) {
-                mEngine.cancel(request);
-            }
-        }
-        mMap.remove(fragment.toString());
+        mMap.remove(tag);
         return this;
     }
 
@@ -79,11 +63,6 @@ public class HttpManager {
     public HttpManager bodyType(BodyType type) {
         mRequest.setBodyType(type);
         ;
-        return this;
-    }
-
-    public HttpManager url(String url) {
-        mRequest.setUrl(url);
         return this;
     }
 
@@ -132,12 +111,15 @@ public class HttpManager {
         if (mEngine == null) {
             mEngine = new HttpEngine();
         }
-        List<HttpRequest> requests = mMap.get(mRequest.getTag().toString());
-        if (requests == null) {
-            requests = new ArrayList<>();
+        Object tag = mRequest.getTag();
+        if (tag != null) {
+            List<HttpRequest> requests = mMap.get(tag);
+            if (requests == null) {
+                requests = new ArrayList<>();
+            }
+            requests.add(mRequest);
+            mMap.put(tag, requests);
         }
-        requests.add(mRequest);
-        mMap.put(mRequest.getTag().toString(), requests);
         mEngine.execute(mRequest);
     }
 }

@@ -23,7 +23,7 @@ public class HttpEngine implements Engine {
 
     private static final String TAG = "HttpEngine";
     private OkHttpClient mClient;
-    private Map<String, Call> mCallMap = new WeakHashMap<>();
+    private Map<Object, Call> mCallMap = new WeakHashMap<>();
     private Cache<String, String> mCache = new SQLiteCache();
 
     public HttpEngine() {
@@ -119,14 +119,20 @@ public class HttpEngine implements Engine {
                 }
             }
         });
-        mCallMap.put(request.getTag().toString(), mCall);
+        Object tag = request.getTag();
+        if (tag != null){
+            mCallMap.put(tag, mCall);
+        }
     }
 
     @Override
     public void cancel(HttpRequest request) {
-        Call call = mCallMap.get(request.getTag().toString());
-        if (call != null) {
-            call.cancel();
+        Object tag = request.getTag();
+        if (tag != null){
+            Call call = mCallMap.get(tag);
+            if (call != null) {
+                call.cancel();
+            }
         }
     }
 }
