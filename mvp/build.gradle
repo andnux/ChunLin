@@ -25,20 +25,10 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-
-    api 'androidx.constraintlayout:constraintlayout:1.1.3'
-    api 'com.google.android.material:material:1.0.0'
-    api 'androidx.recyclerview:recyclerview:1.0.0'
-    api 'androidx.legacy:legacy-support-v4:1.0.0'
-    api 'androidx.viewpager:viewpager:1.0.0'
-    api 'androidx.cardview:cardview:1.0.0'
-    api 'androidx.gridlayout:gridlayout:1.0.0'
     api 'androidx.appcompat:appcompat:1.0.2'
-    api 'androidx.multidex:multidex:2.0.1'
-
+    api project(path: ':ui')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    implementation project(path: ':adapter')
-    implementation project(path: ':http')
+
 }

@@ -14,7 +14,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 import top.andnux.mvp.annotation.ContentView;
-import top.andnux.mvp.statelayout.StateLayout;
+import top.andnux.ui.statelayout.StateLayout;
 
 /**
  * 泛型参数结束

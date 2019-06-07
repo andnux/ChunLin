@@ -3,4 +3,12 @@
 	<string name="app_name">Library</string>
 	<string name="re_send">Resend after seconds</string>
 	<string name="re_send_code">Regain verification code</string>
+	<string name="empty_tip">No data</string>
+	<string name="no_network_tip">No internet</string>
+	<string name="error_tip">Failed to load</string>
+	<string name="time_out_tip">Load timeout</string>
+	<string name="no_login_tip">You have not logged in yet</string>
+	<string name="btn_login">log in</string>
+	<string name="loading_tip">Loading……</string>
+	<string name="retry_tip">Tap the screen to try again</string>
 </resources>

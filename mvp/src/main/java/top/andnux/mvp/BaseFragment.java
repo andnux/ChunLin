@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import top.andnux.mvp.annotation.ContentView;
-import top.andnux.mvp.statelayout.StateLayout;
+import top.andnux.ui.statelayout.StateLayout;
 
 public abstract class BaseFragment extends Fragment implements BaseView, StateLayout.OnViewRefreshListener {
 
