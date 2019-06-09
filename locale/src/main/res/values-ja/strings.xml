@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">ローカル</string>
+	<string name="language_setting">言語設定</string>
+	<string name="done">完了しました</string>
+</resources>

@@ -1,15 +1,16 @@
 package top.andnux.chunlin.login;
 
-import android.graphics.Color;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 import top.andnux.base.annotation.ContentView;
 import top.andnux.chunlin.R;
+import top.andnux.locale.LanguageActivity;
+import top.andnux.locale.LocaleManager;
 import top.andnux.mvp.BaseActivity;
 
 
@@ -24,6 +25,13 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter>
     protected void onCreated(@Nullable Bundle savedInstanceState) {
         mName = findViewById(R.id.mName);
         mPwd = findViewById(R.id.mPwd);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        LocaleManager instance = LocaleManager.getInstance();
+        Context context = instance.attachBaseContext(newBase);
+        super.attachBaseContext(context);
     }
 
     @Override
@@ -48,6 +56,7 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter>
 
     public void login(View view) {
 //        mPresenter.login();
+        LanguageActivity.newInstance(this, R.color.colorPrimary, android.R.color.white);
     }
 
     @Override

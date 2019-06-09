@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "top.andnux.chunlin"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -42,6 +42,7 @@ dependencies {
     implementation project(path: ':mvp')
     implementation project(path: ':compat')
     implementation project(path: ':zbar')
+    implementation project(path: ':locale')
 
     //测试相关
     testImplementation 'junit:junit:4.12'

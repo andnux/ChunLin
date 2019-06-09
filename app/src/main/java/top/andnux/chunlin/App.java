@@ -2,6 +2,7 @@ package top.andnux.chunlin;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshFooterCreator;
@@ -13,7 +14,11 @@ import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.squareup.leakcanary.LeakCanary;
 
-public class App extends Application {
+import top.andnux.chunlin.login.LoginActivity;
+import top.andnux.locale.LocaleApplication;
+import top.andnux.locale.LocaleManager;
+
+public class App extends LocaleApplication {
     //static 代码段可以防止内存泄露
     static {
         //设置全局的Header构建器
@@ -41,5 +46,10 @@ public class App extends Application {
             return;
         }
         LeakCanary.install(this);
+        setLocaleListener(context -> {
+            Intent intent = new Intent(context, LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            context.startActivity(intent);
+        });
     }
 }
