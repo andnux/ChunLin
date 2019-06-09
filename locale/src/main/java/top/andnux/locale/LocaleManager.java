@@ -85,18 +85,19 @@ public class LocaleManager {
     }
 
     public void init(Context context) {
-        mContext = context;
+        mContext = context.getApplicationContext();
         if (mContext == null) {
             mContext = getApplicationInner();
         }
-        if (mContext != null) {
-            mPreferences = mContext.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
-            int current = mPreferences.getInt(SP_KEY, -1);
-            if (current == -1) {
-                SharedPreferences.Editor edit = mPreferences.edit();
-                edit.putInt(SP_KEY, 0);
-                edit.apply();
-            }
+        if (mContext == null) {
+            mContext = context;
+        }
+        mPreferences = mContext.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        int current = mPreferences.getInt(SP_KEY, -1);
+        if (current == -1) {
+            SharedPreferences.Editor edit = mPreferences.edit();
+            edit.putInt(SP_KEY, 0);
+            edit.apply();
         }
 
     }
