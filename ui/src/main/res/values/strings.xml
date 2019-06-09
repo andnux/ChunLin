@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Library</string>
     <string name="re_send">秒后可重发</string>
     <string name="re_send_code">重新获取验证码</string>
     <string name="empty_tip">暂无数据</string>

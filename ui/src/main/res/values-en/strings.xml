@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Library</string>
 	<string name="re_send">Resend after seconds</string>
 	<string name="re_send_code">Regain verification code</string>
 	<string name="empty_tip">No data</string>
