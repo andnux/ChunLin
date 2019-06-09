@@ -11,8 +11,7 @@ public class LocaleChangeReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         if (Intent.ACTION_LOCALE_CHANGED.equals(intent.getAction())) {
             Log.e("LocaleChangeReceiver", "Language change");
-            Process.killProcess(Process.myPid());
-            System.exit(0);
+            LocaleManager.getInstance().onLocaleChange();
         }
     }
 }

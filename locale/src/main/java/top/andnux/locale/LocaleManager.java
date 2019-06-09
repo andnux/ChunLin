@@ -8,6 +8,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.LocaleList;
+import android.os.Process;
 import android.util.DisplayMetrics;
 
 import java.lang.reflect.Method;
@@ -61,6 +62,14 @@ public class LocaleManager {
 
     public void setLocaleList(List<LocaleModel> list) {
         mList = list;
+    }
+
+    public void onLocaleChange() {
+        int current = mPreferences.getInt(SP_KEY, -1);
+        if (current == 0) {
+            Process.killProcess(Process.myPid());
+            System.exit(0);
+        }
     }
 
     public interface LocaleListener {
