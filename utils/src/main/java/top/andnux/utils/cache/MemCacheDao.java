@@ -1,6 +1,5 @@
 package top.andnux.utils.cache;
 
-import android.content.Context;
 import android.util.LruCache;
 
 public class MemCacheDao<T> extends BaseCacheDao<T> {

@@ -20,23 +20,7 @@ import java.io.InputStream;
  */
 public class PhoneUtil {
 
-    private static volatile PhoneUtil instance;
-
-    private PhoneUtil() {
-    }
-
-    public static PhoneUtil getInstance() {
-        if (instance == null) {
-            synchronized (PhoneUtil.class) {
-                if (instance == null) {
-                    instance = new PhoneUtil();
-                }
-            }
-        }
-        return instance;
-    }
-
-    public String getPhoneInfo(Context context) {
+    public static String getPhoneInfo(Context context) {
         StringBuffer stringBuffer = new StringBuffer();
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         if (tm == null) {
@@ -71,7 +55,7 @@ public class PhoneUtil {
      *
      * @return
      */
-    private String getTotalMemory(Context context) {
+    public static String getTotalMemory(Context context) {
         String str1 = "/proc/meminfo";// 系统内存信息文件
         String str2;
         String[] arrayOfString;
@@ -97,14 +81,14 @@ public class PhoneUtil {
      *
      * @return
      */
-    private String getAvailMemory(Context context) {
+    public static String getAvailMemory(Context context) {
         ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
         am.getMemoryInfo(mi);
         return Formatter.formatFileSize(context.getApplicationContext(), mi.availMem);
     }
 
-    private String getMaxCpuFreq(Context context) {
+    public static String getMaxCpuFreq(Context context) {
         String result = "";
         ProcessBuilder cmd;
         try {
@@ -125,8 +109,7 @@ public class PhoneUtil {
     }
 
     // 获取CPU最小频率（单位KHZ）
-
-    private String getMinCpuFreq() {
+    public static String getMinCpuFreq() {
         String result = "";
         ProcessBuilder cmd;
         try {
@@ -147,8 +130,7 @@ public class PhoneUtil {
     }
 
     // 实时获取CPU当前频率（单位KHZ）
-
-    private String getCurCpuFreq() {
+    public static String getCurCpuFreq() {
         String result = "N/A";
         try {
             FileReader fr = new FileReader("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq");
@@ -163,7 +145,7 @@ public class PhoneUtil {
         return result;
     }
 
-    private String getCpuName() {
+    public static String getCpuName() {
         try {
             FileReader fr = new FileReader("/proc/cpuinfo");
             BufferedReader br = new BufferedReader(fr);

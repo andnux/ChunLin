@@ -7,8 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.ArrayMap;
 import android.util.Log;
 
-import top.andnux.http.Utils;
-
 import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -16,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+
+import top.andnux.http.Utils;
 
 public class DaoSupport<T> implements IDaoSupport<T> {
 

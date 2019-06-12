@@ -16,7 +16,6 @@ public class PreCacheDao<T> extends BaseCacheDao<T> {
 
     private SharedPreferences mPreferences;
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.getDefault());
-    private ExecutorService mService;
 
     public PreCacheDao( Class<T> clazz) {
         super(clazz);
@@ -33,7 +32,6 @@ public class PreCacheDao<T> extends BaseCacheDao<T> {
             saveData(mPreferences, data, edit, field);
         }
         edit.apply();
-
     }
 
 
