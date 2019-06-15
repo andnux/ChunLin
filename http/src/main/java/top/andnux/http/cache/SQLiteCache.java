@@ -2,9 +2,9 @@ package top.andnux.http.cache;
 
 import java.util.List;
 
-import top.andnux.http.sqlite.SQLiteDao;
-import top.andnux.http.sqlite.SQLiteDaoFactory;
 import top.andnux.http.utils.Utils;
+import top.andnux.utils.sqlite.SQLiteDao;
+import top.andnux.utils.sqlite.SQLiteDaoFactory;
 
 public class SQLiteCache implements Cache {
 

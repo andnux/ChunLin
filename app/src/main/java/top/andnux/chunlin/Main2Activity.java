@@ -1,20 +1,22 @@
 package top.andnux.chunlin;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.util.Log;
 
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import top.andnux.adapter.CommonAdapter;
 import top.andnux.adapter.CommonViewHolder;
 import top.andnux.http.HttpManager;
+import top.andnux.http.callback.JsonCallback;
+import top.andnux.http.core.HttpRequest;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -39,32 +41,31 @@ public class Main2Activity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);
         refreshLayout.autoRefresh();
-        refreshLayout.setOnRefreshListener(it ->
-                HttpManager.getInstance().with("http://v.juhe.cn/toutiao/index")
-                        .callback(new JsonCallback2<NewBean>() {
-                            @Override
-                            public void onSuccess(Result<NewBean> data) {
-                                it.finishRefresh();
-                                Log.e(TAG, "onSuccess() called with: data = [" + data + "]");
-                                mBeans.clear();
-                                mBeans.addAll(data.getResult().getData());
-                                mAdapter.notifyDataSetHasChanged();
-                            }
+        refreshLayout.setOnRefreshListener(it -> {
+            HttpManager instance = HttpManager.getInstance();
+            HttpRequest httpRequest = instance.newHttpRequest();
+            httpRequest.setUrl("http://v.juhe.cn/toutiao/index");
+            Map<String, Object> parameter = httpRequest.getParameter();
+            parameter.put("type", "top");
+            parameter.put("key", "fd583f1c64d9e2d03699629c4c4e8639");
+            httpRequest.setHttpCallback(new JsonCallback<NewBean>() {
+                @Override
+                public void onFail(Exception e) {
 
-                            @Override
-                            public void onFail(Exception e) {
-                                super.onFail(e);
-                                it.finishRefresh(false);
-                            }
-                        })
-                        .addParam("type", "top")
-                        .addParam("key", "fd583f1c64d9e2d03699629c4c4e8639")
-                        .execute());
-        refreshLayout.setOnLoadMoreListener(it -> {
-            it.finishLoadMore(/*,false*/);//传入false表示加载失败
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+
+                @Override
+                public void onSuccess(NewBean data) {
+
+                }
+            });
+            instance.sendRequest(httpRequest);
         });
-
-
     }
 
     @Override
@@ -72,6 +73,5 @@ public class Main2Activity extends AppCompatActivity {
         super.onDestroy();
         mAdapter.clear();
         mAdapter = null;
-        HttpManager.getInstance().cancel(this);
     }
 }

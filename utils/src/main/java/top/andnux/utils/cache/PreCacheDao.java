@@ -33,9 +33,7 @@ public class PreCacheDao<T> extends BaseCacheDao<T> {
             saveData(mPreferences, data, edit, field);
         }
         edit.apply();
-
     }
-
 
     protected void saveData(SharedPreferences sp, T data,
                             SharedPreferences.Editor edit,
