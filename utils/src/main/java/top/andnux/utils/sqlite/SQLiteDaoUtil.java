@@ -17,19 +17,19 @@ public class SQLiteDaoUtil {
 
     public static String getColumnType(String type) {
         String value = null;
-        if (type.contains("String")) {
+        if (type.toLowerCase().contains("string")) {
             value = " text";
-        } else if (type.contains("int")) {
+        } else if (type.toLowerCase().contains("int")) {
             value = " integer";
-        } else if (type.contains("boolean")) {
+        } else if (type.toLowerCase().contains("boolean")) {
             value = " boolean";
-        } else if (type.contains("float")) {
+        } else if (type.toLowerCase().contains("float")) {
             value = " float";
-        } else if (type.contains("double")) {
+        } else if (type.toLowerCase().contains("double")) {
             value = " double";
-        } else if (type.contains("char")) {
+        } else if (type.toLowerCase().contains("char")) {
             value = " varchar";
-        } else if (type.contains("long")) {
+        } else if (type.toLowerCase().contains("long")) {
             value = " long";
         }
         return value;

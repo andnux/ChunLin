@@ -1,125 +1,81 @@
 package top.andnux.http;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.WeakHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
+import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
+import top.andnux.http.core.HttpConfig;
+import top.andnux.http.core.HttpRequest;
 
 public class HttpManager {
 
-    private static final String TAG = "HttpManager";
-    private static final HttpManager INSTANCE = new HttpManager();
-    private Map<Object, List<HttpRequest>> mMap = new WeakHashMap<>();
-    private HttpRequest mRequest;
-    private Engine mEngine;
+    private static final HttpManager ourInstance = new HttpManager();
 
     public static HttpManager getInstance() {
-        return INSTANCE;
+        return ourInstance;
     }
+
+    private HttpConfig mHttpConfig = new HttpConfig();
+    private Retrofit mRetrofit;
+    private OkHttpClient mClient;
+    private ExecutorService mService;
 
     private HttpManager() {
-        mEngine = new HttpEngine();
+        mService = Executors.newCachedThreadPool();
     }
 
-    public HttpManager with(String url) {
-        mRequest = new HttpRequest();
-        mRequest.setUrl(url);
-        return this;
+    public HttpConfig getHttpConfig() {
+        return mHttpConfig;
     }
 
-    public HttpManager tag(Object tag) {
-        mRequest.setTag(tag);
-        return this;
+    public void setHttpConfig(HttpConfig httpConfig) {
+        mHttpConfig = httpConfig;
     }
 
-    public HttpManager setEngine(Engine engine) {
-        mEngine = engine;
-        return this;
-    }
-
-    public HttpManager cancel(Object tag) {
-        List<HttpRequest> engines = mMap.get(tag);
-        if (engines != null && engines.size() > 0) {
-            for (HttpRequest request : engines) {
-                mEngine.cancel(request);
+    public void sendRequest(final HttpRequest request) {
+        mService.submit(() -> {
+            if (request.getHttpEngine() != null) {
+                request.getHttpEngine().execute(request);
+            } else {
+                mHttpConfig.getHttpEngine().execute(request);
             }
+        });
+    }
+
+    public HttpRequest newHttpRequest() {
+        return new HttpRequest();
+    }
+
+    private void initRetrofit() {
+        HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor();
+        logInterceptor.setLevel(HttpLoggingInterceptor.Level.HEADERS);
+        mClient = new OkHttpClient.Builder()
+                .addInterceptor(logInterceptor)
+                .readTimeout(mHttpConfig.getReadTimeout(), TimeUnit.SECONDS)
+                .writeTimeout(mHttpConfig.getWriteTimeout(), TimeUnit.SECONDS)
+                .connectTimeout(mHttpConfig.getConnectTimeout(), TimeUnit.SECONDS)
+                .build();
+        mRetrofit = new Retrofit.Builder()
+                .client(mClient)
+                .baseUrl(mHttpConfig.getHost())
+                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(SimpleXmlConverterFactory.create())
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
+    }
+
+    public <T> T create(Class<T> service) {
+        if (mRetrofit == null) {
+            initRetrofit();
         }
-        mMap.remove(tag);
-        return this;
-    }
-
-    public HttpManager cancelAll() {
-        Collection<List<HttpRequest>> engines = mMap.values();
-        for (List<HttpRequest> engine : engines) {
-            for (HttpRequest engine1 : engine) {
-                mEngine.cancel(engine1);
-            }
-        }
-        mMap.clear();
-        return this;
-    }
-
-    public HttpManager bodyType(BodyType type) {
-        mRequest.setBodyType(type);
-        ;
-        return this;
-    }
-
-    public HttpManager loading(boolean loading) {
-        mRequest.setLoading(loading);
-        return this;
-    }
-
-    public HttpManager addHeader(String key, String value) {
-        mRequest.addHeader(key, value);
-        return this;
-    }
-
-    public HttpManager addHeaders(Map<String, String> headers) {
-        mRequest.addHeaders(headers);
-        return this;
-    }
-
-    public HttpManager addParam(String key, String value) {
-        mRequest.addParam(key, value);
-        return this;
-    }
-
-    public HttpManager addParams(Map<String, Object> params) {
-        mRequest.addParams(params);
-        return this;
-    }
-
-    public HttpManager setRequestMethod(RequestMethod requestMethod) {
-        mRequest.setRequestMethod(requestMethod);
-        return this;
-    }
-
-    public HttpManager setBodyType(BodyType bodyType) {
-        mRequest.setBodyType(bodyType);
-        return this;
-    }
-
-
-    public <T> HttpManager callback(HttpCallback callback) {
-        mRequest.setCallback(callback);
-        return this;
-    }
-
-    public void execute() {
-        if (mEngine == null) {
-            mEngine = new HttpEngine();
-        }
-        Object tag = mRequest.getTag();
-        if (tag != null) {
-            List<HttpRequest> requests = mMap.get(tag);
-            if (requests == null) {
-                requests = new ArrayList<>();
-            }
-            requests.add(mRequest);
-            mMap.put(tag, requests);
-        }
-        mEngine.execute(mRequest);
+        return mRetrofit.create(service);
     }
 }

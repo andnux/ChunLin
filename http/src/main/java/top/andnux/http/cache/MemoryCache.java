@@ -1,28 +1,56 @@
 package top.andnux.http.cache;
 
-import android.util.LruCache;
 
-public class MemoryCache implements Cache<String, String> {
+import java.util.HashMap;
+import java.util.Map;
 
-    private LruCache<String, String> mCache;
+import top.andnux.http.utils.Utils;
+
+public class MemoryCache implements Cache {
+
+    private Map<String, CacheEntity> mCache;
 
     public MemoryCache() {
-        int size = (int) (Runtime.getRuntime().freeMemory() / 8);
-        mCache = new LruCache<>(size);
+        mCache = new HashMap<>();
     }
 
     @Override
-    public void put(String key, String value) {
-        mCache.put(key, value);
+    public void put(String url, String value, long time) {
+        CacheEntity entity = new CacheEntity();
+        entity.setUrl(Utils.md5(url));
+        entity.setData(value);
+        entity.setTime(System.currentTimeMillis());
+        entity.setDuration(time);
+        mCache.put(url, entity);
     }
 
     @Override
-    public String get(String key) {
-        return mCache.get(key);
+    public String get(String url) {
+        CacheEntity entity = mCache.get(url);
+        if (entity != null) {
+            long time = entity.getDuration();
+            if (time < 0) {
+                return entity.getData();
+            } else {
+                long timeMillis = System.currentTimeMillis() - entity.getTime();
+                if (timeMillis > entity.getDuration()) {
+                    mCache.remove(url);
+                    return null;
+                } else {
+                    return entity.getData();
+                }
+            }
+        }
+        return null;
     }
 
     @Override
-    public void clean() {
-        mCache.evictAll();
+    public void remove(String url) {
+        mCache.remove(url);
+    }
+
+    @Override
+    public void clear() {
+        mCache.clear();
     }
 }
