@@ -43,11 +43,12 @@ dependencies {
     implementation project(path: ':compat')
     implementation project(path: ':zbar')
     implementation project(path: ':locale')
+    implementation project(path: ':web')
 
     //测试相关
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     //内存存泄漏检测
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'

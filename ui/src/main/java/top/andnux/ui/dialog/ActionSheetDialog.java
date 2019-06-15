@@ -38,9 +38,10 @@ public class ActionSheetDialog {
         if (windowManager != null) {
             display = windowManager.getDefaultDisplay();
         }
+        builder();
     }
 
-    public ActionSheetDialog builder() {
+    private void builder() {
         View view = LayoutInflater.from(context).inflate(
                 R.layout.view_actionsheet, null);
         view.setMinimumWidth(display.getWidth());
@@ -63,7 +64,6 @@ public class ActionSheetDialog {
             lp.y = 0;
             dialogWindow.setAttributes(lp);
         }
-        return this;
     }
 
     public ActionSheetDialog setTitle(String title) {

@@ -8,9 +8,21 @@ import es.dmoral.toasty.Toasty;
 
 public class ToastUtil {
     //成功
+    public static void success(@NonNull Context context, @NonNull String message) {
+        success(context, message, Toasty.LENGTH_SHORT);
+    }
+
+    //成功
     public static void success(@NonNull Context context, @NonNull String message, int duration) {
         if (StringUtil.isNotEmpty(message)) {
             Toasty.success(context, message, duration).show();
+        }
+    }
+
+    //感叹号
+    public static void info(@NonNull Context context, @NonNull String message) {
+        if (StringUtil.isNotEmpty(message)) {
+            Toasty.info(context, message, Toasty.LENGTH_SHORT).show();
         }
     }
 
@@ -22,6 +34,13 @@ public class ToastUtil {
     }
 
     //正常
+    public static void normal(@NonNull Context context, @NonNull String message) {
+        if (StringUtil.isNotEmpty(message)) {
+            Toasty.normal(context, message, Toasty.LENGTH_SHORT).show();
+        }
+    }
+
+    //正常
     public static void normal(@NonNull Context context, @NonNull String message, int duration) {
         if (StringUtil.isNotEmpty(message)) {
             Toasty.normal(context, message, duration).show();
@@ -29,9 +48,23 @@ public class ToastUtil {
     }
 
     //警告
+    public static void warning(@NonNull Context context, @NonNull String message) {
+        if (StringUtil.isNotEmpty(message)) {
+            Toasty.warning(context, message, Toasty.LENGTH_SHORT).show();
+        }
+    }
+
+    //警告
     public static void warning(@NonNull Context context, @NonNull String message, int duration) {
         if (StringUtil.isNotEmpty(message)) {
             Toasty.warning(context, message, duration).show();
+        }
+    }
+
+    //错误
+    public static void error(@NonNull Context context, @NonNull String message) {
+        if (StringUtil.isNotEmpty(message)) {
+            Toasty.error(context, message, Toasty.LENGTH_SHORT).show();
         }
     }
 

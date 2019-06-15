@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">web</string>
+    <string name="download_image">下载图片</string>
+    <string name="share_image">分享图片</string>
+    <string name="chose">请选择</string>
+    <string name="save_success">保存成功</string>
+    <string name="save_error">保存失败</string>
+    <string name="share_to">分享到</string>
+</resources>
