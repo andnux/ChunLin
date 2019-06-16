@@ -22,5 +22,6 @@ dependencies {
     implementation 'com.github.andnux.ChunLin:http:0.0.10'
     implementation 'com.github.andnux.ChunLin:base:0.0.10'
     implementation 'com.github.andnux.ChunLin:compat:0.0.10'
+    implementation 'com.github.andnux.ChunLin:web:0.0.10'
 }
 ```
