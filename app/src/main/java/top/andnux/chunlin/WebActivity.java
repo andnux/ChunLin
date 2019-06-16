@@ -8,7 +8,10 @@ import android.webkit.WebView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import java.util.ArrayList;
+
 import top.andnux.ui.dialog.AlertDialog;
+import top.andnux.ui.image.photoview.PhotoActivity;
 import top.andnux.web.BaseWebChromeClient;
 import top.andnux.web.BaseWebSetting;
 import top.andnux.web.BaseWebView;
@@ -41,18 +44,10 @@ public class WebActivity extends AppCompatActivity {
         mContainer.setOnRefreshListener(() -> {
             mWebView.reload();
         });
-        new AlertDialog(this)
-                .setCenterButton("取消", v -> {
-
-                })
-                .setNegativeButton("hhh", v -> {
-
-                })
-                .setPositiveButton("gggg", v -> {
-
-                })
-                .setMessage("消息")
-                .setTitle("标题")
-                .show();
+        ArrayList<String> urls = new ArrayList<>();
+        urls.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560661550590&di=53ec964af429493732fc7a78e982a10f&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F67%2F01%2F13558PIC4R7_1024.jpg");
+        urls.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560661550589&di=63b8b50fd383d8bce87e093b1554edca&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160907%2F963561b9374b48c094a420e4e8218118_th.jpeg");
+        urls.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560661550589&di=a50a1097f5d0824dee9afb6ce3c98016&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160924%2Fa1c0b27f9fcf4985b5f6e8eda154cbc3_th.jpeg");
+        PhotoActivity.newInstance(this, urls);
     }
 }
