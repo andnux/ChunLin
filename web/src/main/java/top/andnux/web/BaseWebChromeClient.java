@@ -1,47 +1,57 @@
 package top.andnux.web;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.view.View;
 import android.webkit.ConsoleMessage;
+import android.webkit.GeolocationPermissions;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import java.io.File;
+import java.util.Date;
 
 import top.andnux.compat.UriCompat;
+import top.andnux.ui.dialog.ActionSheetDialog;
 import top.andnux.ui.dialog.AlertDialog;
 import top.andnux.ui.dialog.InputDialog;
-import top.andnux.utils.common.FileUtil;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
- * Created by LinkToken on 2018/4/11.
+ * Created by andnux on 2018/4/11.
  */
 
 public class BaseWebChromeClient extends WebChromeClient implements WrapListener {
 
-    private static final String TAG = "BaseWebChromeClient";
     private WarpFragment fragment;
-    private ValueCallback<Uri[]> mUploadMessageAboveL;
+    private ValueCallback<Uri> uriValueCallback;
+    private ValueCallback<Uri[]> uriValueCallbacks;
     private Activity mContext;
     private ProgressBar mProgressBar;
-    private String compressPath;
     private static final int REQ_CHOOSE = 0x88;
+    private String mCameraFilePath = "";
+    private String message;
+    private GeolocationPermissions.Callback mCallback;
+    private String mOrigin;
 
     public BaseWebChromeClient(Activity context, ProgressBar progress) {
         mContext = context;
@@ -56,27 +66,125 @@ public class BaseWebChromeClient extends WebChromeClient implements WrapListener
         }
     }
 
-    // Android 5.0以上
     @Override
-    public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback,
-                                     WebChromeClient.FileChooserParams fileChooserParams) {
-        mUploadMessageAboveL = filePathCallback;
-        selectImage();
+    public boolean onShowFileChooser(WebView webView,
+                                     ValueCallback<Uri[]> filePathCallback,
+                                     FileChooserParams fileChooserParams) {
+        uriValueCallbacks = filePathCallback;
+        selectPictures();
         return true;
     }
 
-    private void selectImage() {
-        FileUtil.deleteFile(compressPath);
-        Intent intent;
-        if (Build.VERSION.SDK_INT < 19) {
-            intent = new Intent(Intent.ACTION_GET_CONTENT);
-            intent.setType("image/*");
-        } else {
-            intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+    private void selectPictures() {
+        new ActionSheetDialog(mContext)
+                .addSheetItem(mContext.getString(R.string.camera),
+                        ActionSheetDialog.SheetItemColor.Blue, which -> {
+                            int ic = ContextCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA);
+                            int is = ContextCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                            if (ic == PackageManager.PERMISSION_GRANTED && is == PackageManager.PERMISSION_GRANTED) {
+                                fragment.startActivityForResult(createCameraIntent(), REQ_CHOOSE);
+                            } else {
+                                fragment.requestPermissions(new String[]{Manifest.permission.CAMERA,
+                                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                        Manifest.permission.READ_EXTERNAL_STORAGE}, 0x88);
+                                message = mContext.getString(R.string.no_camera);
+                                reset();
+                            }
+                        }).addSheetItem(mContext.getString(R.string.album),
+                ActionSheetDialog.SheetItemColor.Blue, which -> {
+                    int i = ContextCompat.checkSelfPermission(mContext, Manifest.permission.READ_EXTERNAL_STORAGE);
+                    if (i == PackageManager.PERMISSION_GRANTED) {
+                        fragment.startActivityForResult(createDefaultOpenableIntent(), REQ_CHOOSE);
+                    } else {
+                        fragment.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0x88);
+                        message = mContext.getString(R.string.no_album);
+                        reset();
+                    }
+                })
+                .setCancelListener(dialog -> reset())
+                .setTitle(mContext.getString(R.string.chose)).show();
+    }
+
+    private Intent createDefaultOpenableIntent() {
+        Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+        i.addCategory(Intent.CATEGORY_OPENABLE);
+        i.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+        return i;
+    }
+
+    private Intent createCameraIntent() {
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (cameraIntent.resolveActivity(mContext.getPackageManager()) != null) {
+            mCameraFilePath = createFile(mContext).getAbsolutePath();
+            Uri fromFile = UriCompat.fromFile(mContext, new File(mCameraFilePath));
+            cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, fromFile);
         }
-        //REQ_CHOOSE是定义的一个常量
-        Intent wrapperIntent = Intent.createChooser(intent, null);
-        fragment.startActivityForResult(wrapperIntent, REQ_CHOOSE);
+        return cameraIntent;
+    }
+
+    private File createFile(Context context) {
+        File file;
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+            String timeStamp = String.valueOf(new Date().getTime());
+            file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) +
+                    File.separator + timeStamp + ".jpg");
+        } else {
+            File cacheDir = context.getCacheDir();
+            String timeStamp = String.valueOf(new Date().getTime());
+            file = new File(cacheDir, timeStamp + ".jpg");
+        }
+        return file;
+    }
+
+    private void update(Uri[] uris) {
+        if (uriValueCallbacks != null
+                && uris[0] != null) {
+            uriValueCallbacks.onReceiveValue(uris);
+            uriValueCallbacks = null;
+        }
+        if (uriValueCallback != null
+                && uris[0] != null) {
+            uriValueCallback.onReceiveValue(uris[0]);
+            uriValueCallback = null;
+        }
+    }
+
+    private void reset() {
+        if (uriValueCallbacks != null) {
+            uriValueCallbacks.onReceiveValue(null);
+            uriValueCallbacks = null;
+        }
+        if (uriValueCallback != null) {
+            uriValueCallback.onReceiveValue(null);
+            uriValueCallback = null;
+        }
+    }
+
+    @Override
+    public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
+        super.onGeolocationPermissionsShowPrompt(origin, callback);
+        mOrigin = origin;
+        mCallback = callback;
+        new AlertDialog(mContext)
+                .setTitle(mContext.getString(R.string.location_info))
+                .setMessage(origin + mContext.getString(R.string.get_your_location))
+                .setCancelable(true)
+                .setPositiveButton(mContext.getString(R.string.allow), v -> {
+                    int i1 = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION);
+                    int i2 = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION);
+                    if (i1 == PackageManager.PERMISSION_GRANTED && i2 == PackageManager.PERMISSION_GRANTED) {
+                        callback.invoke(origin, true, true);
+                    } else {
+                        fragment.requestPermissions(new String[]{
+                                Manifest.permission.ACCESS_FINE_LOCATION,
+                                Manifest.permission.ACCESS_COARSE_LOCATION
+                        }, 100);
+                    }
+                })
+                .setCancelable(false)
+                .setNegativeButton(mContext.getString(R.string.refuse), v -> callback.invoke(origin, false, true))
+                .show();
     }
 
     /**
@@ -133,13 +241,11 @@ public class BaseWebChromeClient extends WebChromeClient implements WrapListener
     @Override
     public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
         new AlertDialog(mContext)
-                .setTitle(url)
+                .setTitle("")
                 .setMsg(message)
-                .setPositiveButton("确定", v -> {
+                .setPositiveButton(mContext.getString(R.string.sure), v -> {
                     result.confirm();
-                }).setNegativeButton("取消", v -> {
-            result.cancel();
-        }).show();
+                }).show();
         return true;
     }
 
@@ -155,11 +261,11 @@ public class BaseWebChromeClient extends WebChromeClient implements WrapListener
     @Override
     public boolean onJsConfirm(WebView view, String url, String message, JsResult result) {
         new AlertDialog(mContext)
-                .setTitle(url)
+                .setTitle("")
                 .setMsg(message)
-                .setPositiveButton("确定", v -> {
+                .setPositiveButton(mContext.getString(R.string.sure), v -> {
                     result.confirm();
-                }).setNegativeButton("取消", v -> {
+                }).setNegativeButton(mContext.getString(R.string.cancel), v -> {
             result.cancel();
         }).show();
         return true;
@@ -179,13 +285,12 @@ public class BaseWebChromeClient extends WebChromeClient implements WrapListener
     public boolean onJsPrompt(WebView view, String url, String message, String
             defaultValue, JsPromptResult result) {
         new InputDialog(mContext)
-                .setTitle(url)
-                .setHint(message)
+                .setTitle(message)
                 .setText(defaultValue)
-                .setNegativeButton("取消", v -> {
+                .setNegativeButton(mContext.getString(R.string.cancel), v -> {
                     result.cancel();
                 })
-                .setPositiveButton("确定", (dialog, text) -> {
+                .setPositiveButton(mContext.getString(R.string.sure), (dialog, text) -> {
                     result.confirm(text);
                     dialog.dismiss();
                 })
@@ -200,46 +305,61 @@ public class BaseWebChromeClient extends WebChromeClient implements WrapListener
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (null == data) {
-            mUploadMessageAboveL.onReceiveValue(null);
-            return;
-        }
-        Uri uri = null;
-        if (requestCode == REQ_CHOOSE) {
-            uri = afterChosePic(data);
-        }
-        if (mUploadMessageAboveL != null) {
-            mUploadMessageAboveL.onReceiveValue(new Uri[]{uri});
-        }
-        mUploadMessageAboveL = null;
-    }
-
-    private Uri afterChosePic(@NonNull Intent data) {
-        // 获取图片的路径：
-        String[] proj = {MediaStore.Images.Media.DATA};
-        // 好像是android多媒体数据库的封装接口，具体的看Android文档
-        Cursor cursor = mContext.getContentResolver().query(data.getData(), proj, null, null, null);
-        if (cursor == null) {
-            Toast.makeText(mContext, "上传的图片仅支持png或jpg格式", Toast.LENGTH_SHORT).show();
-            return null;
-        }
-        // 按我个人理解 这个是获得用户选择的图片的索引值
-        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-        // 将光标移至开头 ，这个很重要，不小心很容易引起越界
-        cursor.moveToFirst();
-        // 最后根据索引值获取图片路径
-        String path = cursor.getString(column_index);
-        if (path != null && (path.endsWith(".png") || path.endsWith(".PNG") ||
-                path.endsWith(".jpg") || path.endsWith(".JPG"))) {
-            return UriCompat.fromFile(mContext, new File(path));
+        if (requestCode == REQ_CHOOSE && data != null && resultCode == RESULT_OK) {
+            Uri[] uris = new Uri[1];
+            uris[0] = data.getData();
+            update(uris);
         } else {
-            Toast.makeText(mContext, "上传的图片仅支持png或jpg格式", Toast.LENGTH_SHORT).show();
+            reset();
         }
-        cursor.close();
-        return null;
     }
 
-    private File compressFile(String path, String compressPath) {
-        return null;
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == 0) {
+            for (int i = 0; i < permissions.length; i++) {
+                if (grantResults[i] != -1) {
+                    //T.showShort(mContext,"权限设置成功");
+                } else {
+                    //T.showShort(mContext,"拒绝权限");
+                    // 权限被拒绝，弹出dialog 提示去开启权限
+                    showPermissions(message);
+                    break;
+                }
+            }
+        } else if (requestCode == 100) {
+            for (int i = 0; i < permissions.length; i++) {
+                if (grantResults[i] != -1) {
+                    //T.showShort(mContext,"权限设置成功");
+                    mCallback.invoke(mOrigin, true, true);
+                } else {
+                    //T.showShort(mContext,"拒绝权限");
+                    // 权限被拒绝，弹出dialog 提示去开启权限
+                    showPermissions(message);
+                    break;
+                }
+            }
+        }
+    }
+
+    private void toSetting() {
+        Intent intent = new Intent();
+        intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        intent.setData(Uri.parse("package:" + mContext.getPackageName()));
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+        mContext.startActivity(intent);
+    }
+
+    private void showPermissions(String text) {
+        new AlertDialog(mContext)
+                .setTitle("")
+                .setMsg(text)
+                .setPositiveButton(mContext.getString(R.string.sure), v -> {
+                    toSetting();
+                }).setNegativeButton(mContext.getString(R.string.cancel), v -> {
+        }).show();
     }
 }

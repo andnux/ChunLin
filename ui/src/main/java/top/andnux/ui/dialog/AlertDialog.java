@@ -2,13 +2,13 @@ package top.andnux.ui.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -29,7 +29,7 @@ public class AlertDialog {
     private ImageView img_line;
     private Display display;
     private boolean showTitle = false;
-    private boolean showMsg = false;
+    private boolean showMessage = false;
     private boolean showPosBtn = false;
     private boolean showNegBtn = false;
 
@@ -72,14 +72,26 @@ public class AlertDialog {
         return this;
     }
 
+    @Deprecated
     public AlertDialog setMsg(String msg) {
-        showMsg = true;
+        showMessage = true;
+        txt_msg.setText(msg);
+        return this;
+    }
+
+    public AlertDialog setMessage(String msg) {
+        showMessage = true;
         txt_msg.setText(msg);
         return this;
     }
 
     public AlertDialog setCancelable(boolean cancel) {
         dialog.setCancelable(cancel);
+        return this;
+    }
+
+    public AlertDialog setCancelListener(DialogInterface.OnCancelListener listener) {
+        dialog.setOnCancelListener(listener);
         return this;
     }
 
@@ -110,7 +122,7 @@ public class AlertDialog {
     }
 
     private void setLayout() {
-        if (!showTitle && !showMsg) {
+        if (!showTitle && !showMessage) {
             txt_title.setText("⚠️警告");
             txt_title.setVisibility(View.VISIBLE);
         }
@@ -119,7 +131,7 @@ public class AlertDialog {
             txt_title.setVisibility(View.VISIBLE);
         }
 
-        if (showMsg) {
+        if (showMessage) {
             txt_msg.setVisibility(View.VISIBLE);
         }
         if (!showPosBtn && !showNegBtn) {

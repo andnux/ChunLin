@@ -20,9 +20,9 @@ import top.andnux.compat.UriCompat;
 import top.andnux.ui.dialog.ActionSheetDialog;
 import top.andnux.utils.common.ToastUtil;
 
-public class WebViewSupport {
+class WebViewSupport {
 
-    public static void showSaveImage(Activity context, String url) {
+    static void showSaveImage(Activity context, String url) {
         context.runOnUiThread(() -> {
             new ActionSheetDialog(context)
                     .addSheetItem(context.getString(R.string.download_image),

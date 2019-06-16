@@ -7,11 +7,12 @@ import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 /**
- * Created by LinkToken on 2018/4/11.
+ * Created by andnux on 2018/4/11.
  */
 
 public class BaseWebViewClient extends WebViewClient {
@@ -45,6 +46,8 @@ public class BaseWebViewClient extends WebViewClient {
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
         super.onPageStarted(view, url, favicon);
+        WebSettings settings = view.getSettings();
+        settings.setLoadsImagesAutomatically(false);
 //        ShowDialog.showDialog(mContext, "", true, null).show();
     }
 
@@ -57,6 +60,8 @@ public class BaseWebViewClient extends WebViewClient {
     @Override
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
+        WebSettings settings = view.getSettings();
+        settings.setLoadsImagesAutomatically(true);
     }
 
     /**

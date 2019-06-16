@@ -2,6 +2,7 @@ package top.andnux.ui.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -82,6 +83,11 @@ public class InputDialog {
     public InputDialog setText(String msg) {
         showInput = true;
         input_view.setText(msg);
+        return this;
+    }
+
+    public InputDialog setCancelListener(DialogInterface.OnCancelListener listener) {
+        dialog.setOnCancelListener(listener);
         return this;
     }
 

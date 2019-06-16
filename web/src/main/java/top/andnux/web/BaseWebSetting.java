@@ -32,6 +32,8 @@ public class BaseWebSetting {
         webSettings.setJavaScriptEnabled(true);
         // 支持自动加载图片
         webSettings.setLoadsImagesAutomatically(false);
+        //启用地理定位
+        webSettings.setGeolocationEnabled(true);
         if (isCache) {
             // 开启DOM缓存
             webSettings.setDomStorageEnabled(true);

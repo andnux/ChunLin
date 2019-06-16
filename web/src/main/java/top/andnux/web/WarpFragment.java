@@ -2,17 +2,18 @@ package top.andnux.web;
 
 import android.content.Intent;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 public class WarpFragment extends Fragment {
 
     private WrapListener mListener;
 
-    public WarpFragment(WrapListener listener) {
+    private WarpFragment(WrapListener listener) {
         mListener = listener;
     }
 
-    public static WarpFragment getInstance(WrapListener listener){
+    static WarpFragment getInstance(WrapListener listener){
         return new WarpFragment(listener);
     }
 
@@ -22,5 +23,10 @@ public class WarpFragment extends Fragment {
         if (mListener != null){
             mListener.onActivityResult(requestCode, resultCode, data);
         }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }

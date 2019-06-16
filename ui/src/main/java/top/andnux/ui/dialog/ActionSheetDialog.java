@@ -2,6 +2,7 @@ package top.andnux.ui.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.view.Display;
 import android.view.Gravity;
@@ -75,6 +76,11 @@ public class ActionSheetDialog {
 
     public ActionSheetDialog setCancelable(boolean cancel) {
         dialog.setCancelable(cancel);
+        return this;
+    }
+
+    public ActionSheetDialog setCancelListener(DialogInterface.OnCancelListener listener) {
+        dialog.setOnCancelListener(listener);
         return this;
     }
 
