@@ -26,12 +26,15 @@ public class AlertDialog {
     private TextView txt_msg;
     private Button btn_neg;
     private Button btn_pos;
-    private ImageView img_line;
+    private Button btn_center;
+    private ImageView img_line1;
+    private ImageView img_line2;
     private Display display;
     private boolean showTitle = false;
     private boolean showMessage = false;
     private boolean showPosBtn = false;
     private boolean showNegBtn = false;
+    private boolean showCenterBtn = false;
 
     public AlertDialog(Context context) {
         this.context = context;
@@ -53,9 +56,12 @@ public class AlertDialog {
         btn_neg.setVisibility(View.GONE);
         btn_pos = view.findViewById(R.id.btn_pos);
         btn_pos.setVisibility(View.GONE);
-        img_line = view.findViewById(R.id.img_line);
-        img_line.setVisibility(View.GONE);
-
+        btn_center = view.findViewById(R.id.btn_center);
+        btn_center.setVisibility(View.GONE);
+        img_line1 = view.findViewById(R.id.img_line1);
+        img_line1.setVisibility(View.GONE);
+        img_line2 = view.findViewById(R.id.img_line2);
+        img_line2.setVisibility(View.GONE);
         dialog = new Dialog(context, R.style.AlertDialogStyle);
         dialog.setContentView(view);
         lLayout_bg.setLayoutParams(new FrameLayout.LayoutParams((int) (display
@@ -108,6 +114,19 @@ public class AlertDialog {
         return this;
     }
 
+    public AlertDialog setCenterButton(String text,
+                                       final OnClickListener listener) {
+        showCenterBtn = true;
+        btn_center.setText(text);
+        btn_center.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onClick(v);
+            }
+            dialog.dismiss();
+        });
+        return this;
+    }
+
     public AlertDialog setNegativeButton(String text,
                                          final OnClickListener listener) {
         showNegBtn = true;
@@ -146,7 +165,18 @@ public class AlertDialog {
             btn_pos.setBackgroundResource(R.drawable.alertdialog_right_selector);
             btn_neg.setVisibility(View.VISIBLE);
             btn_neg.setBackgroundResource(R.drawable.alertdialog_left_selector);
-            img_line.setVisibility(View.VISIBLE);
+            img_line1.setVisibility(View.VISIBLE);
+        }
+
+        if (showPosBtn && showNegBtn && showCenterBtn) {
+            btn_pos.setVisibility(View.VISIBLE);
+            btn_pos.setBackgroundResource(R.drawable.alertdialog_right_selector);
+            btn_neg.setVisibility(View.VISIBLE);
+            btn_neg.setBackgroundResource(R.drawable.alertdialog_left_selector);
+            img_line1.setVisibility(View.VISIBLE);
+            btn_center.setBackgroundResource(R.drawable.alertdialog_center_selector);
+            btn_center.setVisibility(View.VISIBLE);
+            img_line2.setVisibility(View.VISIBLE);
         }
 
         if (showPosBtn && !showNegBtn) {
