@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "C:\\Users\\Administrator\\Desktop\\github\\ChunLin\\glide\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "D:\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\Administrator\\Desktop\\github\\ChunLin\\glide\\.externalNativeBuild\\cmake\\debug\\x86 --target clean"
+  ],
+  "libraries": {
+    "glide-Debug-x86": {
+      "artifactName": "glide",
+      "buildCommand": "D:\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\Administrator\\Desktop\\github\\ChunLin\\glide\\.externalNativeBuild\\cmake\\debug\\x86 --target glide",
+      "abi": "x86",
+      "output": "C:\\Users\\Administrator\\Desktop\\github\\ChunLin\\glide\\build\\intermediates\\cmake\\debug\\obj\\x86\\libglide.so"
+    }
+  }
+}

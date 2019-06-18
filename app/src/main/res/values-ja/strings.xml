@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">春林</string>
+	<string name="usser_name">ユーザー名</string>
+	<string name="password">パスワード</string>
+	<string name="login">ログイン</string>
+</resources>

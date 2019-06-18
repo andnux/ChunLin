@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "C:\\Users\\Administrator\\Desktop\\github\\ChunLin\\glide\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "D:\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\Administrator\\Desktop\\github\\ChunLin\\glide\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "glide-Debug-armeabi-v7a": {
+      "artifactName": "glide",
+      "buildCommand": "D:\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\Administrator\\Desktop\\github\\ChunLin\\glide\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target glide",
+      "abi": "armeabi-v7a",
+      "output": "C:\\Users\\Administrator\\Desktop\\github\\ChunLin\\glide\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libglide.so"
+    }
+  }
+}

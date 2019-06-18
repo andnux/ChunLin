@@ -1,42 +1,59 @@
 package top.andnux.http.cache;
 
-import android.util.Log;
-
 import java.util.List;
 
-import top.andnux.http.db.DaoSupportFactory;
-import top.andnux.http.db.IDaoSupport;
+import top.andnux.http.utils.Utils;
+import top.andnux.utils.sqlite.SQLiteDao;
+import top.andnux.utils.sqlite.SQLiteDaoFactory;
 
-public class SQLiteCache implements Cache<String, String> {
+public class SQLiteCache implements Cache {
 
-    private IDaoSupport<HttpCache> mDaoSupport;
+    private SQLiteDao<CacheEntity> dao = SQLiteDaoFactory.getDao(CacheEntity.class);
 
-    public SQLiteCache() {
-        mDaoSupport = DaoSupportFactory.getFactory().getDao(HttpCache.class);
+    @Override
+    public void put(String url, String value, long time) {
+        CacheEntity entity = new CacheEntity();
+        entity.setTime(System.currentTimeMillis());
+        entity.setDuration(time);
+        entity.setData(Utils.encode(value));
+        entity.setUrl(Utils.md5(url));
+        CacheEntity where = new CacheEntity();
+        where.setUrl(Utils.md5(url));
+        dao.delete(where);
+        dao.insert(entity);
     }
 
     @Override
-    public void put(String key, String value) {
-        HttpCache cache = new HttpCache();
-        cache.setUrl(key);
-        cache.setData(value);
-        long id = mDaoSupport.insert(cache);
-        Log.e("TAG", "ID = " + id);
-    }
-
-    @Override
-    public String get(String key) {
-        HttpCache where = new HttpCache();
-        where.setUrl(key);
-        List<HttpCache> list = mDaoSupport.query(where);
-        if (list.size() > 0) {
-            return list.get(0).getData();
+    public String get(String url) {
+        CacheEntity where = new CacheEntity();
+        where.setUrl(Utils.md5(url));
+        List<CacheEntity> query = dao.query(where);
+        if (query.size() > 0) {
+            CacheEntity entity = query.get(0);
+            if (entity.getDuration() < 0){
+                return Utils.decode(entity.getData());
+            }else {
+                long l = System.currentTimeMillis() - entity.getTime();
+                if (l - entity.getDuration() > 0) {
+                    dao.delete(where);
+                } else {
+                    return Utils.decode(entity.getData());
+                }
+            }
         }
         return null;
     }
 
     @Override
-    public void clean() {
-        mDaoSupport.delete(null);
+    public void remove(String url) {
+        CacheEntity where = new CacheEntity();
+        where.setUrl(Utils.md5(url));
+        dao.delete(where);
+    }
+
+    @Override
+    public void clear() {
+        CacheEntity where = new CacheEntity();
+        dao.delete(where);
     }
 }

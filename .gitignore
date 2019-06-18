@@ -1,0 +1,17 @@
+.gradle/5.1.1/vcsMetadata-1/
+.idea/workspace.xml
+adapter/build/
+app/build/
+base/build/
+compat/build/
+glide/build/
+http/build/
+locale/build/
+mvp/build/
+mvvm/build/
+ui/build/
+utils/build/
+web/build/
+zbar/build/
+glide/.externalNativeBuild/
+zbar/.externalNativeBuild/

@@ -1,0 +1,3 @@
+C:/Users/Administrator/Desktop/github/ChunLin/glide/.externalNativeBuild/cmake/debug/x86/CMakeFiles/glide.dir
+C:/Users/Administrator/Desktop/github/ChunLin/glide/.externalNativeBuild/cmake/debug/x86/CMakeFiles/edit_cache.dir
+C:/Users/Administrator/Desktop/github/ChunLin/glide/.externalNativeBuild/cmake/debug/x86/CMakeFiles/rebuild_cache.dir

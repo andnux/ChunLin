@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="@dimen/sp18"
@@ -27,26 +27,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
             android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="@dimen/sp16"
             android:visibility="visible" />
-
-        <EditText
-            android:layout_margin="@dimen/dp5"
-            android:id="@+id/input_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/alertdialog_input_selector"
-            android:gravity="center_vertical"
-            android:hint="请输入"
-            android:padding="@dimen/dp15"
-            android:singleLine="true"
-            android:textColor="@color/black"
-            android:textSize="@dimen/sp14"
-            android:visibility="gone" />
 
     </FrameLayout>
 
@@ -72,7 +58,25 @@
             android:textSize="@dimen/sp16" />
 
         <ImageView
-            android:id="@+id/img_line"
+            android:id="@+id/img_line1"
+            android:layout_width="0.5dp"
+            android:layout_height="43dp"
+            android:background="@color/alertdialog_line"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_center"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_weight="1"
+            android:background="@drawable/alertdialog_left_selector"
+            android:gravity="center"
+            android:textColor="@color/actionsheet_blue"
+            android:textSize="@dimen/sp16"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_line2"
             android:layout_width="0.5dp"
             android:layout_height="43dp"
             android:background="@color/alertdialog_line" />

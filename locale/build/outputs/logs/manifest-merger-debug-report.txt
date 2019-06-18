@@ -1,0 +1,57 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:1:1-13:12
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:1:1-13:12
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:1:1-13:12
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:1:1-13:12
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:1:1-13:12
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:1:1-13:12
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:1:1-13:12
+	package
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:2:5-32
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:1:1-13:12
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:1:1-13:12
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:1:11-69
+application
+ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:4:5-12:19
+activity#top.andnux.locale.LanguageActivity
+ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:5:9-54
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:5:19-51
+receiver#top.andnux.locale.LocaleChangeReceiver
+ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:6:9-11:20
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:6:19-55
+intent-filter#action:name:android.intent.action.LOCALE_CHANGED+category:name:android.intent.category.DEFAULT
+ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:7:13-10:29
+action#android.intent.action.LOCALE_CHANGED
+ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:8:17-79
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:8:25-76
+category#android.intent.category.DEFAULT
+ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:9:17-76
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml:9:27-73
+uses-sdk
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\locale\src\main\AndroidManifest.xml

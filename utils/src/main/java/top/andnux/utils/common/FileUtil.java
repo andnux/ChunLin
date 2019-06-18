@@ -137,6 +137,7 @@ public class FileUtil {
     public static void deleteFile(String path) {
         if (TextUtils.isEmpty(path)) {
             Log.d("FileUtil", "路径为空:"+path);
+            return;
         }
         File file = new File(path);
         if (file.exists()) {
@@ -155,6 +156,7 @@ public class FileUtil {
     public static  void deleteDir(String path){
         if (TextUtils.isEmpty(path)) {
             Log.d("FileUtil", "路径为空:"+path);
+            return;
         }
         File file = new File(path);
         if (file.exists()) {//判断文件是否存在

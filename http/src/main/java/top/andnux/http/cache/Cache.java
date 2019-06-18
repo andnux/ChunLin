@@ -1,10 +1,12 @@
 package top.andnux.http.cache;
 
-public interface Cache<K, V> {
+public interface Cache {
 
-    void put(K key, V value);
+    void put(String url, String value, long time);
 
-    V get(K key);
+    String get(String url);
 
-    void clean();
+    void remove(String url);
+
+    void clear();
 }

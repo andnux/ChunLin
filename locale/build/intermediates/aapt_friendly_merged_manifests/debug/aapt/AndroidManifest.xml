@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="top.andnux.locale"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="28" />
+
+    <application>
+        <activity android:name="top.andnux.locale.LanguageActivity" />
+
+        <receiver android:name="top.andnux.locale.LocaleChangeReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

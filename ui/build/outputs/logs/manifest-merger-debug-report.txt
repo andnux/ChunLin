@@ -1,0 +1,47 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:1:1-10:12
+	package
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:2:5-28
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:1:1-10:12
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:1:1-10:12
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:1:11-69
+application
+ADDED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:4:5-9:19
+activity#top.andnux.ui.image.photoview.PhotoActivity
+ADDED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:5:9-8:49
+	android:screenOrientation
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:7:13-49
+	android:theme
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:8:13-46
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml:6:13-58
+uses-sdk
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrator\Desktop\github\ChunLin\ui\src\main\AndroidManifest.xml

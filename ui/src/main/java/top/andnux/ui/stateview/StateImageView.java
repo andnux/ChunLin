@@ -48,7 +48,7 @@ public class StateImageView extends AppCompatImageView {
         states[2] = new int[] { android.R.attr.state_enabled };
 
         Drawable drawable = getBackground();
-        if(drawable != null && drawable instanceof StateListDrawable){
+        if(drawable instanceof StateListDrawable){
             mStateBackground = (StateListDrawable) drawable;
         }else{
             mStateBackground = new StateListDrawable();

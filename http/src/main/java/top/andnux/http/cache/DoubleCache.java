@@ -1,35 +1,34 @@
 package top.andnux.http.cache;
 
-import android.text.TextUtils;
+public class DoubleCache implements Cache {
 
-public class DoubleCache implements Cache<String, String> {
+    private Cache mMemCache = new MemoryCache();
+    private Cache mSQCache = new SQLiteCache();
 
-    private Cache<String, String> mMemoryCache;
-    private Cache<String, String> mSQLiteCache;
-
-    public DoubleCache() {
-        mMemoryCache = new MemoryCache();
-        mSQLiteCache = new SQLiteCache();
+    @Override
+    public void put(String url, String value, long time) {
+        mMemCache.put(url, value, time);
+        mSQCache.put(url, value, time);
     }
 
     @Override
-    public void put(String key, String value) {
-        mMemoryCache.put(key, value);
-        mSQLiteCache.put(key, value);
-    }
-
-    @Override
-    public String get(String key) {
-        String s = mMemoryCache.get(key);
-        if (TextUtils.isEmpty(s)) {
-            s = mSQLiteCache.get(key);
+    public String get(String url) {
+        String s = mMemCache.get(url);
+        if (s == null || "".equals(s)) {
+            s = mSQCache.get(url);
         }
         return s;
     }
 
     @Override
-    public void clean() {
-        mMemoryCache.clean();
-        mSQLiteCache.clean();
+    public void remove(String url) {
+        mMemCache.remove(url);
+        mSQCache.remove(url);
+    }
+
+    @Override
+    public void clear() {
+        mMemCache.clear();
+        mSQCache.clear();
     }
 }

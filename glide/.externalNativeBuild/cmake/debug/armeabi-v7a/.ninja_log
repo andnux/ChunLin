@@ -1,0 +1,17 @@
+# ninja log v5
+10	956	0	CMakeFiles/glide.dir/src/main/cpp/FrameSequenceJNI.cpp.o	d9e2c62193122d5a
+20	968	0	CMakeFiles/glide.dir/src/main/cpp/FrameSequence_gif.cpp.o	57d7a876540e4e55
+43	980	0	CMakeFiles/glide.dir/src/main/cpp/Registry.cpp.o	4eb050aa2d195d26
+102	992	0	CMakeFiles/glide.dir/src/main/cpp/giflib/gifalloc.c.o	2173ef8492873b73
+0	1006	0	CMakeFiles/glide.dir/src/main/cpp/BitmapDecoderJNI.cpp.o	ce3f6d9d49b640f7
+29	1023	0	CMakeFiles/glide.dir/src/main/cpp/JNIHelpers.cpp.o	3e72ffef10f46708
+56	1024	0	CMakeFiles/glide.dir/src/main/cpp/FrameSequence.cpp.o	68aa9313776579e6
+69	1025	0	CMakeFiles/glide.dir/src/main/cpp/Stream.cpp.o	56c7230c82812659
+128	1025	0	CMakeFiles/glide.dir/src/main/cpp/giflib/dgif_lib.c.o	30a10b4bf3d50fea
+84	1026	0	CMakeFiles/glide.dir/src/main/cpp/giflib/quantize.c.o	8858020334922651
+957	1057	0	CMakeFiles/glide.dir/src/main/cpp/giflib/openbsd-reallocarray.c.o	4b5c38034ba88b5
+980	1120	0	CMakeFiles/glide.dir/src/main/cpp/giflib/gif_err.c.o	cb3f64fb844ebad9
+968	1124	0	CMakeFiles/glide.dir/src/main/cpp/giflib/gif_font.c.o	3c51b01bb4ac7e55
+1006	1156	0	CMakeFiles/glide.dir/src/main/cpp/giflib/gif_hash.c.o	e6e50d4dd1be9144
+992	1199	0	CMakeFiles/glide.dir/src/main/cpp/giflib/egif_lib.c.o	598ff74feb6e4871
+1199	1301	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libglide.so	4f1ed2e96c187fb2
