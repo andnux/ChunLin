@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.text.method.MovementMethod;
 import android.util.Log;
 import android.util.SparseArray;
@@ -56,7 +57,9 @@ public class CommonViewHolder extends RecyclerView.ViewHolder implements ChainSe
      */
     @Deprecated
     public <T extends View> T getView(int id) {
-        Log.e("CommonViewHolder", "Deprecated method 'getView(int)', please use 'findViewById(int)' instead.");
+        if (BuildConfig.DEBUG){
+            Log.e("CommonViewHolder", "Deprecated method 'getView(int)', please use 'findViewById(int)' instead.");
+        }
         return findViewById(id);
     }
 

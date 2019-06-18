@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class HttpResponse {
 
+    private int mCode;
     private int mContentLength;
     private InputStream mInputStream;
     private Map<String, String> mHeader;
@@ -49,5 +50,13 @@ public class HttpResponse {
 
     public void setHeader(Map<String, String> header) {
         mHeader = header;
+    }
+
+    public int getCode() {
+        return mCode;
+    }
+
+    public void setCode(int code) {
+        mCode = code;
     }
 }

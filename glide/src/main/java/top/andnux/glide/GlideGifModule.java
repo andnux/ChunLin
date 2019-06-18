@@ -17,6 +17,12 @@ import java.io.InputStream;
 
 @GlideModule
 public class GlideGifModule extends AppGlideModule {
+
+    @Override
+    public boolean isManifestParsingEnabled() {
+        return false;
+    }
+
     @Override
     public void registerComponents(@NonNull Context context, @NonNull Glide glide, @NonNull Registry registry) {
         //第一个参数任意填写

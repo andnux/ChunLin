@@ -105,6 +105,7 @@ public class DefaultHttpEngine implements HttpEngine {
                 HttpCallback httpCallback = request.getHttpCallback();
                 HttpResponse response = new HttpResponse();
                 response.setRequest(request);
+                response.setCode(responseCode);
                 response.setInputStream(conn.getInputStream());
                 response.setContentLength(conn.getContentLength());
                 Map<String, List<String>> headerFields = conn.getHeaderFields();

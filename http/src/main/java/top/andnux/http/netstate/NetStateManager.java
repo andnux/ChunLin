@@ -27,6 +27,7 @@ public class NetStateManager implements NetStateListener {
     }
 
     private Application mApplication;
+    private NetStateListener mStateListener;
     private NetStateReceiver mNetBroadcastReceiver;
     private Map<Object, List<NetStateBean>> methodMap = new ArrayMap<>();
 
@@ -34,6 +35,14 @@ public class NetStateManager implements NetStateListener {
         mNetBroadcastReceiver = new NetStateReceiver();
         mNetBroadcastReceiver.setNetListener(this);
         init(Utils.getApplicationByReflection());
+    }
+
+    public NetStateListener getStateListener() {
+        return mStateListener;
+    }
+
+    public void setStateListener(NetStateListener stateListener) {
+        mStateListener = stateListener;
     }
 
     private void init(Application context) {
@@ -104,6 +113,7 @@ public class NetStateManager implements NetStateListener {
     @Override
     public void onConnect(NetType state) {
         postMessage(state);
+        if (mStateListener != null) mStateListener.onConnect(state);
     }
 
     private void postMessage(NetType state) {
@@ -158,5 +168,6 @@ public class NetStateManager implements NetStateListener {
     @Override
     public void onDisConnect() {
         postMessage(NetType.NONE);
+        if (mStateListener != null) mStateListener.onDisConnect();
     }
 }
