@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".Main3Activity">
+
+    <top.andnux.ui.ExpandableTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:text="哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈"
+        android:textColor="@color/black"
+        app:expandText="展开"
+        app:mode="icon"
+        app:retractText="收起"
+        app:expandIcon="@drawable/ic_up"
+        app:retractIcon="@drawable/ic_down"
+        app:expandTextColor="@color/colorPrimaryDark"
+        app:retractTextColor="@color/colorPrimaryDark"
+        app:expandTotalLine="3" />
+
+</LinearLayout>
