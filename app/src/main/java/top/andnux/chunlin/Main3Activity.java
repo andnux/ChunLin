@@ -22,7 +22,7 @@ public class Main3Activity extends AppCompatActivity {
         NetStateManager.getInstance().registerObserver(this);
     }
 
-    @NetSupport(value = NetState.AUTO, tips = "当前网络不是WifI,请连接WIFI后操作")
+    @NetSupport(NetState.AUTO)
     public void checkNet(NetState type) {
         switch (type) {
             case NONE: {
