@@ -2,7 +2,7 @@ package top.andnux.http.netstate;
 
 public interface NetStateListener {
 
-    void onConnect(NetType state);
+    void onConnect(NetState state);
 
     void onDisConnect();
 }

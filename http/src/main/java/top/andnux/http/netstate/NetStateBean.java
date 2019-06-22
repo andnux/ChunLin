@@ -4,24 +4,24 @@ import java.lang.reflect.Method;
 
 public class NetStateBean {
 
-    private NetType mNetState;
+    private NetState mNetState;
     private Class<?> type;
     private Method mMethod;
 
     public NetStateBean() {
     }
 
-    public NetStateBean(NetType mNetState, Class<?> type, Method mMethod) {
+    public NetStateBean(NetState mNetState, Class<?> type, Method mMethod) {
         this.mNetState = mNetState;
         this.type = type;
         this.mMethod = mMethod;
     }
 
-    public NetType getNetState() {
+    public NetState getNetState() {
         return mNetState;
     }
 
-    public void setNetState(NetType mNetState) {
+    public void setNetState(NetState mNetState) {
         this.mNetState = mNetState;
     }
 

@@ -1,7 +1,6 @@
 package top.andnux.http.netstate;
 
 import android.net.ConnectivityManager;
-import android.net.LinkProperties;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.os.Build;
@@ -21,7 +20,7 @@ public class NetworkCallback extends ConnectivityManager.NetworkCallback {
     public void onAvailable(Network network) {
         super.onAvailable(network);
         Log.e("TAG", "网络已经连接");
-        NetType mNetState = NetUtil.getNetState();
+        NetState mNetState = NetUtil.getNetState();
         if (NetUtil.isNetworkAvailable()) {
             if (this.mNetStateListener != null){
                 this.mNetStateListener.onConnect(mNetState);

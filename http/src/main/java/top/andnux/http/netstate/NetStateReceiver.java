@@ -9,7 +9,7 @@ import android.util.Log;
 
 public class NetStateReceiver extends BroadcastReceiver {
 
-    private NetType mNetState;
+    private NetState mNetState;
     private NetStateListener mNetListener;
 
     public NetStateListener getNetListener() {
@@ -21,7 +21,7 @@ public class NetStateReceiver extends BroadcastReceiver {
     }
 
     public NetStateReceiver() {
-        mNetState = NetType.NONE;
+        mNetState = NetState.NONE;
     }
 
     @Override
