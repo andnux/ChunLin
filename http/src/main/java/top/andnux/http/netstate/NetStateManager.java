@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import top.andnux.http.netstate.annotation.NetWork;
+import top.andnux.http.netstate.annotation.NetSupport;
 import top.andnux.http.utils.Utils;
 
 public class NetStateManager implements NetStateListener {
@@ -79,9 +79,9 @@ public class NetStateManager implements NetStateListener {
         mNetChangeObservers.add(observer);
         if (isFirst) {
             isFirst = false;
-            NetType netState = NetUtil.getNetState();
-            if (netState == NetType.NONE && observer != null) {
-                observer.onConnect(NetType.NONE);
+            NetState netState = NetUtil.getNetState();
+            if (netState == NetState.NONE && observer != null) {
+                observer.onConnect(NetState.NONE);
             }
         }
     }
@@ -103,13 +103,13 @@ public class NetStateManager implements NetStateListener {
         Method[] methods = aClass.getDeclaredMethods();
         for (Method method : methods) {
             method.setAccessible(true);
-            NetWork annotation = method.getAnnotation(NetWork.class);
+            NetSupport annotation = method.getAnnotation(NetSupport.class);
             if (annotation == null) {
                 continue;
             }
             Class<?>[] parameterTypes = method.getParameterTypes();
             if (parameterTypes.length != 1) {
-                throw new IllegalArgumentException("NetWork 注解得方法只能有一个参数");
+                throw new IllegalArgumentException("NetSupport 注解得方法只能有一个参数");
             }
             list.add(new NetStateBean(annotation.value(), parameterTypes[0], method));
         }
@@ -136,7 +136,7 @@ public class NetStateManager implements NetStateListener {
     }
 
     @Override
-    public void onConnect(NetType state) {
+    public void onConnect(NetState state) {
         postMessage(state);
         if (!mNetChangeObservers.isEmpty()) {
             int size = mNetChangeObservers.size();
@@ -149,7 +149,7 @@ public class NetStateManager implements NetStateListener {
         }
     }
 
-    private void postMessage(NetType state) {
+    private void postMessage(NetState state) {
         try {
             Set<Object> set = methodMap.keySet();
             for (Object object : set) {
@@ -159,24 +159,24 @@ public class NetStateManager implements NetStateListener {
                         Method method = bean.getMethod();
                         switch (bean.getNetState()) {
                             case AUTO:
-                                if (state == NetType.WIFI
-                                        || state == NetType.MOBILE
-                                        || state == NetType.NONE) {
+                                if (state == NetState.WIFI
+                                        || state == NetState.MOBILE
+                                        || state == NetState.NONE) {
                                     invoke(method, object, state);
                                 }
                                 break;
                             case WIFI:
-                                if (state == NetType.WIFI || state == NetType.NONE) {
+                                if (state == NetState.WIFI || state == NetState.NONE) {
                                     invoke(method, object, state);
                                 }
                                 break;
                             case MOBILE:
-                                if (state == NetType.MOBILE || state == NetType.NONE) {
+                                if (state == NetState.MOBILE || state == NetState.NONE) {
                                     invoke(method, object, state);
                                 }
                                 break;
                             case NONE:
-                                if (state == NetType.NONE) {
+                                if (state == NetState.NONE) {
                                     invoke(method, object, state);
                                 }
                                 break;
@@ -189,7 +189,7 @@ public class NetStateManager implements NetStateListener {
         }
     }
 
-    private void invoke(Method method, Object object, NetType state) {
+    private void invoke(Method method, Object object, NetState state) {
         try {
             method.setAccessible(true);
             method.invoke(object, state);
@@ -200,13 +200,13 @@ public class NetStateManager implements NetStateListener {
 
     @Override
     public void onDisConnect() {
-        postMessage(NetType.NONE);
+        postMessage(NetState.NONE);
         if (!mNetChangeObservers.isEmpty()) {
             int size = mNetChangeObservers.size();
             for (int i = 0; i < size; i++) {
                 NetStateListener observer = mNetChangeObservers.get(i);
                 if (observer != null) {
-                    observer.onConnect(NetType.NONE);
+                    observer.onConnect(NetState.NONE);
                 }
             }
         }

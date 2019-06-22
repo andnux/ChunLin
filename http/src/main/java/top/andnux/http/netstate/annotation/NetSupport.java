@@ -5,13 +5,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import top.andnux.http.netstate.NetType;
+import top.andnux.http.netstate.NetState;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface NetWork {
+public @interface NetSupport {
 
-    NetType value() default NetType.AUTO;
-
-    String tips() default "";
+    NetState value() default NetState.AUTO;
 }

@@ -1,13 +1,12 @@
 package top.andnux.chunlin;
 
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import top.andnux.http.netstate.NetStateManager;
-import top.andnux.http.netstate.NetType;
-import top.andnux.http.netstate.annotation.NetWork;
+import top.andnux.http.netstate.NetState;
+import top.andnux.http.netstate.annotation.NetSupport;
 import top.andnux.ui.snackbar.EasySnackBar;
 import top.andnux.utils.common.ToastUtil;
 
@@ -23,8 +22,8 @@ public class Main3Activity extends AppCompatActivity {
         NetStateManager.getInstance().registerObserver(this);
     }
 
-    @NetWork(value = NetType.AUTO, tips = "当前网络不是WifI,请连接WIFI后操作")
-    public void checkNet(NetType type) {
+    @NetSupport(value = NetState.AUTO, tips = "当前网络不是WifI,请连接WIFI后操作")
+    public void checkNet(NetState type) {
         switch (type) {
             case NONE: {
                 ToastUtil.normal("没有网络连接");

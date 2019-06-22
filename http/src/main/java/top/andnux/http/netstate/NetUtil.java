@@ -19,18 +19,18 @@ public class NetUtil {
         return false;
     }
 
-    public static NetType getNetState() {
+    public static NetState getNetState() {
         ConnectivityManager service = (ConnectivityManager) NetStateManager.getInstance().getApplication().
                 getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (service == null) return NetType.NONE;
+        if (service == null) return NetState.NONE;
         NetworkInfo activeNetworkInfo = service.getActiveNetworkInfo();
-        if (activeNetworkInfo == null) return NetType.NONE;
+        if (activeNetworkInfo == null) return NetState.NONE;
         int type = activeNetworkInfo.getType();
         if (type == ConnectivityManager.TYPE_MOBILE) {
-            return NetType.MOBILE;
+            return NetState.MOBILE;
         } else if (type == ConnectivityManager.TYPE_WIFI) {
-            return NetType.WIFI;
+            return NetState.WIFI;
         }
-        return NetType.NONE;
+        return NetState.NONE;
     }
 }

@@ -1,6 +1,6 @@
 package top.andnux.http.netstate;
 
-public enum NetType {
+public enum NetState {
 
     AUTO,//有网络
 
