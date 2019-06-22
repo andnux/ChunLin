@@ -6,7 +6,7 @@ public enum NetType {
 
     WIFI, //wifi
 
-    FLOW, //流量
+    MOBILE, //流量
 
     NONE //无网络
 }

@@ -27,7 +27,7 @@ public class NetUtil {
         if (activeNetworkInfo == null) return NetType.NONE;
         int type = activeNetworkInfo.getType();
         if (type == ConnectivityManager.TYPE_MOBILE) {
-            return NetType.FLOW;
+            return NetType.MOBILE;
         } else if (type == ConnectivityManager.TYPE_WIFI) {
             return NetType.WIFI;
         }

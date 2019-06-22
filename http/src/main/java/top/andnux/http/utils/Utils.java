@@ -15,10 +15,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
 public class Utils {
+
+    private static Application mApplication;
 
     public static String inputStream2String(InputStream input) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(input));
@@ -153,15 +156,25 @@ public class Utils {
         CookieSyncManager.getInstance().sync();
     }
 
-    @SuppressLint("PrivateApi")
-    public static Application getApplicationByReflection() {
-        try {
-            return (Application) Class.forName("android.app.ActivityThread")
-                    .getMethod("currentApplication").invoke(null, (Object[]) null);
-        } catch (Exception e) {
-            e.printStackTrace();
+    public static Application getApp() {
+        if (mApplication == null) {
+            mApplication = getApplicationInner();
         }
-        return null;
+        return mApplication;
     }
 
+    private static Application getApplicationInner() {
+        try {
+            @SuppressLint("PrivateApi")
+            Class<?> activityThread = Class.forName("android.app.ActivityThread");
+            Method currentApplication = activityThread.getDeclaredMethod("currentApplication");
+            Method currentActivityThread = activityThread.getDeclaredMethod("currentActivityThread");
+            Object current = currentActivityThread.invoke((Object) null);
+            Object app = currentApplication.invoke(current);
+            return (Application) app;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
