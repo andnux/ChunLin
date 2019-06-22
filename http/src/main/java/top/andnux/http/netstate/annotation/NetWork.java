@@ -10,5 +10,8 @@ import top.andnux.http.netstate.NetType;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface NetWork {
+
     NetType value() default NetType.AUTO;
+
+    String tips() default "";
 }

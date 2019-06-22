@@ -12,7 +12,7 @@ public class XmlCookieStorage implements CookieStorage {
     private SharedPreferences mPreferences;
 
     public XmlCookieStorage() {
-        mApplication = Utils.getApplicationByReflection();
+        mApplication = Utils.getApp();
         if (mApplication != null) {
             mPreferences = mApplication.getSharedPreferences("cookie", Context.MODE_PRIVATE);
         }

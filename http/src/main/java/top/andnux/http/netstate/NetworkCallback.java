@@ -21,6 +21,16 @@ public class NetworkCallback extends ConnectivityManager.NetworkCallback {
     public void onAvailable(Network network) {
         super.onAvailable(network);
         Log.e("TAG", "网络已经连接");
+        NetType mNetState = NetUtil.getNetState();
+        if (NetUtil.isNetworkAvailable()) {
+            if (this.mNetStateListener != null){
+                this.mNetStateListener.onConnect(mNetState);
+            }
+        } else {
+            if (this.mNetStateListener != null){
+                this.mNetStateListener.onDisConnect();
+            }
+        }
     }
 
     /**
@@ -44,16 +54,5 @@ public class NetworkCallback extends ConnectivityManager.NetworkCallback {
     public void onCapabilitiesChanged(Network network, NetworkCapabilities networkCapabilities) {
         super.onCapabilitiesChanged(network, networkCapabilities);
         Log.e("TAG", "网络状态发生变化");
-        NetType mNetState = NetUtil.getNetState();
-        if (NetUtil.isNetworkAvailable()) {
-            if (this.mNetStateListener != null){
-                this.mNetStateListener.onConnect(mNetState);
-            }
-        } else {
-            if (this.mNetStateListener != null){
-                this.mNetStateListener.onDisConnect();
-            }
-        }
-
     }
 }
