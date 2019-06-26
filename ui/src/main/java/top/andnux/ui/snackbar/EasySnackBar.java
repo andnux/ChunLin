@@ -36,7 +36,6 @@ import top.andnux.ui.R;
  * off screen.
  * <p>
  * Snackbars can contain an action which is set via
- * {@link #setAction(CharSequence, View.OnClickListener)}.
  * <p>
  * To be notified when a snackbar has been shown or dismissed, you can provide a {@link Callback}
  * via {@link BaseTransientBar#addCallback(BaseCallback)}.</p>
@@ -325,7 +324,6 @@ public final class EasySnackBar extends BaseTransientBar<EasySnackBar> {
 
     /**
      * Sets the text color of the action specified in
-     * {@link #setAction(CharSequence, View.OnClickListener)}.
      */
     @NonNull
     public EasySnackBar setActionTextColor(ColorStateList colors) {
@@ -337,7 +335,6 @@ public final class EasySnackBar extends BaseTransientBar<EasySnackBar> {
 
     /**
      * Sets the text color of the action specified in
-     * {@link #setAction(CharSequence, View.OnClickListener)}.
      */
     @NonNull
     public EasySnackBar setActionTextColor(@ColorInt int color) {
