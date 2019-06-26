@@ -151,11 +151,8 @@ public class CommonViewHolder extends RecyclerView.ViewHolder implements ChainSe
     @Override
     public CommonViewHolder setImageUrl(int viewId, String url) {
         ImageView view = findViewById(viewId);
-        ImageLoader loader = new ImageLoader() {
-            @Override
-            public void loadImage(ImageView imageView, String url) {
-                Glide.with(imageView.getContext()).load(url).into(imageView);
-            }
+        ImageLoader loader = (imageView, url1) -> {
+            Glide.with(imageView.getContext()).load(url1).into(imageView);
         };
         loader.loadImage(view, url);
         return null;
