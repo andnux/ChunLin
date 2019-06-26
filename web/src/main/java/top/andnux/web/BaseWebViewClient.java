@@ -34,22 +34,7 @@ public class BaseWebViewClient extends WebViewClient {
      */
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
-        if (url.startsWith("weixin://")
-                || url.startsWith("alipays://")
-                || url.startsWith("mqqapi://")) {
-            try {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                mContext.startActivity(intent);
-            }catch (Exception e){
-                e.printStackTrace();
-                view.loadUrl(url);
-            }
-        } else {
-            view.loadUrl(url);
-        }
-        return true;
+        return super.shouldOverrideUrlLoading(view, url);
     }
 
     /**

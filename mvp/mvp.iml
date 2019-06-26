@@ -172,5 +172,17 @@
     <orderEntry type="module" module-name="ui" />
     <orderEntry type="module" module-name="base" />
     <orderEntry type="module" module-name="glide" />
+    <orderEntry type="module" module-name="ui" />
+    <orderEntry type="module" module-name="base" />
+    <orderEntry type="module" module-name="glide" />
+    <orderEntry type="module" module-name="ui" />
+    <orderEntry type="module" module-name="base" />
+    <orderEntry type="module" module-name="glide" />
+    <orderEntry type="module" module-name="ui" />
+    <orderEntry type="module" module-name="base" />
+    <orderEntry type="module" module-name="glide" />
+    <orderEntry type="module" module-name="ui" />
+    <orderEntry type="module" module-name="base" />
+    <orderEntry type="module" module-name="glide" />
   </component>
 </module>

@@ -215,5 +215,49 @@
     <orderEntry type="module" module-name="compat" />
     <orderEntry type="module" module-name="glide" />
     <orderEntry type="module" module-name="adapter" />
+    <orderEntry type="module" module-name="web" />
+    <orderEntry type="module" module-name="http" />
+    <orderEntry type="module" module-name="mvp" />
+    <orderEntry type="module" module-name="base" />
+    <orderEntry type="module" module-name="ui" />
+    <orderEntry type="module" module-name="utils" />
+    <orderEntry type="module" module-name="zbar" />
+    <orderEntry type="module" module-name="locale" />
+    <orderEntry type="module" module-name="compat" />
+    <orderEntry type="module" module-name="glide" />
+    <orderEntry type="module" module-name="adapter" />
+    <orderEntry type="module" module-name="web" />
+    <orderEntry type="module" module-name="http" />
+    <orderEntry type="module" module-name="mvp" />
+    <orderEntry type="module" module-name="base" />
+    <orderEntry type="module" module-name="ui" />
+    <orderEntry type="module" module-name="utils" />
+    <orderEntry type="module" module-name="zbar" />
+    <orderEntry type="module" module-name="locale" />
+    <orderEntry type="module" module-name="compat" />
+    <orderEntry type="module" module-name="glide" />
+    <orderEntry type="module" module-name="adapter" />
+    <orderEntry type="module" module-name="web" />
+    <orderEntry type="module" module-name="http" />
+    <orderEntry type="module" module-name="mvp" />
+    <orderEntry type="module" module-name="base" />
+    <orderEntry type="module" module-name="ui" />
+    <orderEntry type="module" module-name="utils" />
+    <orderEntry type="module" module-name="zbar" />
+    <orderEntry type="module" module-name="locale" />
+    <orderEntry type="module" module-name="compat" />
+    <orderEntry type="module" module-name="glide" />
+    <orderEntry type="module" module-name="adapter" />
+    <orderEntry type="module" module-name="web" />
+    <orderEntry type="module" module-name="http" />
+    <orderEntry type="module" module-name="mvp" />
+    <orderEntry type="module" module-name="base" />
+    <orderEntry type="module" module-name="ui" />
+    <orderEntry type="module" module-name="utils" />
+    <orderEntry type="module" module-name="zbar" />
+    <orderEntry type="module" module-name="locale" />
+    <orderEntry type="module" module-name="compat" />
+    <orderEntry type="module" module-name="glide" />
+    <orderEntry type="module" module-name="adapter" />
   </component>
 </module>

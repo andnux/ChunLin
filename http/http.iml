@@ -176,5 +176,9 @@
     <orderEntry type="library" name="Gradle: com.squareup.retrofit2:adapter-rxjava2:2.6.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.collection:collection:1.0.0@jar" level="project" />
     <orderEntry type="module" module-name="utils" />
+    <orderEntry type="module" module-name="utils" />
+    <orderEntry type="module" module-name="utils" />
+    <orderEntry type="module" module-name="utils" />
+    <orderEntry type="module" module-name="utils" />
   </component>
 </module>

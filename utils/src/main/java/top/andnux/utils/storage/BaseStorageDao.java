@@ -1,27 +1,26 @@
-package top.andnux.utils.cache;
+package top.andnux.utils.storage;
 
 import android.content.Context;
 
-import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import top.andnux.utils.Utils;
 
-public abstract class BaseCacheDao<T> implements CacheDao<T> {
+public abstract class BaseStorageDao<T> implements StorageDao<T> {
 
     protected final ExecutorService mService;
     protected final Class<T> mClass;
     protected final Context mContext;
 
-    public BaseCacheDao(Class<T> clazz) {
+    public BaseStorageDao(Class<T> clazz) {
         mClass = clazz;
         mContext = Utils.getApp();
         mService = Executors.newSingleThreadExecutor();
     }
 
     @Override
-    public void save(final T data, final CacheListener<T> listener) {
+    public void save(final T data, final StorageListener<T> listener) {
         mService.execute(new Runnable() {
             @Override
             public void run() {
@@ -32,14 +31,13 @@ public abstract class BaseCacheDao<T> implements CacheDao<T> {
                     e.printStackTrace();
                     if (listener != null) listener.onFail(e);
                 }
-                if (listener != null) listener.onComplete();
             }
         });
 
     }
 
     @Override
-    public void load(final CacheListener<T> listener) {
+    public void load(final StorageListener<T> listener) {
         mService.execute(new Runnable() {
             @Override
             public void run() {
@@ -54,7 +52,6 @@ public abstract class BaseCacheDao<T> implements CacheDao<T> {
                     e.printStackTrace();
                     if (listener != null) listener.onFail(e);
                 }
-                if (listener != null) listener.onComplete();
             }
         });
     }

@@ -1,12 +1,12 @@
-package top.andnux.utils.cache;
+package top.andnux.utils.storage;
 
 import android.util.LruCache;
 
-public class MemCacheDao<T> extends BaseCacheDao<T> {
+public class MemStorageDao<T> extends BaseStorageDao<T> {
 
     private LruCache<String, T> mCache;
 
-    public MemCacheDao(Class<T> clazz) {
+    public MemStorageDao(Class<T> clazz) {
         super( clazz);
         long size = Runtime.getRuntime().freeMemory() / 8;
         mCache = new LruCache<>((int) size);
