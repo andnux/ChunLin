@@ -1,18 +1,18 @@
-package top.andnux.utils.cache;
+package top.andnux.utils.storage;
 
-public interface CacheDao<T> {
+public interface StorageDao<T> {
 
     //同步保存
     void save(T data) throws Exception;
 
     //异步保存
-    void save(T data, CacheListener<T> listener);
+    void save(T data, StorageListener<T> listener);
 
     //同步读取
     T load() throws Exception;
 
     //异步读取
-    void load(CacheListener<T> listener);
+    void load(StorageListener<T> listener);
 
     //清除数据
     void clear();

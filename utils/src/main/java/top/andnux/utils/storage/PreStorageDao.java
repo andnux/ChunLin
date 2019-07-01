@@ -1,4 +1,4 @@
-package top.andnux.utils.cache;
+package top.andnux.utils.storage;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,13 +12,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 
-public class PreCacheDao<T> extends BaseCacheDao<T> {
+public class PreStorageDao<T> extends BaseStorageDao<T> {
 
     private SharedPreferences mPreferences;
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.getDefault());
     private ExecutorService mService;
 
-    public PreCacheDao( Class<T> clazz) {
+    public PreStorageDao(Class<T> clazz) {
         super(clazz);
         mPreferences = mContext.getSharedPreferences(
                 clazz.getCanonicalName(), Context.MODE_PRIVATE);
