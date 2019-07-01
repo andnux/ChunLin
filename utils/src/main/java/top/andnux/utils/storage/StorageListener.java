@@ -6,4 +6,5 @@ public interface StorageListener<T> {
 
     void onFail(Exception e);
 
+    void onComplete();
 }
