@@ -1,10 +1,11 @@
-package top.andnux.http.netstate;
+package top.andnux.utils.netstate;
 
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.os.Build;
 import android.util.Log;
+
 import androidx.annotation.RequiresApi;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
