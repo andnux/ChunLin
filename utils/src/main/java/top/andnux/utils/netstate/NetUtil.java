@@ -1,4 +1,4 @@
-package top.andnux.http.netstate;
+package top.andnux.utils.netstate;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

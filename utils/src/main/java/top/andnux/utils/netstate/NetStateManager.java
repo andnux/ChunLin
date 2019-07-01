@@ -1,4 +1,4 @@
-package top.andnux.http.netstate;
+package top.andnux.utils.netstate;
 
 import android.app.Application;
 import android.content.Context;
@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import top.andnux.http.netstate.annotation.NetSupport;
-import top.andnux.http.utils.Utils;
+import top.andnux.utils.Utils;
+import top.andnux.utils.netstate.annotation.NetSupport;
 
 public class NetStateManager implements NetStateListener {
 
@@ -72,7 +72,7 @@ public class NetStateManager implements NetStateListener {
      *
      * @param observer
      */
-    public void registerObserver(NetStateListener observer) {
+    public void registerNetStateListener(NetStateListener observer) {
         if (mNetChangeObservers == null) {
             mNetChangeObservers = new ArrayList<>();
         }
@@ -91,7 +91,7 @@ public class NetStateManager implements NetStateListener {
      *
      * @param observer
      */
-    public void unRegisterObserver(NetStateListener observer) {
+    public void unRegisterNetStateListener(NetStateListener observer) {
         if (mNetChangeObservers != null) {
             mNetChangeObservers.remove(observer);
         }

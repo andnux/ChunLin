@@ -3,12 +3,11 @@ package top.andnux.chunlin;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import top.andnux.http.netstate.NetStateManager;
-import top.andnux.http.netstate.NetState;
-import top.andnux.http.netstate.annotation.NetSupport;
 import top.andnux.ui.snackbar.EasySnackBar;
 import top.andnux.utils.common.ToastUtil;
+import top.andnux.utils.netstate.NetState;
+import top.andnux.utils.netstate.NetStateManager;
+import top.andnux.utils.netstate.annotation.NetSupport;
 
 
 public class Main3Activity extends AppCompatActivity {
