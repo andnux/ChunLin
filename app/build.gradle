@@ -44,6 +44,7 @@ dependencies {
     implementation project(path: ':zbar')
     implementation project(path: ':locale')
     implementation project(path: ':web')
+    implementation project(path: ':skin')
 
     //测试相关
     testImplementation 'junit:junit:4.12'
