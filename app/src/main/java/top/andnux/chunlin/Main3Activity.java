@@ -3,11 +3,14 @@ package top.andnux.chunlin;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import top.andnux.ui.snackbar.EasySnackBar;
 import top.andnux.utils.common.ToastUtil;
 import top.andnux.utils.netstate.NetState;
 import top.andnux.utils.netstate.NetStateManager;
 import top.andnux.utils.netstate.annotation.NetSupport;
+import top.andnux.utils.storage.StorageDao;
+import top.andnux.utils.storage.StorageFactory;
 
 
 public class Main3Activity extends AppCompatActivity {
@@ -19,6 +22,14 @@ public class Main3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
         NetStateManager.getInstance().registerObserver(this);
+        StorageDao<Config> preDao = StorageFactory.getPreDao(Config.class);
+        Config data = new Config();
+        data.setName("张春林");
+        try {
+            preDao.save(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @NetSupport(NetState.AUTO)
