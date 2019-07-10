@@ -45,6 +45,7 @@ dependencies {
     implementation project(path: ':locale')
     implementation project(path: ':web')
     implementation project(path: ':skin')
+    implementation project(path: ':pay')
 
     //测试相关
     testImplementation 'junit:junit:4.12'

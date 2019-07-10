@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -149,6 +150,27 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
                 mStateLayout.showContentView();
             });
         }
+    }
+
+    @Override
+    public void toast(String msg) {
+        Toast toast = Toast.makeText(getContext(), "", Toast.LENGTH_SHORT);
+        toast.setText(msg);
+        toast.show();
+    }
+
+    @Override
+    public void toastError(String msg) {
+        Toast toast = Toast.makeText(getContext(), "", Toast.LENGTH_SHORT);
+        toast.setText(msg);
+        toast.show();
+    }
+
+    @Override
+    public void toastSuccess(String msg) {
+        Toast toast = Toast.makeText(getContext(), "", Toast.LENGTH_SHORT);
+        toast.setText(msg);
+        toast.show();
     }
 
     @Override

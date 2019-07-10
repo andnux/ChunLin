@@ -19,6 +19,10 @@ public interface BaseView {
 
     void toast(String msg);
 
+    void toastError(String msg);
+
+    void toastSuccess(String msg);
+
     void startActivity(Class<? extends Activity> clazz);
 
     void startActivity(Class<? extends Activity> clazz, Bundle extras);
