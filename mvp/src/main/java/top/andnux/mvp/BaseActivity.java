@@ -144,6 +144,24 @@ public abstract class BaseActivity<V extends BaseView,
     }
 
     @Override
+    public void toastError(String msg) {
+        runOnUiThread(() -> {
+            Toast toast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
+            toast.setText(msg);
+            toast.show();
+        });
+    }
+
+    @Override
+    public void toastSuccess(String msg) {
+        runOnUiThread(() -> {
+            Toast toast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
+            toast.setText(msg);
+            toast.show();
+        });
+    }
+
+    @Override
     public void startActivity(Class<? extends Activity> clazz) {
         startActivity(clazz, null);
     }
