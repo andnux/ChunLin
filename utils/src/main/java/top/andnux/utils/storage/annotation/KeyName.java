@@ -10,6 +10,4 @@ import java.lang.annotation.Target;
 public @interface KeyName {
 
     String value() default "";
-
-    String oldValue() default "";
 }
