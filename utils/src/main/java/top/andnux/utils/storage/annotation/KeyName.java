@@ -11,5 +11,4 @@ public @interface KeyName {
 
     String value() default "";
 
-    String oldValue() default "";
 }
