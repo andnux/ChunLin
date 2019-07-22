@@ -12,11 +12,8 @@
       <module fileurl="file://$PROJECT_DIR$/locale/locale.iml" filepath="$PROJECT_DIR$/locale/locale.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvp/mvp.iml" filepath="$PROJECT_DIR$/mvp/mvp.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvvm/mvvm.iml" filepath="$PROJECT_DIR$/mvvm/mvvm.iml" />
-<<<<<<< HEAD
-=======
       <module fileurl="file://$PROJECT_DIR$/pay/pay.iml" filepath="$PROJECT_DIR$/pay/pay.iml" />
       <module fileurl="file://$PROJECT_DIR$/skin/skin.iml" filepath="$PROJECT_DIR$/skin/skin.iml" />
->>>>>>> 修改bug
       <module fileurl="file://$PROJECT_DIR$/ui/ui.iml" filepath="$PROJECT_DIR$/ui/ui.iml" />
       <module fileurl="file://$PROJECT_DIR$/utils/utils.iml" filepath="$PROJECT_DIR$/utils/utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />

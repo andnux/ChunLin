@@ -1,19 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-26@aar">
     <ANNOTATIONS>
-<<<<<<< HEAD
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/13dfbb9b43a4044734d1e132423424dd/annotations.zip!/" />
-    </ANNOTATIONS>
-    <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/13dfbb9b43a4044734d1e132423424dd/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/13dfbb9b43a4044734d1e132423424dd/res" />
-=======
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/21d8870e831083ecafe54909a2c91f85/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/21d8870e831083ecafe54909a2c91f85/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/21d8870e831083ecafe54909a2c91f85/res" />
->>>>>>> 修改bug
     </CLASSES>
     <JAVADOC />
     <SOURCES>
