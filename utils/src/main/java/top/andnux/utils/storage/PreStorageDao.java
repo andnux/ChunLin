@@ -3,7 +3,9 @@ package top.andnux.utils.storage;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import android.util.Log;
 
+import java.io.File;
 import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,6 +13,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
+import top.andnux.utils.storage.annotation.FileName;
+import top.andnux.utils.storage.annotation.KeyName;
 public class PreStorageDao<T> extends BaseStorageDao<T> {
 
     private SharedPreferences mPreferences;
@@ -18,8 +22,13 @@ public class PreStorageDao<T> extends BaseStorageDao<T> {
 
     public PreStorageDao(Class<T> clazz) {
         super(clazz);
-        mPreferences = mContext.getSharedPreferences(
-                clazz.getCanonicalName(), Context.MODE_PRIVATE);
+        FileName annotation = clazz.getAnnotation(FileName.class);
+        String value = clazz.getCanonicalName();
+        if (annotation != null && !TextUtils.isEmpty(annotation.value())) {
+            value = annotation.value();
+        }
+        String fileName = value;
+        mPreferences = mContext.getSharedPreferences(fileName, Context.MODE_PRIVATE);
     }
 
     @Override
@@ -33,22 +42,27 @@ public class PreStorageDao<T> extends BaseStorageDao<T> {
         edit.apply();
     }
 
-    protected void saveData(SharedPreferences sp, T data,
+    protected void saveData(SharedPreferences sp, Object data,
                             SharedPreferences.Editor edit,
                             Field field) throws Exception {
+        KeyName annotation = field.getAnnotation(KeyName.class);
+        String name = field.getName();
+        if (annotation != null && !TextUtils.isEmpty(annotation.value())) {
+            name = annotation.value();
+        }
         if (field.getType().equals(String.class)) {
-            edit.putString(field.getName(), (String) field.get(data));
+            edit.putString(name, (String) field.get(data));
         } else if (field.getType().equals(int.class) || field.getType().equals(Integer.class)) {
-            edit.putInt(field.getName(), (Integer) field.get(data));
+            edit.putInt(name, (Integer) field.get(data));
         } else if (field.getType().equals(Long.class)) {
-            edit.putLong(field.getName(), (Long) field.get(data));
+            edit.putLong(name, (Long) field.get(data));
         } else if (field.getType().equals(Float.class)) {
-            edit.putFloat(field.getName(), (Float) field.get(data));
+            edit.putFloat(name, (Float) field.get(data));
         } else if (field.getType().equals(boolean.class) ||
                 field.getType().equals(Boolean.class)) {
-            edit.putBoolean(field.getName(), (Boolean) field.get(data));
+            edit.putBoolean(name, (Boolean) field.get(data));
         } else if (field.getType().equals(Date.class)) {
-            edit.putString(field.getName(), sdf.format(field.get(data)));
+            edit.putString(name, sdf.format(field.get(data)));
         }
     }
 
@@ -79,27 +93,32 @@ public class PreStorageDao<T> extends BaseStorageDao<T> {
         mPreferences.edit().clear().apply();
     }
 
-    protected void loadData(SharedPreferences sp, T t, Field field)
+    protected void loadData(SharedPreferences sp, Object t, Field field)
             throws Exception {
+        KeyName annotation = field.getAnnotation(KeyName.class);
+        String name = field.getName();
+        if (annotation != null && !TextUtils.isEmpty(annotation.value())) {
+            name = annotation.value();
+        }
         if (field.getType().equals(String.class)) {
-            String value = sp.getString(field.getName(), "");
+            String value = sp.getString(name, "");
             field.set(t, value);
         } else if (field.getType().equals(Integer.class)
                 || field.getType().equals(int.class)) {
-            Integer value = sp.getInt(field.getName(), 0);
+            Integer value = sp.getInt(name, 0);
             field.set(t, value);
         } else if (field.getType().equals(Float.class)) {
-            Float value = sp.getFloat(field.getName(), 0);
+            Float value = sp.getFloat(name, 0);
             field.set(t, value);
         } else if (field.getType().equals(Long.class)) {
-            Long value = sp.getLong(field.getName(), 0);
+            Long value = sp.getLong(name, 0);
             field.set(t, value);
         } else if (field.getType().equals(Boolean.class) ||
                 field.getType().equals(boolean.class)) {
-            Boolean value = mPreferences.getBoolean(field.getName(), false);
+            Boolean value = mPreferences.getBoolean(name, false);
             field.set(t, value);
         } else if (field.getType().equals(Date.class)) {
-            String value = mPreferences.getString(field.getName(), "");
+            String value = mPreferences.getString(name, "");
             try {
                 if (!TextUtils.isEmpty(value)) {
                     Date parse = sdf.parse(value);

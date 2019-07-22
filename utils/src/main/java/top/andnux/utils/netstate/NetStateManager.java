@@ -1,4 +1,4 @@
-package top.andnux.http.netstate;
+package top.andnux.utils.netstate;
 
 import android.app.Application;
 import android.content.Context;
@@ -16,16 +16,12 @@ import java.util.Map;
 import java.util.Set;
 
 import top.andnux.utils.Utils;
-import top.andnux.utils.netstate.NetState;
-import top.andnux.utils.netstate.NetStateBean;
-import top.andnux.utils.netstate.NetStateListener;
-import top.andnux.utils.netstate.NetStateReceiver;
-import top.andnux.utils.netstate.NetworkCallback;
 import top.andnux.utils.netstate.annotation.NetSupport;
 
 public class NetStateManager implements NetStateListener {
 
     private static final NetStateManager ourInstance = new NetStateManager();
+    private boolean isFirst = true;
 
     public static NetStateManager getInstance() {
         return ourInstance;
@@ -35,6 +31,7 @@ public class NetStateManager implements NetStateListener {
     private NetStateListener mStateListener;
     private NetStateReceiver mNetBroadcastReceiver;
     private Map<Object, List<NetStateBean>> methodMap = new ArrayMap<>();
+    private static ArrayList<NetStateListener> mNetChangeObservers = new ArrayList<>();
 
     private NetStateManager() {
         mNetBroadcastReceiver = new NetStateReceiver();
@@ -50,7 +47,7 @@ public class NetStateManager implements NetStateListener {
         mStateListener = stateListener;
     }
 
-    private void init(Application context) {
+    public void init(Application context) {
         this.mApplication = context;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             ConnectivityManager service = (ConnectivityManager) NetStateManager.getInstance().getApplication().
@@ -70,10 +67,43 @@ public class NetStateManager implements NetStateListener {
     }
 
     public void registerObserver(Object object) {
+        if (mApplication == null){
+            init(Utils.getApp());
+        }
         List<NetStateBean> methodBeans = methodMap.get(object);
         if (methodBeans == null) {
             methodBeans = findAnnotationMethod(object);
             methodMap.put(object, methodBeans);
+        }
+    }
+
+    /**
+     * 添加网络监听
+     *
+     * @param observer
+     */
+    public void registerNetStateListener(NetStateListener observer) {
+        if (mNetChangeObservers == null) {
+            mNetChangeObservers = new ArrayList<>();
+        }
+        mNetChangeObservers.add(observer);
+        if (isFirst) {
+            isFirst = false;
+            NetState netState = NetUtil.getNetState();
+            if (netState == NetState.NONE && observer != null) {
+                observer.onConnect(NetState.NONE);
+            }
+        }
+    }
+
+    /**
+     * 移除网络监听
+     *
+     * @param observer
+     */
+    public void unRegisterNetStateListener(NetStateListener observer) {
+        if (mNetChangeObservers != null) {
+            mNetChangeObservers.remove(observer);
         }
     }
 
@@ -89,7 +119,7 @@ public class NetStateManager implements NetStateListener {
             }
             Class<?>[] parameterTypes = method.getParameterTypes();
             if (parameterTypes.length != 1) {
-                throw new IllegalArgumentException("NetWork 注解得方法只能有一个参数");
+                throw new IllegalArgumentException("NetSupport 注解得方法只能有一个参数");
             }
             list.add(new NetStateBean(annotation.value(), parameterTypes[0], method));
         }
@@ -119,6 +149,15 @@ public class NetStateManager implements NetStateListener {
     public void onConnect(NetState state) {
         postMessage(state);
         if (mStateListener != null) mStateListener.onConnect(state);
+        if (!mNetChangeObservers.isEmpty()) {
+            int size = mNetChangeObservers.size();
+            for (int i = 0; i < size; i++) {
+                NetStateListener observer = mNetChangeObservers.get(i);
+                if (observer != null) {
+                    observer.onConnect(state);
+                }
+            }
+        }
     }
 
     private void postMessage(NetState state) {
@@ -173,5 +212,14 @@ public class NetStateManager implements NetStateListener {
     public void onDisConnect() {
         postMessage(NetState.NONE);
         if (mStateListener != null) mStateListener.onDisConnect();
+        if (!mNetChangeObservers.isEmpty()) {
+            int size = mNetChangeObservers.size();
+            for (int i = 0; i < size; i++) {
+                NetStateListener observer = mNetChangeObservers.get(i);
+                if (observer != null) {
+                    observer.onConnect(NetState.NONE);
+                }
+            }
+        }
     }
 }

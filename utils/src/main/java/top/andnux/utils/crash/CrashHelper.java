@@ -52,9 +52,7 @@ public class CrashHelper implements Thread.UncaughtExceptionHandler {
         ex.printStackTrace(printWriter);
         final String stacktrace = result.toString();
         final String fileName = DateFormat.format("yyyy年MM月dd日 HH时mm分ss秒", System.currentTimeMillis()) + ".txt";
-        String stringBuffer = PhoneUtil.getPhoneInfo(mContext) +
-                "----------------------------------------------\r\n" +
-                stacktrace;
+        String stringBuffer = PhoneUtil.getPhoneInfo(mContext);
         Logger.getInstance().e("exception", stringBuffer,true,fileName);
         if (defaultUEH != null){
             defaultUEH.uncaughtException(thread, ex);

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:gravity="center"
     tools:context=".Main3Activity">
 
@@ -19,7 +20,13 @@
         app:expandIcon="@drawable/ic_up"
         app:retractIcon="@drawable/ic_down"
         app:expandTextColor="@color/colorPrimaryDark"
-        app:retractTextColor="@color/colorPrimaryDark"
-        app:expandTotalLine="3" />
+        app:retractTextColor="@color/colorPrimaryDark" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:gravity="center"
+        android:text="下载"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp18" />
 </LinearLayout>

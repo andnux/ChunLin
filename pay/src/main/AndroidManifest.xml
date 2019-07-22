@@ -2,7 +2,6 @@
     package="top.andnux.pay">
 
     <application>
-
         <activity
             android:name=".wxapi.WXPayEntryActivity"
             android:exported="true"

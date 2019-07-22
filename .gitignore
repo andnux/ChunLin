@@ -1,5 +1,7 @@
-.gradle/5.1.1/vcsMetadata-1/
-.idea/workspace.xml
+.gradle/
+*/*.iml
+.gradle
+.idea
 adapter/build/
 app/build/
 base/build/
@@ -15,3 +17,5 @@ web/build/
 zbar/build/
 glide/.externalNativeBuild/
 zbar/.externalNativeBuild/
+pay/build/
+skin/build/
