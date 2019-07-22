@@ -7,7 +7,7 @@ import android.net.NetworkInfo;
 public class NetUtil {
 
     public static boolean isNetworkAvailable() {
-        ConnectivityManager service = (ConnectivityManager) NetStateManager.getInstance().getApplication().
+        ConnectivityManager service = (ConnectivityManager) top.andnux.http.netstate.NetStateManager.getInstance().getApplication().
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         if (service == null) return false;
         NetworkInfo[] networkInfos = service.getAllNetworkInfo();
@@ -20,7 +20,7 @@ public class NetUtil {
     }
 
     public static NetState getNetState() {
-        ConnectivityManager service = (ConnectivityManager) NetStateManager.getInstance().getApplication().
+        ConnectivityManager service = (ConnectivityManager) top.andnux.http.netstate.NetStateManager.getInstance().getApplication().
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         if (service == null) return NetState.NONE;
         NetworkInfo activeNetworkInfo = service.getActiveNetworkInfo();

@@ -15,8 +15,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import top.andnux.http.netstate.annotation.NetWork;
-import top.andnux.http.utils.Utils;
+import top.andnux.utils.Utils;
+import top.andnux.utils.netstate.NetState;
+import top.andnux.utils.netstate.NetStateBean;
+import top.andnux.utils.netstate.NetStateListener;
+import top.andnux.utils.netstate.NetStateReceiver;
+import top.andnux.utils.netstate.NetworkCallback;
+import top.andnux.utils.netstate.annotation.NetSupport;
 
 public class NetStateManager implements NetStateListener {
 
@@ -34,7 +39,7 @@ public class NetStateManager implements NetStateListener {
     private NetStateManager() {
         mNetBroadcastReceiver = new NetStateReceiver();
         mNetBroadcastReceiver.setNetListener(this);
-        init(Utils.getApplicationByReflection());
+        init(Utils.getApp());
     }
 
     public NetStateListener getStateListener() {
@@ -78,7 +83,7 @@ public class NetStateManager implements NetStateListener {
         Method[] methods = aClass.getDeclaredMethods();
         for (Method method : methods) {
             method.setAccessible(true);
-            NetWork annotation = method.getAnnotation(NetWork.class);
+            NetSupport annotation = method.getAnnotation(NetSupport.class);
             if (annotation == null) {
                 continue;
             }
@@ -111,12 +116,12 @@ public class NetStateManager implements NetStateListener {
     }
 
     @Override
-    public void onConnect(NetType state) {
+    public void onConnect(NetState state) {
         postMessage(state);
         if (mStateListener != null) mStateListener.onConnect(state);
     }
 
-    private void postMessage(NetType state) {
+    private void postMessage(NetState state) {
         try {
             Set<Object> set = methodMap.keySet();
             for (Object object : set) {
@@ -126,24 +131,24 @@ public class NetStateManager implements NetStateListener {
                         Method method = bean.getMethod();
                         switch (bean.getNetState()) {
                             case AUTO:
-                                if (state == NetType.WIFI
-                                        || state == NetType.FLOW
-                                        || state == NetType.NONE) {
+                                if (state == NetState.WIFI
+                                        || state == NetState.MOBILE
+                                        || state == NetState.NONE) {
                                     invoke(method, object, state);
                                 }
                                 break;
                             case WIFI:
-                                if (state == NetType.WIFI || state == NetType.NONE) {
+                                if (state == NetState.WIFI || state == NetState.NONE) {
                                     invoke(method, object, state);
                                 }
                                 break;
-                            case FLOW:
-                                if (state == NetType.FLOW || state == NetType.NONE) {
+                            case MOBILE:
+                                if (state == NetState.MOBILE || state == NetState.NONE) {
                                     invoke(method, object, state);
                                 }
                                 break;
                             case NONE:
-                                if (state == NetType.NONE) {
+                                if (state == NetState.NONE) {
                                     invoke(method, object, state);
                                 }
                                 break;
@@ -156,7 +161,7 @@ public class NetStateManager implements NetStateListener {
         }
     }
 
-    private void invoke(Method method, Object object, NetType state) {
+    private void invoke(Method method, Object object, NetState state) {
         try {
             method.setAccessible(true);
             method.invoke(object, state);
@@ -164,10 +169,9 @@ public class NetStateManager implements NetStateListener {
             e.printStackTrace();
         }
     }
-
     @Override
     public void onDisConnect() {
-        postMessage(NetType.NONE);
+        postMessage(NetState.NONE);
         if (mStateListener != null) mStateListener.onDisConnect();
     }
 }
