@@ -1,1 +1,1533 @@
-ninja: no work to do.
+[1/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/config.c.o
+[2/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/convert.c.o
+[3/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/image.c.o
+[4/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/scanner.c.o
+[5/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/error.c.o
+[6/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/symbol.c.o
+[7/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/decoder.c.o
+[8/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/img_scanner.c.o
+[9/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/video.c.o
+[10/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/decoder/ean.c.o
+[11/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/decoder/i25.c.o
+[12/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/qrcode/binarize.c.o
+[13/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/qrcode/bch15_5.c.o
+[14/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/decoder/code39.c.o
+[15/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/video/null.c.o
+[16/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/decoder/qr_finder.c.o
+[17/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/decoder/databar.c.o
+[18/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/decoder/codabar.c.o
+[19/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/refcnt.c.o
+[20/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/decoder/code93.c.o
+[21/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/decoder/code128.c.o
+[22/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/qrcode/util.c.o
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\binarize.c:540:53: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    for(logwindw=4;logwindw<8&&(1<<logwindw)<(_width+7>>3);logwindw++);
+                                              ~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\binarize.c:540:53: note: place parentheses around the '+' expression to silence this warning
+    for(logwindw=4;logwindw<8&&(1<<logwindw)<(_width+7>>3);logwindw++);
+                                                    ^
+                                              (       )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\binarize.c:541:54: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    for(logwindh=4;logwindh<8&&(1<<logwindh)<(_height+7>>3);logwindh++);
+                                              ~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\binarize.c:541:54: note: place parentheses around the '+' expression to silence this warning
+    for(logwindh=4;logwindh<8&&(1<<logwindh)<(_height+7>>3);logwindh++);
+                                                     ^
+                                              (        )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\binarize.c:548:31: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+      col_sums[x]=(g<<logwindh-1)+g;
+                    ~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\binarize.c:548:31: note: place parentheses around the '-' expression to silence this warning
+      col_sums[x]=(g<<logwindh-1)+g;
+                              ^
+                      (         )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\binarize.c:562:31: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+      m=(col_sums[0]<<logwindw-1)+col_sums[0];
+                    ~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\binarize.c:562:31: note: place parentheses around the '-' expression to silence this warning
+      m=(col_sums[0]<<logwindw-1)+col_sums[0];
+                              ^
+                      (         )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\binarize.c:571:29: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+        mask[y*_width+x]=-(g+3<<logwindw+logwindh<m)&0xFF;
+                           ~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\binarize.c:571:29: note: place parentheses around the '+' expression to silence this warning
+        mask[y*_width+x]=-(g+3<<logwindw+logwindh<m)&0xFF;
+                            ^
+                           (  )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\binarize.c:571:41: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+        mask[y*_width+x]=-(g+3<<logwindw+logwindh<m)&0xFF;
+                              ~~~~~~~~~~^~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\binarize.c:571:41: note: place parentheses around the '+' expression to silence this warning
+        mask[y*_width+x]=-(g+3<<logwindw+logwindh<m)&0xFF;
+                                        ^
+                                (                )
+6 warnings generated.
+[23/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbarjni.c.o
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\bch15_5.c:49:71: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    for (i = 0; i < 3; i++)for (j = 0; j < 5; j++)if (_y & 1 << 5 * i + j)p ^= gf16_exp[j * 3];
+                                                             ~~ ~~~~~~^~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\bch15_5.c:49:71: note: place parentheses around the '+' expression to silence this warning
+    for (i = 0; i < 3; i++)for (j = 0; j < 5; j++)if (_y & 1 << 5 * i + j)p ^= gf16_exp[j * 3];
+                                                                      ^
+                                                                (        )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\bch15_5.c:52:71: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    for (i = 0; i < 5; i++)for (j = 0; j < 3; j++)if (_y & 1 << 3 * i + j)p ^= gf16_exp[j * 5];
+                                                             ~~ ~~~~~~^~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\bch15_5.c:52:71: note: place parentheses around the '+' expression to silence this warning
+    for (i = 0; i < 5; i++)for (j = 0; j < 3; j++)if (_y & 1 << 3 * i + j)p ^= gf16_exp[j * 5];
+                                                                      ^
+                                                                (        )
+2 warnings generated.
+[24/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/qrcode/qrdectxt.c.o
+[25/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/qrcode/isaac.c.o
+[26/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/qrcode/qrdec.c.o
+[27/28] Building C object CMakeFiles/zbar.dir/src/main/cpp/zbar/qrcode/rs.c.o
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\decoder\ean.c:297:8: warning: logical not is only applied to the left hand side of this comparison [-Wlogical-not-parentheses]
+    if(!par == fwd) {
+       ^    ~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\decoder\ean.c:297:8: note: add parentheses after the '!' to evaluate the comparison first
+    if(!par == fwd) {
+       ^
+        (         )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\decoder\ean.c:297:8: note: add parentheses around left hand side expression to silence this warning
+    if(!par == fwd) {
+       ^
+       (   )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\decoder\ean.c:383:8: warning: logical not is only applied to the left hand side of this comparison [-Wlogical-not-parentheses]
+    if(!par == fwd) {
+       ^    ~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\decoder\ean.c:383:8: note: add parentheses after the '!' to evaluate the comparison first
+    if(!par == fwd) {
+       ^
+        (         )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\decoder\ean.c:383:8: note: add parentheses around left hand side expression to silence this warning
+    if(!par == fwd) {
+       ^
+       (   )
+2 warnings generated.
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:22:13: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    t=(g<<1)+b<<bshift;
+      ~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:22:13: note: place parentheses around the '+' expression to silence this warning
+    t=(g<<1)+b<<bshift;
+            ^
+      (       )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:64:6: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  u=x+1>>1;
+    ~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:64:6: note: place parentheses around the '+' expression to silence this warning
+  u=x+1>>1;
+     ^
+    (  )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:65:7: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  v=_y+1>>1;
+    ~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:65:7: note: place parentheses around the '+' expression to silence this warning
+  v=_y+1>>1;
+      ^
+    (   )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:71:8: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    u=x+1>>2;
+      ~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:71:8: note: place parentheses around the '+' expression to silence this warning
+    u=x+1>>2;
+       ^
+      (  )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:73:9: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    v=_y+r>>2*i;
+      ~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:73:9: note: place parentheses around the '+' expression to silence this warning
+    v=_y+r>>2*i;
+        ^
+      (   )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:76:10: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    _y=_y-(u+mask^mask)<<1;
+       ~~^~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:76:10: note: place parentheses around the '-' expression to silence this warning
+    _y=_y-(u+mask^mask)<<1;
+         ^
+       (               )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:78:11: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  return x+((1U<<shift)>>1)>>shift;
+         ~^~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\util.c:78:11: note: place parentheses around the '+' expression to silence this warning
+  return x+((1U<<shift)>>1)>>shift;
+          ^
+         (                 )
+7 warnings generated.
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:29:25: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:29:25: note: place parentheses around the '-' expression to silence this warning
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:30:29: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+              ~~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:30:29: note: place parentheses around the '+' expression to silence this warning
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+                ~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:33:25: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:33:25: note: place parentheses around the '-' expression to silence this warning
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:34:29: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+              ~~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:34:29: note: place parentheses around the '+' expression to silence this warning
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+                ~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:37:25: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:37:25: note: place parentheses around the '-' expression to silence this warning
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:38:29: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+              ~~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:38:29: note: place parentheses around the '+' expression to silence this warning
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+                ~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:41:25: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:41:25: note: place parentheses around the '-' expression to silence this warning
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:42:29: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+              ~~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:42:29: note: place parentheses around the '+' expression to silence this warning
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+                ~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:47:25: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:47:25: note: place parentheses around the '-' expression to silence this warning
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:48:29: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+              ~~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:48:29: note: place parentheses around the '+' expression to silence this warning
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+                ~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:51:25: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:51:25: note: place parentheses around the '-' expression to silence this warning
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:52:29: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+              ~~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:52:29: note: place parentheses around the '+' expression to silence this warning
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+                ~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:55:25: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:55:25: note: place parentheses around the '-' expression to silence this warning
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:56:29: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+              ~~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:56:29: note: place parentheses around the '+' expression to silence this warning
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+                ~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:59:25: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:59:25: note: place parentheses around the '-' expression to silence this warning
+    m[i]=y=m[(x&ISAAC_SZ-1<<2)>>2]+a+b&ISAAC_MASK;
+                ~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:60:29: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+              ~~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\isaac.c:60:29: note: place parentheses around the '+' expression to silence this warning
+    r[i]=b=m[y>>ISAAC_SZ_LOG+2&ISAAC_SZ-1]+x&ISAAC_MASK;
+                ~~~~~~~~~~~~^~
+16 warnings generated.
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\rs.c:67:23: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  return _gf->exp[loga+(255&-(loga&1))>>1];
+                  ~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\rs.c:67:23: note: place parentheses around the '+' expression to silence this warning
+  return _gf->exp[loga+(255&-(loga&1))>>1];
+                      ^
+                  (                   )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\rs.c:199:13: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  logd=logd2+(255&-(logd2&1))>>1;
+       ~~~~~^~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\rs.c:199:13: note: place parentheses around the '+' expression to silence this warning
+  logd=logd2+(255&-(logd2&1))>>1;
+            ^
+       (                     )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\rs.c:297:29: warning: '&&' within '||' [-Wlogical-op-parentheses]
+      if(nroots!=2||_x[0]!=s&&_x[1]!=s)_x[nroots++]=s;
+                  ~~~~~~~~~~^~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\rs.c:297:29: note: place parentheses around the '&&' expression to silence this warning
+      if(nroots!=2||_x[0]!=s&&_x[1]!=s)_x[nroots++]=s;
+                            ^
+                    (                 )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\rs.c:533:44: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    if(nerrors<=0||nerrors-_nerasures>_npar-_nerasures>>1)return -1;
+                                      ~~~~~^~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\rs.c:533:44: note: place parentheses around the '-' expression to silence this warning
+    if(nerrors<=0||nerrors-_nerasures>_npar-_nerasures>>1)return -1;
+                                           ^
+                                      (               )
+4 warnings generated.
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:159:32: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  return ((a->pos[0]>b->pos[0])-(a->pos[0]<b->pos[0])<<1)+
+          ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:159:32: note: place parentheses around the '-' expression to silence this warning
+  return ((a->pos[0]>b->pos[0])-(a->pos[0]<b->pos[0])<<1)+
+                               ^
+          (                                          )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:201:20: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      thresh=a->len+7>>2;
+             ~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:201:20: note: place parentheses around the '+' expression to silence this warning
+      thresh=a->len+7>>2;
+                   ^
+             (       )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:280:38: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  return ((b->nedge_pts>a->nedge_pts)-(b->nedge_pts<a->nedge_pts)<<2)+
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:280:38: note: place parentheses around the '-' expression to silence this warning
+  return ((b->nedge_pts>a->nedge_pts)-(b->nedge_pts<a->nedge_pts)<<2)+
+                                     ^
+          (                                                      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:281:26: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+   ((a->pos[1]>b->pos[1])-(a->pos[1]<b->pos[1])<<1)+
+    ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:281:26: note: place parentheses around the '-' expression to silence this warning
+   ((a->pos[1]>b->pos[1])-(a->pos[1]<b->pos[1])<<1)+
+                         ^
+    (                                          )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:537:63: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  dshift=QR_MAXI(0,QR_MAXI(qr_ilog(u),qr_ilog(abs(v)))+1-(_res+1>>1));
+                                                          ~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:537:63: note: place parentheses around the '+' expression to silence this warning
+  dshift=QR_MAXI(0,QR_MAXI(qr_ilog(u),qr_ilog(abs(v)))+1-(_res+1>>1));
+                                                          ~~~~^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:537:63: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  dshift=QR_MAXI(0,QR_MAXI(qr_ilog(u),qr_ilog(abs(v)))+1-(_res+1>>1));
+                                                          ~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:537:63: note: place parentheses around the '+' expression to silence this warning
+  dshift=QR_MAXI(0,QR_MAXI(qr_ilog(u),qr_ilog(abs(v)))+1-(_res+1>>1));
+                                                          ~~~~^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:540:12: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    _l[0]=v+dround>>dshift;
+          ~^~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:540:12: note: place parentheses around the '+' expression to silence this warning
+    _l[0]=v+dround>>dshift;
+           ^
+          (       )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:541:14: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    _l[1]=u+w+dround>>dshift;
+          ~~~^~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:541:14: note: place parentheses around the '+' expression to silence this warning
+    _l[1]=u+w+dround>>dshift;
+             ^
+          (         )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:544:14: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    _l[0]=u+w+dround>>dshift;
+          ~~~^~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:544:14: note: place parentheses around the '+' expression to silence this warning
+    _l[0]=u+w+dround>>dshift;
+             ^
+          (         )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:545:12: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    _l[1]=v+dround>>dshift;
+          ~^~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:545:12: note: place parentheses around the '+' expression to silence this warning
+    _l[1]=v+dround>>dshift;
+           ^
+          (       )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:583:47: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+   QR_MAXI(ymax-ybar,ybar-ymin)))-(QR_INT_BITS-1>>1));
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:583:47: note: place parentheses around the '-' expression to silence this warning
+   QR_MAXI(ymax-ybar,ybar-ymin)))-(QR_INT_BITS-1>>1));
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:583:47: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+   QR_MAXI(ymax-ybar,ybar-ymin)))-(QR_INT_BITS-1>>1));
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:583:47: note: place parentheses around the '-' expression to silence this warning
+   QR_MAXI(ymax-ybar,ybar-ymin)))-(QR_INT_BITS-1>>1));
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:587:21: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    dx=_p[i][0]-xbar+sround>>sshift;
+       ~~~~~~~~~~~~~^~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:587:21: note: place parentheses around the '+' expression to silence this warning
+    dx=_p[i][0]-xbar+sround>>sshift;
+                    ^
+       (                   )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:588:21: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    dy=_p[i][1]-ybar+sround>>sshift;
+       ~~~~~~~~~~~~~^~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:588:21: note: place parentheses around the '+' expression to silence this warning
+    dy=_p[i][1]-ybar+sround>>sshift;
+                    ^
+       (                   )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:670:4: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+   +(1<<_aff->ires>>1)>>_aff->ires;
+   ^~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:670:4: note: place parentheses around the '+' expression to silence this warning
+   +(1<<_aff->ires>>1)>>_aff->ires;
+   ^
+                      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:672:4: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+   +(1<<_aff->ires>>1)>>_aff->ires;
+   ^~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:672:4: note: place parentheses around the '+' expression to silence this warning
+   +(1<<_aff->ires>>1)>>_aff->ires;
+   ^
+                      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:678:61: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  _p[0]=(_aff->fwd[0][0]*_u+_aff->fwd[0][1]*_v+(1<<_aff->res-1)>>_aff->res)
+                                                 ~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:678:61: note: place parentheses around the '-' expression to silence this warning
+  _p[0]=(_aff->fwd[0][0]*_u+_aff->fwd[0][1]*_v+(1<<_aff->res-1)>>_aff->res)
+                                                            ^
+                                                   (          )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:678:47: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _p[0]=(_aff->fwd[0][0]*_u+_aff->fwd[0][1]*_v+(1<<_aff->res-1)>>_aff->res)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:678:47: note: place parentheses around the '+' expression to silence this warning
+  _p[0]=(_aff->fwd[0][0]*_u+_aff->fwd[0][1]*_v+(1<<_aff->res-1)>>_aff->res)
+                                              ^
+         (                                                     )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:680:61: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  _p[1]=(_aff->fwd[1][0]*_u+_aff->fwd[1][1]*_v+(1<<_aff->res-1)>>_aff->res)
+                                                 ~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:680:61: note: place parentheses around the '-' expression to silence this warning
+  _p[1]=(_aff->fwd[1][0]*_u+_aff->fwd[1][1]*_v+(1<<_aff->res-1)>>_aff->res)
+                                                            ^
+                                                   (          )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:680:47: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _p[1]=(_aff->fwd[1][0]*_u+_aff->fwd[1][1]*_v+(1<<_aff->res-1)>>_aff->res)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:680:47: note: place parentheses around the '+' expression to silence this warning
+  _p[1]=(_aff->fwd[1][0]*_u+_aff->fwd[1][1]*_v+(1<<_aff->res-1)>>_aff->res)
+                                              ^
+         (                                                     )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:744:19: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->fwd[0][0]=QR_FIXMUL(dx10,a20+a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:744:19: note: place parentheses around the '+' expression to silence this warning
+  _hom->fwd[0][0]=QR_FIXMUL(dx10,a20+a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:745:19: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->fwd[0][1]=QR_FIXMUL(dx20,a21+a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:745:19: note: place parentheses around the '+' expression to silence this warning
+  _hom->fwd[0][1]=QR_FIXMUL(dx20,a21+a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:747:19: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->fwd[1][0]=QR_FIXMUL(dy10,a20+a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:747:19: note: place parentheses around the '+' expression to silence this warning
+  _hom->fwd[1][0]=QR_FIXMUL(dy10,a20+a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:748:19: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->fwd[1][1]=QR_FIXMUL(dy20,a21+a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:748:19: note: place parentheses around the '+' expression to silence this warning
+  _hom->fwd[1][1]=QR_FIXMUL(dy20,a21+a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:750:22: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->fwd[2][0]=a20+r1>>s1;
+                  ~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:750:22: note: place parentheses around the '+' expression to silence this warning
+  _hom->fwd[2][0]=a20+r1>>s1;
+                     ^
+                  (     )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:751:22: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->fwd[2][1]=a21+r1>>s1;
+                  ~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:751:22: note: place parentheses around the '+' expression to silence this warning
+  _hom->fwd[2][1]=a21+r1>>s1;
+                     ^
+                  (     )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:752:26: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->fwd22=s1>_res?a22+(r1>>_res)>>s1-_res:a22<<_res-s1;
+                      ~~~^~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:752:26: note: place parentheses around the '+' expression to silence this warning
+  _hom->fwd22=s1>_res?a22+(r1>>_res)>>s1-_res:a22<<_res-s1;
+                         ^
+                      (             )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:752:41: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  _hom->fwd22=s1>_res?a22+(r1>>_res)>>s1-_res:a22<<_res-s1;
+                                    ~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:752:41: note: place parentheses around the '-' expression to silence this warning
+  _hom->fwd22=s1>_res?a22+(r1>>_res)>>s1-_res:a22<<_res-s1;
+                                        ^
+                                      (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:752:56: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  _hom->fwd22=s1>_res?a22+(r1>>_res)>>s1-_res:a22<<_res-s1;
+                                                 ~~~~~~^~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:752:56: note: place parentheses around the '-' expression to silence this warning
+  _hom->fwd22=s1>_res?a22+(r1>>_res)>>s1-_res:a22<<_res-s1;
+                                                       ^
+                                                   (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:765:19: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->inv[0][0]=QR_FIXMUL(_hom->fwd[1][1],a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:765:19: note: place parentheses around the '+' expression to silence this warning
+  _hom->inv[0][0]=QR_FIXMUL(_hom->fwd[1][1],a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:766:19: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->inv[0][1]=QR_FIXMUL(-_hom->fwd[0][1],a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:766:19: note: place parentheses around the '+' expression to silence this warning
+  _hom->inv[0][1]=QR_FIXMUL(-_hom->fwd[0][1],a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:767:19: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->inv[1][0]=QR_FIXMUL(-_hom->fwd[1][0],a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:767:19: note: place parentheses around the '+' expression to silence this warning
+  _hom->inv[1][0]=QR_FIXMUL(-_hom->fwd[1][0],a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:768:19: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->inv[1][1]=QR_FIXMUL(_hom->fwd[0][0],a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:768:19: note: place parentheses around the '+' expression to silence this warning
+  _hom->inv[1][1]=QR_FIXMUL(_hom->fwd[0][0],a22,r1,s1);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:769:19: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->inv[2][0]=QR_FIXMUL(_hom->fwd[1][0],_hom->fwd[2][1],
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:769:19: note: place parentheses around the '+' expression to silence this warning
+  _hom->inv[2][0]=QR_FIXMUL(_hom->fwd[1][0],_hom->fwd[2][1],
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:771:19: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->inv[2][1]=QR_FIXMUL(_hom->fwd[0][1],_hom->fwd[2][0],
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:771:19: note: place parentheses around the '+' expression to silence this warning
+  _hom->inv[2][1]=QR_FIXMUL(_hom->fwd[0][1],_hom->fwd[2][0],
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:773:15: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _hom->inv22=QR_FIXMUL(_hom->fwd[0][0],_hom->fwd[1][1],
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:773:15: note: place parentheses around the '+' expression to silence this warning
+  _hom->inv22=QR_FIXMUL(_hom->fwd[0][0],_hom->fwd[1][1],
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:790:30: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+   +_hom->inv22+(1<<_hom->res-1)>>_hom->res;
+                  ~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:790:30: note: place parentheses around the '-' expression to silence this warning
+   +_hom->inv22+(1<<_hom->res-1)>>_hom->res;
+                             ^
+                    (          )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:790:16: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+   +_hom->inv22+(1<<_hom->res-1)>>_hom->res;
+   ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:790:16: note: place parentheses around the '+' expression to silence this warning
+   +_hom->inv22+(1<<_hom->res-1)>>_hom->res;
+               ^
+                                )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:868:28: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  return ((a->edge>b->edge)-(a->edge<b->edge)<<1)+
+          ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:868:28: note: place parentheses around the '-' expression to silence this warning
+  return ((a->edge>b->edge)-(a->edge<b->edge)<<1)+
+                           ^
+          (                                  )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1090:69: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      thresh=qr_isqrt(qr_point_distance2(p0,p1)<<2*QR_FINDER_SUBPREC+1);
+                                               ~~~~~~~~~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1090:69: note: place parentheses around the '+' expression to silence this warning
+      thresh=qr_isqrt(qr_point_distance2(p0,p1)<<2*QR_FINDER_SUBPREC+1);
+                                                                    ^
+                                                 (                    )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1222:6: warning: logical not is only applied to the left hand side of this comparison [-Wlogical-not-parentheses]
+  if(!_img[_y0*_width+_x0]!=_v||!_img[_y1*_width+_x1]!=_v)return 1;
+     ^                    ~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1222:6: note: add parentheses after the '!' to evaluate the comparison first
+  if(!_img[_y0*_width+_x0]!=_v||!_img[_y1*_width+_x1]!=_v)return 1;
+     ^
+      (                       )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1222:6: note: add parentheses around left hand side expression to silence this warning
+  if(!_img[_y0*_width+_x0]!=_v||!_img[_y1*_width+_x1]!=_v)return 1;
+     ^
+     (                    )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1222:33: warning: logical not is only applied to the left hand side of this comparison [-Wlogical-not-parentheses]
+  if(!_img[_y0*_width+_x0]!=_v||!_img[_y1*_width+_x1]!=_v)return 1;
+                                ^                    ~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1222:33: note: add parentheses after the '!' to evaluate the comparison first
+  if(!_img[_y0*_width+_x0]!=_v||!_img[_y1*_width+_x1]!=_v)return 1;
+                                ^
+                                 (                       )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1222:33: note: add parentheses around left hand side expression to silence this warning
+  if(!_img[_y0*_width+_x0]!=_v||!_img[_y1*_width+_x1]!=_v)return 1;
+                                ^
+                                (                    )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1223:16: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  if(!_img[(_y0+_y1>>1)*_width+(_x0+_x1>>1)]==_v)return -1;
+            ~~~^~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1223:16: note: place parentheses around the '+' expression to silence this warning
+  if(!_img[(_y0+_y1>>1)*_width+(_x0+_x1>>1)]==_v)return -1;
+               ^
+            (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1223:36: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  if(!_img[(_y0+_y1>>1)*_width+(_x0+_x1>>1)]==_v)return -1;
+                                ~~~^~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1223:36: note: place parentheses around the '+' expression to silence this warning
+  if(!_img[(_y0+_y1>>1)*_width+(_x0+_x1>>1)]==_v)return -1;
+                                   ^
+                                (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1223:6: warning: logical not is only applied to the left hand side of this comparison [-Wlogical-not-parentheses]
+  if(!_img[(_y0+_y1>>1)*_width+(_x0+_x1>>1)]==_v)return -1;
+     ^                                      ~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1223:6: note: add parentheses after the '!' to evaluate the comparison first
+  if(!_img[(_y0+_y1>>1)*_width+(_x0+_x1>>1)]==_v)return -1;
+     ^
+      (                                         )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1223:6: note: add parentheses around left hand side expression to silence this warning
+  if(!_img[(_y0+_y1>>1)*_width+(_x0+_x1>>1)]==_v)return -1;
+     ^
+     (                                      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1264:8: warning: logical not is only applied to the left hand side of this comparison [-Wlogical-not-parentheses]
+    if(!_img[x0[1]*_width+x0[0]]!=_v)break;
+       ^                        ~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1264:8: note: add parentheses after the '!' to evaluate the comparison first
+    if(!_img[x0[1]*_width+x0[0]]!=_v)break;
+       ^
+        (                           )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1264:8: note: add parentheses around left hand side expression to silence this warning
+    if(!_img[x0[1]*_width+x0[0]]!=_v)break;
+       ^
+       (                        )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1276:8: warning: logical not is only applied to the left hand side of this comparison [-Wlogical-not-parentheses]
+    if(!_img[x1[1]*_width+x1[0]]!=_v)break;
+       ^                        ~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1276:8: note: add parentheses after the '!' to evaluate the comparison first
+    if(!_img[x1[1]*_width+x1[0]]!=_v)break;
+       ^
+        (                           )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1276:8: note: add parentheses around left hand side expression to silence this warning
+    if(!_img[x1[1]*_width+x1[0]]!=_v)break;
+       ^
+       (                        )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1279:21: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _p[0]=(x0[0]+x1[0]+1<<QR_FINDER_SUBPREC)>>1;
+         ~~~~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1279:21: note: place parentheses around the '+' expression to silence this warning
+  _p[0]=(x0[0]+x1[0]+1<<QR_FINDER_SUBPREC)>>1;
+                    ^
+         (            )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1280:21: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _p[1]=(x0[1]+x1[1]+1<<QR_FINDER_SUBPREC)>>1;
+         ~~~~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1280:21: note: place parentheses around the '+' expression to silence this warning
+  _p[1]=(x0[1]+x1[1]+1<<QR_FINDER_SUBPREC)>>1;
+                    ^
+         (            )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1299:6: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  n=n+round>>shift;
+    ~^~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1299:6: note: place parentheses around the '+' expression to silence this warning
+  n=n+round>>shift;
+     ^
+    (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1300:6: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  d=d+round>>shift;
+    ~^~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1300:6: note: place parentheses around the '+' expression to silence this warning
+  d=d+round>>shift;
+     ^
+    (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1606:7: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  a00=QR_FIXMUL(dx10,a20+a22,round,shift);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1606:7: note: place parentheses around the '+' expression to silence this warning
+  a00=QR_FIXMUL(dx10,a20+a22,round,shift);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1607:7: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  a01=QR_FIXMUL(dx20,a21+a22,round,shift);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1607:7: note: place parentheses around the '+' expression to silence this warning
+  a01=QR_FIXMUL(dx20,a21+a22,round,shift);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1608:7: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  a10=QR_FIXMUL(dy10,a20+a22,round,shift);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1608:7: note: place parentheses around the '+' expression to silence this warning
+  a10=QR_FIXMUL(dy10,a20+a22,round,shift);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1609:7: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  a11=QR_FIXMUL(dy20,a21+a22,round,shift);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1609:7: note: place parentheses around the '+' expression to silence this warning
+  a11=QR_FIXMUL(dy20,a21+a22,round,shift);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:47:59: note: expanded from macro 'QR_FIXMUL'
+#define QR_FIXMUL(_a,_b,_r,_s) ((int)((_a)*(long long)(_b)+(_r)>>(_s)))
+                                      ~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1621:33: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+   +(i20?QR_DIVROUND(a22,i20):0)+round>>shift;
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1621:33: note: place parentheses around the '+' expression to silence this warning
+   +(i20?QR_DIVROUND(a22,i20):0)+round>>shift;
+                                ^
+                                      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1623:33: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+   +(i21?QR_DIVROUND(a22,i21):0)+round>>shift;
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1623:33: note: place parentheses around the '+' expression to silence this warning
+   +(i21?QR_DIVROUND(a22,i21):0)+round>>shift;
+                                ^
+                                      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1624:23: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _cell->fwd[2][2]=a22+round>>shift;
+                   ~~~^~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1624:23: note: place parentheses around the '+' expression to silence this warning
+  _cell->fwd[2][2]=a22+round>>shift;
+                      ^
+                   (        )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1643:23: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _cell->fwd[0][2]=a02+2>>2;
+                   ~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1643:23: note: place parentheses around the '+' expression to silence this warning
+  _cell->fwd[0][2]=a02+2>>2;
+                      ^
+                   (    )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1644:23: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  _cell->fwd[1][2]=a12+2>>2;
+                   ~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1644:23: note: place parentheses around the '+' expression to silence this warning
+  _cell->fwd[1][2]=a12+2>>2;
+                      ^
+                   (    )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1774:44: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    x=_cell->fwd[0][0]*u+_cell->fwd[0][1]*v+_cell->fwd[0][2]<<QR_ALIGN_SUBPREC;
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1774:44: note: place parentheses around the '+' expression to silence this warning
+    x=_cell->fwd[0][0]*u+_cell->fwd[0][1]*v+_cell->fwd[0][2]<<QR_ALIGN_SUBPREC;
+                                           ^
+      (                                                     )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1775:44: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    y=_cell->fwd[1][0]*u+_cell->fwd[1][1]*v+_cell->fwd[1][2]<<QR_ALIGN_SUBPREC;
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1775:44: note: place parentheses around the '+' expression to silence this warning
+    y=_cell->fwd[1][0]*u+_cell->fwd[1][1]*v+_cell->fwd[1][2]<<QR_ALIGN_SUBPREC;
+                                           ^
+      (                                                     )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1776:44: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    w=_cell->fwd[2][0]*u+_cell->fwd[2][1]*v+_cell->fwd[2][2]<<QR_ALIGN_SUBPREC;
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1776:44: note: place parentheses around the '+' expression to silence this warning
+    w=_cell->fwd[2][0]*u+_cell->fwd[2][1]*v+_cell->fwd[2][2]<<QR_ALIGN_SUBPREC;
+                                           ^
+      (                                                     )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1848:52: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      x0=p[MASK_COORDS[i][1]][MASK_COORDS[i][0]][0]+dx>>QR_FINDER_SUBPREC;
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1848:52: note: place parentheses around the '+' expression to silence this warning
+      x0=p[MASK_COORDS[i][1]][MASK_COORDS[i][0]][0]+dx>>QR_FINDER_SUBPREC;
+                                                   ^
+         (                                            )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1850:52: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      y0=p[MASK_COORDS[i][1]][MASK_COORDS[i][0]][1]+dy>>QR_FINDER_SUBPREC;
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1850:52: note: place parentheses around the '+' expression to silence this warning
+      y0=p[MASK_COORDS[i][1]][MASK_COORDS[i][0]][1]+dy>>QR_FINDER_SUBPREC;
+                                                   ^
+         (                                            )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1852:56: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      x1=p[4-MASK_COORDS[i][1]][4-MASK_COORDS[i][0]][0]+dx>>QR_FINDER_SUBPREC;
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1852:56: note: place parentheses around the '+' expression to silence this warning
+      x1=p[4-MASK_COORDS[i][1]][4-MASK_COORDS[i][0]][0]+dx>>QR_FINDER_SUBPREC;
+                                                       ^
+         (                                                )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1854:56: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      y1=p[4-MASK_COORDS[i][1]][4-MASK_COORDS[i][0]][1]+dy>>QR_FINDER_SUBPREC;
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:1854:56: note: place parentheses around the '+' expression to silence this warning
+      y1=p[4-MASK_COORDS[i][1]][4-MASK_COORDS[i][0]][1]+dy>>QR_FINDER_SUBPREC;
+                                                       ^
+         (                                                )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2040:41: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  ox=(_aff->x0<<_aff->res)+(1<<_aff->res-1);
+                             ~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2040:41: note: place parentheses around the '-' expression to silence this warning
+  ox=(_aff->x0<<_aff->res)+(1<<_aff->res-1);
+                                        ^
+                               (          )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2041:41: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  oy=(_aff->y0<<_aff->res)+(1<<_aff->res-1);
+                             ~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2041:41: note: place parentheses around the '-' expression to silence this warning
+  oy=(_aff->y0<<_aff->res)+(1<<_aff->res-1);
+                                        ^
+                               (          )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2070:35: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    rdone=rv>=QR_MINI(bv,_dl->o[1]+bv>>1)||nrempty>14;
+                         ~~~~~~~~~^~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:37: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                    ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2070:35: note: place parentheses around the '+' expression to silence this warning
+    rdone=rv>=QR_MINI(bv,_dl->o[1]+bv>>1)||nrempty>14;
+                         ~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:37: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                    ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2070:35: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    rdone=rv>=QR_MINI(bv,_dl->o[1]+bv>>1)||nrempty>14;
+                         ~~~~~~~~~^~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:49: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2070:35: note: place parentheses around the '+' expression to silence this warning
+    rdone=rv>=QR_MINI(bv,_dl->o[1]+bv>>1)||nrempty>14;
+                         ~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:49: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2071:35: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    bdone=bu>=QR_MINI(ru,_ur->o[0]+ru>>1)||nbempty>14;
+                         ~~~~~~~~~^~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:37: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                    ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2071:35: note: place parentheses around the '+' expression to silence this warning
+    bdone=bu>=QR_MINI(ru,_ur->o[0]+ru>>1)||nbempty>14;
+                         ~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:37: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                    ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2071:35: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    bdone=bu>=QR_MINI(ru,_ur->o[0]+ru>>1)||nbempty>14;
+                         ~~~~~~~~~^~~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:49: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2071:35: note: place parentheses around the '+' expression to silence this warning
+    bdone=bu>=QR_MINI(ru,_ur->o[0]+ru>>1)||nbempty>14;
+                         ~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:49: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2073:12: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      x0=rx+drxj>>_aff->res+QR_FINDER_SUBPREC;
+         ~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2073:12: note: place parentheses around the '+' expression to silence this warning
+      x0=rx+drxj>>_aff->res+QR_FINDER_SUBPREC;
+           ^
+         (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2073:28: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      x0=rx+drxj>>_aff->res+QR_FINDER_SUBPREC;
+                ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2073:28: note: place parentheses around the '+' expression to silence this warning
+      x0=rx+drxj>>_aff->res+QR_FINDER_SUBPREC;
+                  ~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2074:12: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      y0=ry+dryj>>_aff->res+QR_FINDER_SUBPREC;
+         ~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2074:12: note: place parentheses around the '+' expression to silence this warning
+      y0=ry+dryj>>_aff->res+QR_FINDER_SUBPREC;
+           ^
+         (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2074:28: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      y0=ry+dryj>>_aff->res+QR_FINDER_SUBPREC;
+                ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2074:28: note: place parentheses around the '+' expression to silence this warning
+      y0=ry+dryj>>_aff->res+QR_FINDER_SUBPREC;
+                  ~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2075:12: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+      x1=rx-drxj>>_aff->res+QR_FINDER_SUBPREC;
+         ~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2075:12: note: place parentheses around the '-' expression to silence this warning
+      x1=rx-drxj>>_aff->res+QR_FINDER_SUBPREC;
+           ^
+         (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2075:28: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      x1=rx-drxj>>_aff->res+QR_FINDER_SUBPREC;
+                ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2075:28: note: place parentheses around the '+' expression to silence this warning
+      x1=rx-drxj>>_aff->res+QR_FINDER_SUBPREC;
+                  ~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2076:12: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+      y1=ry-dryj>>_aff->res+QR_FINDER_SUBPREC;
+         ~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2076:12: note: place parentheses around the '-' expression to silence this warning
+      y1=ry-dryj>>_aff->res+QR_FINDER_SUBPREC;
+           ^
+         (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2076:28: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      y1=ry-dryj>>_aff->res+QR_FINDER_SUBPREC;
+                ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2076:28: note: place parentheses around the '+' expression to silence this warning
+      y1=ry-dryj>>_aff->res+QR_FINDER_SUBPREC;
+                  ~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2090:16: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+          ru=ru+q[0]>>1;
+             ~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2090:16: note: place parentheses around the '+' expression to silence this warning
+          ru=ru+q[0]>>1;
+               ^
+             (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2092:31: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+          if(q[1]+drv>rv)rv=rv+q[1]>>1;
+                            ~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2092:31: note: place parentheses around the '+' expression to silence this warning
+          if(q[1]+drv>rv)rv=rv+q[1]>>1;
+                              ^
+                            (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2117:12: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      x0=bx+dbxj>>_aff->res+QR_FINDER_SUBPREC;
+         ~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2117:12: note: place parentheses around the '+' expression to silence this warning
+      x0=bx+dbxj>>_aff->res+QR_FINDER_SUBPREC;
+           ^
+         (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2117:28: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      x0=bx+dbxj>>_aff->res+QR_FINDER_SUBPREC;
+                ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2117:28: note: place parentheses around the '+' expression to silence this warning
+      x0=bx+dbxj>>_aff->res+QR_FINDER_SUBPREC;
+                  ~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2118:12: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      y0=by+dbyj>>_aff->res+QR_FINDER_SUBPREC;
+         ~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2118:12: note: place parentheses around the '+' expression to silence this warning
+      y0=by+dbyj>>_aff->res+QR_FINDER_SUBPREC;
+           ^
+         (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2118:28: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      y0=by+dbyj>>_aff->res+QR_FINDER_SUBPREC;
+                ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2118:28: note: place parentheses around the '+' expression to silence this warning
+      y0=by+dbyj>>_aff->res+QR_FINDER_SUBPREC;
+                  ~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2119:12: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+      x1=bx-dbxj>>_aff->res+QR_FINDER_SUBPREC;
+         ~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2119:12: note: place parentheses around the '-' expression to silence this warning
+      x1=bx-dbxj>>_aff->res+QR_FINDER_SUBPREC;
+           ^
+         (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2119:28: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      x1=bx-dbxj>>_aff->res+QR_FINDER_SUBPREC;
+                ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2119:28: note: place parentheses around the '+' expression to silence this warning
+      x1=bx-dbxj>>_aff->res+QR_FINDER_SUBPREC;
+                  ~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2120:12: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+      y1=by-dbyj>>_aff->res+QR_FINDER_SUBPREC;
+         ~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2120:12: note: place parentheses around the '-' expression to silence this warning
+      y1=by-dbyj>>_aff->res+QR_FINDER_SUBPREC;
+           ^
+         (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2120:28: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+      y1=by-dbyj>>_aff->res+QR_FINDER_SUBPREC;
+                ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2120:28: note: place parentheses around the '+' expression to silence this warning
+      y1=by-dbyj>>_aff->res+QR_FINDER_SUBPREC;
+                  ~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2135:31: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+          if(q[0]+dbu>bu)bu=bu+q[0]>>1;
+                            ~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2135:31: note: place parentheses around the '+' expression to silence this warning
+          if(q[0]+dbu>bu)bu=bu+q[0]>>1;
+                              ^
+                            (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2136:16: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+          bv=bv+q[1]>>1;
+             ~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2136:16: note: place parentheses around the '+' expression to silence this warning
+          bv=bv+q[1]>>1;
+               ^
+             (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2171:17: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     -(_aff->res+1>>1));
+       ~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2171:17: note: place parentheses around the '+' expression to silence this warning
+     -(_aff->res+1>>1));
+       ~~~~~~~~~^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2171:17: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     -(_aff->res+1>>1));
+       ~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2171:17: note: place parentheses around the '+' expression to silence this warning
+     -(_aff->res+1>>1));
+       ~~~~~~~~~^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2173:28: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    l[1][0]=_aff->fwd[1][1]+round>>shift;
+            ~~~~~~~~~~~~~~~^~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2173:28: note: place parentheses around the '+' expression to silence this warning
+    l[1][0]=_aff->fwd[1][1]+round>>shift;
+                           ^
+            (                    )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2174:29: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    l[1][1]=-_aff->fwd[0][1]+round>>shift;
+            ~~~~~~~~~~~~~~~~^~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2174:29: note: place parentheses around the '+' expression to silence this warning
+    l[1][1]=-_aff->fwd[0][1]+round>>shift;
+                            ^
+            (                     )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2183:17: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     -(_aff->res+1>>1));
+       ~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2183:17: note: place parentheses around the '+' expression to silence this warning
+     -(_aff->res+1>>1));
+       ~~~~~~~~~^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2183:17: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     -(_aff->res+1>>1));
+       ~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2183:17: note: place parentheses around the '+' expression to silence this warning
+     -(_aff->res+1>>1));
+       ~~~~~~~~~^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2185:28: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    l[3][0]=_aff->fwd[1][0]+round>>shift;
+            ~~~~~~~~~~~~~~~^~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2185:28: note: place parentheses around the '+' expression to silence this warning
+    l[3][0]=_aff->fwd[1][0]+round>>shift;
+                           ^
+            (                    )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2186:29: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    l[3][1]=-_aff->fwd[0][0]+round>>shift;
+            ~~~~~~~~~~~~~~~~^~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2186:29: note: place parentheses around the '+' expression to silence this warning
+    l[3][1]=-_aff->fwd[0][0]+round>>shift;
+                            ^
+            (                     )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2195:41: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     _p[i][0]>=_width<<QR_FINDER_SUBPREC+1||
+                     ~~~~~~~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2195:41: note: place parentheses around the '+' expression to silence this warning
+     _p[i][0]>=_width<<QR_FINDER_SUBPREC+1||
+                       ~~~~~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2197:42: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     _p[i][1]>=_height<<QR_FINDER_SUBPREC+1){
+                      ~~~~~~~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2197:42: note: place parentheses around the '+' expression to silence this warning
+     _p[i][1]>=_height<<QR_FINDER_SUBPREC+1){
+                        ~~~~~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2521:22: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    if(nerrs[besti]>3&&nerrs[i]<=3||
+       ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2521:22: note: place parentheses around the '&&' expression to silence this warning
+    if(nerrs[besti]>3&&nerrs[i]<=3||
+                     ^
+       (                          )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2522:51: warning: '&&' within '||' [-Wlogical-op-parentheses]
+     count[i]>count[besti]||count[i]==count[besti]&&nerrs[i]<nerrs[besti]){
+                          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2522:51: note: place parentheses around the '&&' expression to silence this warning
+     count[i]>count[besti]||count[i]==count[besti]&&nerrs[i]<nerrs[besti]){
+                                                  ^
+                            (                                            )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2552:26: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  stride=_dim+QR_INT_BITS-1>>QR_INT_LOGBITS;
+         ~~~~~~~~~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2552:26: note: place parentheses around the '-' expression to silence this warning
+  stride=_dim+QR_INT_BITS-1>>QR_INT_LOGBITS;
+                         ^
+         (                 )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2563:44: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  return _grid->fpmask[_u*(_dim+QR_INT_BITS-1>>QR_INT_LOGBITS)
+                           ~~~~~~~~~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2563:44: note: place parentheses around the '-' expression to silence this warning
+  return _grid->fpmask[_u*(_dim+QR_INT_BITS-1>>QR_INT_LOGBITS)
+                                           ^
+                           (                 )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2620:20: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+   (dim+QR_INT_BITS-1>>QR_INT_LOGBITS)*sizeof(*_grid->fpmask));
+    ~~~~~~~~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2620:20: note: place parentheses around the '-' expression to silence this warning
+   (dim+QR_INT_BITS-1>>QR_INT_LOGBITS)*sizeof(*_grid->fpmask));
+                   ^
+    (                )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2751:31: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     _width<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:37: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                    ^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2751:31: note: place parentheses around the '+' expression to silence this warning
+     _width<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:37: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                    ^
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2751:31: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     _width<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:49: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                                ^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2751:31: note: place parentheses around the '+' expression to silence this warning
+     _width<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:49: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                                ^
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2751:31: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     _width<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:37: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                    ^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2751:31: note: place parentheses around the '+' expression to silence this warning
+     _width<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:37: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                    ^
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2751:31: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     _width<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:49: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                                ^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2751:31: note: place parentheses around the '+' expression to silence this warning
+     _width<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:49: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                                ^
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2753:32: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     _height<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:37: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                    ^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2753:32: note: place parentheses around the '+' expression to silence this warning
+     _height<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:37: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                    ^
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2753:32: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     _height<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:49: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                                ^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2753:32: note: place parentheses around the '+' expression to silence this warning
+     _height<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:49: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                                ^
+../../../../src/main/cpp/zbar/qrcode/util.h:9:42: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                         ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2753:32: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     _height<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:37: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                    ^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2753:32: note: place parentheses around the '+' expression to silence this warning
+     _height<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:37: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                    ^
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2753:32: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+     _height<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:49: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                                ^~
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2753:32: note: place parentheses around the '+' expression to silence this warning
+     _height<<QR_FINDER_SUBPREC+1);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+../../../../src/main/cpp/zbar/qrcode/util.h:18:52: note: expanded from macro 'QR_CLAMPI'
+#define QR_CLAMPI(_a,_b,_c) (QR_MAXI(_a,QR_MINI(_b,_c)))
+                             ~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../../../src/main/cpp/zbar/qrcode/util.h:10:49: note: expanded from macro 'QR_MINI'
+#define QR_MINI(_a,_b)      ((_a)+((_b)-(_a)&-((_b)<(_a))))
+                                                ^
+../../../../src/main/cpp/zbar/qrcode/util.h:9:49: note: expanded from macro 'QR_MAXI'
+#define QR_MAXI(_a,_b)      ((_a)-((_a)-(_b)&-((_b)>(_a))))
+                                                ^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2836:26: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  stride=_dim+QR_INT_BITS-1>>QR_INT_LOGBITS;
+         ~~~~~~~~~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2836:26: note: place parentheses around the '-' expression to silence this warning
+  stride=_dim+QR_INT_BITS-1>>QR_INT_LOGBITS;
+                         ^
+         (                 )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2882:37: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+          mi=mi>>QR_INT_BITS%3|mi<<3-QR_INT_BITS%3;
+                                 ~~~^~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2882:37: note: place parentheses around the '-' expression to silence this warning
+          mi=mi>>QR_INT_BITS%3|mi<<3-QR_INT_BITS%3;
+                                    ^
+                                   (              )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2911:34: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+          m=m>>QR_INT_BITS%6|m<<6-QR_INT_BITS%6;
+                              ~~~^~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2911:34: note: place parentheses around the '-' expression to silence this warning
+          m=m>>QR_INT_BITS%6|m<<6-QR_INT_BITS%6;
+                                 ^
+                                (              )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2927:34: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+          m=m>>QR_INT_BITS%6|m<<6-QR_INT_BITS%6;
+                              ~~~^~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2927:34: note: place parentheses around the '-' expression to silence this warning
+          m=m>>QR_INT_BITS%6|m<<6-QR_INT_BITS%6;
+                                 ^
+                                (              )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2943:34: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+          m=m>>QR_INT_BITS%6|m<<6-QR_INT_BITS%6;
+                              ~~~^~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2943:34: note: place parentheses around the '-' expression to silence this warning
+          m=m>>QR_INT_BITS%6|m<<6-QR_INT_BITS%6;
+                                 ^
+                                (              )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2960:26: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  stride=_dim+QR_INT_BITS-1>>QR_INT_LOGBITS;
+         ~~~~~~~~~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:2960:26: note: place parentheses around the '-' expression to silence this warning
+  stride=_dim+QR_INT_BITS-1>>QR_INT_LOGBITS;
+                         ^
+         (                 )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3035:26: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  stride=_dim+QR_INT_BITS-1>>QR_INT_LOGBITS;
+         ~~~~~~~~~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3035:26: note: place parentheses around the '-' expression to silence this warning
+  stride=_dim+QR_INT_BITS-1>>QR_INT_LOGBITS;
+                         ^
+         (                 )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3058:36: warning: '&' within '|' [-Wbitwise-op-parentheses]
+          bits=bits<<1|data1>>nbits&1;
+                      ~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3058:36: note: place parentheses around the '&' expression to silence this warning
+          bits=bits<<1|data1>>nbits&1;
+                                   ^
+                       (             )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3063:36: warning: '&' within '|' [-Wbitwise-op-parentheses]
+          bits=bits<<1|data2>>nbits&1;
+                      ~~~~~~~~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3063:36: note: place parentheses around the '&' expression to silence this warning
+          bits=bits<<1|data2>>nbits&1;
+                                   ^
+                       (             )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3098:29: warning: '&' within '|' [-Wbitwise-op-parentheses]
+          bits=bits<<1|data1&1;
+                      ~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3098:29: note: place parentheses around the '&' expression to silence this warning
+          bits=bits<<1|data1&1;
+                            ^
+                       (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3105:29: warning: '&' within '|' [-Wbitwise-op-parentheses]
+          bits=bits<<1|data2&1;
+                      ~~~~~~^~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3105:29: note: place parentheses around the '&' expression to silence this warning
+          bits=bits<<1|data2&1;
+                            ^
+                       (      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3162:14: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+  ret=p[0]<<8+_b->endbit;
+          ~~~^~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3162:14: note: place parentheses around the '+' expression to silence this warning
+  ret=p[0]<<8+_b->endbit;
+             ^
+            (           )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3165:29: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    if(_bits>16)ret|=p[2]>>8-_b->endbit;
+                         ~~~^~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3165:29: note: place parentheses around the '-' expression to silence this warning
+    if(_bits>16)ret|=p[2]>>8-_b->endbit;
+                            ^
+                           (           )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3173:22: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+  return (_b->storage-_b->endbyte<<3)-_b->endbit;
+          ~~~~~~~~~~~^~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3173:22: note: place parentheses around the '-' expression to silence this warning
+  return (_b->storage-_b->endbyte<<3)-_b->endbit;
+                     ^
+          (                      )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3416:21: warning: '&&' within '||' [-Wlogical-op-parentheses]
+        if(!(bits>=0&&bits<100||bits>=165&&bits<191||bits>=197&&bits<223)){
+             ~~~~~~~^~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3416:21: note: place parentheses around the '&&' expression to silence this warning
+        if(!(bits>=0&&bits<100||bits>=165&&bits<191||bits>=197&&bits<223)){
+                    ^
+             (                )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3416:42: warning: '&&' within '||' [-Wlogical-op-parentheses]
+        if(!(bits>=0&&bits<100||bits>=165&&bits<191||bits>=197&&bits<223)){
+                              ~~~~~~~~~~~^~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3416:42: note: place parentheses around the '&&' expression to silence this warning
+        if(!(bits>=0&&bits<100||bits>=165&&bits<191||bits>=197&&bits<223)){
+                                         ^
+                                (                  )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3416:63: warning: '&&' within '||' [-Wlogical-op-parentheses]
+        if(!(bits>=0&&bits<100||bits>=165&&bits<191||bits>=197&&bits<223)){
+                                                   ~~~~~~~~~~~^~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3416:63: note: place parentheses around the '&&' expression to silence this warning
+        if(!(bits>=0&&bits<100||bits>=165&&bits<191||bits>=197&&bits<223)){
+                                                              ^
+                                                     (                  )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3492:44: warning: operator '>>' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+   -(5*nalign)*(5*nalign-2)+36*(_version<7)+83>>3;
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3492:44: note: place parentheses around the '+' expression to silence this warning
+   -(5*nalign)*(5*nalign-2)+36*(_version<7)+83>>3;
+                                           ^
+                                              )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3585:24: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+   dim*(dim+QR_INT_BITS-1>>QR_INT_LOGBITS)*sizeof(*data_bits));
+        ~~~~~~~~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3585:24: note: place parentheses around the '-' expression to silence this warning
+   dim*(dim+QR_INT_BITS-1>>QR_INT_LOGBITS)*sizeof(*data_bits));
+                       ^
+        (                )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3620:41: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+    if(ret<0||_version==1&&ret>ecc_level+1<<1||
+                               ~~~~~~~~~^~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3620:41: note: place parentheses around the '+' expression to silence this warning
+    if(ret<0||_version==1&&ret>ecc_level+1<<1||
+                                        ^
+                               (          )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3620:26: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    if(ret<0||_version==1&&ret>ecc_level+1<<1||
+            ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3620:26: note: place parentheses around the '&&' expression to silence this warning
+    if(ret<0||_version==1&&ret>ecc_level+1<<1||
+                         ^
+              (                              )
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3621:31: warning: '&&' within '||' [-Wlogical-op-parentheses]
+     _version==2&&ecc_level==0&&ret>4){
+     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\Administrator\Desktop\github\ChunLin\zbar\src\main\cpp\zbar\qrcode\qrdec.c:3621:31: note: place parentheses around the '&&' expression to silence this warning
+     _version==2&&ecc_level==0&&ret>4){
+                              ^
+     (                               )
+138 warnings generated.
+[28/28] Linking C shared library ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libzbar.so
