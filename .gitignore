@@ -1,7 +1,4 @@
 .gradle/
-*/*.iml
-.gradle
-.idea
 adapter/build/
 app/build/
 base/build/
