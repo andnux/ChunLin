@@ -7,6 +7,21 @@
     android:orientation="vertical"
     tools:context=".login.LoginActivity">
 
+    <androidx.appcompat.widget.AppCompatRatingBar
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:forceHasOverlappingRendering="true" />
+
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/mName"
         android:layout_width="match_parent"
@@ -21,15 +36,16 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="80dp" />
 
-    <EditText
+    <TextView
+        android:hint="@string/app_name"
+        android:text="123"
+        android:textColorHint="@color/actionsheet_gray"
         android:id="@+id/mPwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="169dp" />

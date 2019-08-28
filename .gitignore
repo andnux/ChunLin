@@ -16,3 +16,4 @@ glide/.externalNativeBuild/
 zbar/.externalNativeBuild/
 pay/build/
 skin/build/
+.idea/workspace.xml

@@ -42,7 +42,7 @@ dependencies {
     implementation project(path: ':mvp')
     implementation project(path: ':compat')
     implementation project(path: ':zbar')
-    implementation project(path: ':locale')
+    implementation project(path: ':language')
     implementation project(path: ':web')
     implementation project(path: ':skin')
     implementation project(path: ':pay')

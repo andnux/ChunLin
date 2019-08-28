@@ -15,8 +15,8 @@ public class SkinPreUtils {
         if(mInstance == null){
             synchronized (SkinPreUtils.class){
                 if(mInstance == null){
-
-                }  mInstance = new SkinPreUtils(context);
+                    mInstance = new SkinPreUtils(context);
+                }
             }
         }
         return mInstance;
@@ -29,7 +29,7 @@ public class SkinPreUtils {
      */
     public void saveSkinPath(String skinPath){
         mContext.getSharedPreferences(SkinConfig.SKIN_INFO_NAME,Context.MODE_PRIVATE)
-                .edit().putString(SkinConfig.SKIN_PATH_NAME,skinPath).commit();
+                .edit().putString(SkinConfig.SKIN_PATH_NAME,skinPath).apply();
     }
 
     /**

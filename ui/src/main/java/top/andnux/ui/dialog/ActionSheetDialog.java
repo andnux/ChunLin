@@ -22,6 +22,7 @@ import top.andnux.ui.R;
 
 
 public class ActionSheetDialog {
+
     private Context context;
     private Dialog dialog;
     private TextView txt_title;
@@ -31,6 +32,7 @@ public class ActionSheetDialog {
     private boolean showTitle = false;
     private List<SheetItem> sheetItemList;
     private Display display;
+    private boolean showCancel;
 
     public ActionSheetDialog(Context context) {
         this.context = context;
@@ -46,11 +48,11 @@ public class ActionSheetDialog {
         View view = LayoutInflater.from(context).inflate(
                 R.layout.view_actionsheet, null);
         view.setMinimumWidth(display.getWidth());
-        sLayout_content = (ScrollView) view.findViewById(R.id.sLayout_content);
-        lLayout_content = (LinearLayout) view
+        sLayout_content = view.findViewById(R.id.sLayout_content);
+        lLayout_content = view
                 .findViewById(R.id.lLayout_content);
-        txt_title = (TextView) view.findViewById(R.id.txt_title);
-        txt_cancel = (TextView) view.findViewById(R.id.txt_cancel);
+        txt_title = view.findViewById(R.id.txt_title);
+        txt_cancel = view.findViewById(R.id.txt_cancel);
         txt_cancel.setOnClickListener(v -> dialog.dismiss());
         dialog = new Dialog(context, R.style.ActionSheetDialogStyle);
         dialog.setContentView(view);
@@ -71,6 +73,13 @@ public class ActionSheetDialog {
         showTitle = true;
         txt_title.setVisibility(View.VISIBLE);
         txt_title.setText(title);
+        return this;
+    }
+
+    public ActionSheetDialog setCancel(String title) {
+        showCancel = true;
+        txt_cancel.setVisibility(View.VISIBLE);
+        txt_cancel.setText(title);
         return this;
     }
 
@@ -196,7 +205,7 @@ public class ActionSheetDialog {
 
         private String name;
 
-        private SheetItemColor(String name) {
+        SheetItemColor(String name) {
             this.name = name;
         }
 
