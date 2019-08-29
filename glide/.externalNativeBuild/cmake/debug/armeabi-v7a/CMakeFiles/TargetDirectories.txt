@@ -1,3 +1,0 @@
-C:/Users/Administrator/Desktop/github/ChunLin/glide/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/glide.dir
-C:/Users/Administrator/Desktop/github/ChunLin/glide/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
-C:/Users/Administrator/Desktop/github/ChunLin/glide/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir
