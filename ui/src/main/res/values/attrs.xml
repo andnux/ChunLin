@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <declare-styleable name="ViewPagerGridView">
+        <!--多少行-->
+        <attr name="row_count" format="integer" />
+        <!--一列多少个-->
+        <attr name="column_count" format="integer" />
+        <!--图标边框宽度-->
+        <attr name="icon_border_width" format="dimension" />
+        <!--图标边框颜色-->
+        <attr name="icon_border_color" format="color|reference" />
+        <!--图标圆角-->
+        <attr name="icon_corner_radius" format="dimension" />
+        <!--图标宽度-->
+        <attr name="icon_width" format="dimension" />
+        <!--图标高度-->
+        <attr name="icon_height" format="dimension" />
+        <!--文字大小-->
+        <attr name="text_size" format="dimension" />
+        <!--文字颜色-->
+        <attr name="text_color" format="color|reference" />
+        <!--图标和文字之间的距离-->
+        <attr name="icon_text_margin" format="dimension" />
+        <!--点的选中颜色-->
+        <attr name="dot_select_color" format="color|reference" />
+        <!--点的正常颜色-->
+        <attr name="dot_normal_color" format="color|reference" />
+        <!--点的宽度-->
+        <attr name="dot_width" format="dimension" />
+        <!--点的高度-->
+        <attr name="dot_height" format="dimension" />
+        <!--点之间的距离-->
+        <attr name="dot_margin" format="dimension" />
+        <!--、点的位置-->
+        <attr name="dot_gravity" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <!--、距离底部多少-->
+        <attr name="dot_margin_bottom" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="MaxHeightRecyclerView">
+        <attr name="rv_maxHeight" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="MaxHeightListView">
+        <attr name="lv_maxHeight" format="dimension" />
+    </declare-styleable>
     <declare-styleable name="StateLayout">
         <!-- 错误提示图标 -->
         <attr name="errorImg" format="reference" />

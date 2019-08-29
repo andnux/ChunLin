@@ -2,4 +2,6 @@
 <resources>
     <item name="stateLayout" type="id" />
     <item name="container" type="id" />
+    <item name="icon" type="id"/>
+    <item name="text" type="id"/>
 </resources>

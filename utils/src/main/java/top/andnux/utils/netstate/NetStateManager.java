@@ -36,7 +36,6 @@ public class NetStateManager implements NetStateListener {
     private NetStateManager() {
         mNetBroadcastReceiver = new NetStateReceiver();
         mNetBroadcastReceiver.setNetListener(this);
-        init(Utils.getApp());
     }
 
     public NetStateListener getStateListener() {
@@ -47,18 +46,20 @@ public class NetStateManager implements NetStateListener {
         mStateListener = stateListener;
     }
 
-    public void init(Application context) {
-        this.mApplication = context;
+    public static void init(Application context) {
+        getInstance().mApplication = context;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             ConnectivityManager service = (ConnectivityManager) NetStateManager.getInstance().getApplication().
                     getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkRequest.Builder builder = null;
             builder = new NetworkRequest.Builder();
-            service.requestNetwork(builder.build(),
-                    new NetworkCallback(this));
+            if (service != null) {
+                service.requestNetwork(builder.build(),
+                        new NetworkCallback(getInstance()));
+            }
         } else {
             IntentFilter filter = new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE");
-            context.registerReceiver(mNetBroadcastReceiver, filter);
+            context.registerReceiver(getInstance().mNetBroadcastReceiver, filter);
         }
     }
 

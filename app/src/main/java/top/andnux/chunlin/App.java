@@ -14,11 +14,10 @@ import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.squareup.leakcanary.LeakCanary;
 
-import top.andnux.chunlin.login.LoginActivity;
-import top.andnux.locale.LocaleApplication;
-import top.andnux.locale.LocaleManager;
+import top.andnux.http.Utils;
+import top.andnux.utils.netstate.NetStateManager;
 
-public class App extends LocaleApplication {
+public class App extends Application {
     //static 代码段可以防止内存泄露
     static {
         //设置全局的Header构建器
@@ -45,11 +44,8 @@ public class App extends LocaleApplication {
         if (LeakCanary.isInAnalyzerProcess(this)) {
             return;
         }
+        Utils.init(this);
+        NetStateManager.init(this);
         LeakCanary.install(this);
-        setLocaleListener(context -> {
-            Intent intent = new Intent(context, LoginActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            context.startActivity(intent);
-        });
     }
 }

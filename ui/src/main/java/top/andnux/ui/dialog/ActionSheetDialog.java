@@ -49,8 +49,7 @@ public class ActionSheetDialog {
                 R.layout.view_actionsheet, null);
         view.setMinimumWidth(display.getWidth());
         sLayout_content = view.findViewById(R.id.sLayout_content);
-        lLayout_content = view
-                .findViewById(R.id.lLayout_content);
+        lLayout_content = view.findViewById(R.id.lLayout_content);
         txt_title = view.findViewById(R.id.txt_title);
         txt_cancel = view.findViewById(R.id.txt_cancel);
         txt_cancel.setOnClickListener(v -> dialog.dismiss());
