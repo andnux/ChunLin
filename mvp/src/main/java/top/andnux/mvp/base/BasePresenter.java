@@ -6,7 +6,7 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
-import top.andnux.mvp.annotation.Provider;
+import top.andnux.base.annotation.Provider;
 
 public abstract class BasePresenter<V extends BaseView, M extends BaseModel> {
 

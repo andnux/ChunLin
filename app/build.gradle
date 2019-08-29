@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "top.andnux.chunlin"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -46,6 +46,7 @@ dependencies {
     implementation project(path: ':web')
     implementation project(path: ':skin')
     implementation project(path: ':pay')
+    implementation project(path: ':utils')
 
     //测试相关
     testImplementation 'junit:junit:4.12'

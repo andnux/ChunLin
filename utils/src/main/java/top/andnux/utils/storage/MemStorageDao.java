@@ -1,25 +1,20 @@
 package top.andnux.utils.storage;
 
-import android.text.TextUtils;
+import android.content.Context;
 import android.util.LruCache;
-
-import top.andnux.utils.storage.annotation.FileName;
 
 public class MemStorageDao<T> extends BaseStorageDao<T> {
 
     private LruCache<String, T> mCache;
-    private String fileName;
 
-    public MemStorageDao(Class<T> clazz) {
-        super( clazz);
+    @Override
+    protected void init() {
+    }
+
+    public MemStorageDao(Context context, Class<T> clazz) {
+        super(context, clazz);
         long size = Runtime.getRuntime().freeMemory() / 8;
         mCache = new LruCache<>((int) size);
-        FileName annotation = clazz.getAnnotation(FileName.class);
-        String value = clazz.getCanonicalName();
-        if (annotation != null && !TextUtils.isEmpty(annotation.value())){
-            value = annotation.value();
-        }
-        fileName = value;
     }
 
     @Override

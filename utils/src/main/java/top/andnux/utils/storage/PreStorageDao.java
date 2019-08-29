@@ -5,30 +5,26 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.util.Log;
 
-import java.io.File;
+import com.google.gson.Gson;
+
 import java.lang.reflect.Field;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import top.andnux.utils.storage.annotation.FileName;
 import top.andnux.utils.storage.annotation.KeyName;
 public class PreStorageDao<T> extends BaseStorageDao<T> {
 
     private SharedPreferences mPreferences;
-    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.getDefault());
 
-    public PreStorageDao(Class<T> clazz) {
-        super(clazz);
-        FileName annotation = clazz.getAnnotation(FileName.class);
-        String value = clazz.getCanonicalName();
-        if (annotation != null && !TextUtils.isEmpty(annotation.value())) {
-            value = annotation.value();
-        }
-        String fileName = value;
+    @Override
+    protected void init() { 
         mPreferences = mContext.getSharedPreferences(fileName, Context.MODE_PRIVATE);
+    }
+
+    public PreStorageDao(Context context, Class<T> clazz) {
+        super(context, clazz);
     }
 
     @Override
@@ -63,6 +59,12 @@ public class PreStorageDao<T> extends BaseStorageDao<T> {
             edit.putBoolean(name, (Boolean) field.get(data));
         } else if (field.getType().equals(Date.class)) {
             edit.putString(name, sdf.format(field.get(data)));
+        } else if (field.getType().equals(Set.class)) {
+            edit.putStringSet(name, (Set<String>) field.get(data));
+        } else {
+            Object o = field.get(data);
+            String s = new Gson().toJson(o);
+            edit.putString(name, s);
         }
     }
 
@@ -115,14 +117,27 @@ public class PreStorageDao<T> extends BaseStorageDao<T> {
             field.set(t, value);
         } else if (field.getType().equals(Boolean.class) ||
                 field.getType().equals(boolean.class)) {
-            Boolean value = mPreferences.getBoolean(name, false);
+            Boolean value = sp.getBoolean(name, false);
             field.set(t, value);
         } else if (field.getType().equals(Date.class)) {
-            String value = mPreferences.getString(name, "");
+            String value = sp.getString(name, "");
             try {
                 if (!TextUtils.isEmpty(value)) {
                     Date parse = sdf.parse(value);
                     field.set(t, parse);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (field.getType().equals(Set.class)) {
+            Set<String> stringSet = sp.getStringSet(name, new HashSet<>());
+            field.set(t, stringSet);
+        } else {
+            try {
+                String value = sp.getString(name, "");
+                if (!TextUtils.isEmpty(value)) {
+                    Object o = new Gson().fromJson(value, field.getType());
+                    field.set(t, o);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
